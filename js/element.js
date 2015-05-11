@@ -1,0 +1,86 @@
+$(function() {
+
+  // Property box
+
+  var $propertyBox = $(".property-box");
+  var $propertyBoxChecker = $propertyBox.find(".icon-property");
+  var propertyBoxZIndex = 0;
+
+  var propertyBoxToggler = function($event) {
+    $event.stopPropagation();
+    var $currentPropertyBox = $(this).closest(".property-box");
+    var $propertyContainer = $currentPropertyBox.find(".property-container");
+    $propertyContainer.css({ zIndex: ++propertyBoxZIndex });
+    if (!$propertyContainer[0].active) {
+      $propertyContainer[0].active = true;
+      $propertyContainer.css({ display: "block" }).animate({ opacity: 1 }, 200);
+    } else {
+      $propertyContainer[0].active = false;
+      $propertyContainer.animate({ opacity: 0 }, 200, function() {
+        $propertyContainer.css({ display: "none" });
+      });
+    }
+  };
+
+  $propertyBoxChecker.bind("click", propertyBoxToggler);
+
+  // Table items
+
+  var $articleTable = $("article.table");
+  var $articleTableChecker = $articleTable.find("thead input[type=\"checkbox\"]");
+  var $articleTableTbody = $articleTable.find("tbody");
+  var $articleTableTbodyChecker = $articleTableTbody.find("input[type=\"checkbox\"]");
+
+  $articleTableChecker.bind("change", function() {
+    var $container = $(this).closest(".table");
+    var $tbody = $container.find("tbody");
+    var $chackers = $tbody.find("input[type=\"checkbox\"]");
+    if (!$container[0].active) {
+      $container[0].active = true;
+      $chackers.prop("checked", true);
+    } else {
+      $container[0].active = false;
+      $chackers.prop("checked", false);
+    }
+    $chackers.trigger("change");
+  });
+
+  $articleTableTbodyChecker.bind("change", function() {
+    var $container = $(this).closest(".table");
+    var $tbody = $container.find("tbody");
+    var $chackers = $tbody.find("input[type=\"checkbox\"]");
+    var $countToDelete = $container.find(".count-to-delete");
+    var $count = $countToDelete.find(".count");
+    var checked = 0;
+    $chackers.each(function(index, $element) {
+      if ($element.checked) checked++;
+    });
+    if (checked > 0) {
+      $count.text(checked);
+      $countToDelete.addClass("active");
+    } else {
+      $count.text(checked);
+      $countToDelete.removeClass("active");
+    }
+  });
+
+  // Responsive left menu
+
+  $leftPanel = $(".left-panel");
+  $leftMenuActivator = $(".left-panel-activator");
+
+  $leftMenuActivator.bind("click", function() {
+    if (!$leftPanel[0].active) {
+      $leftPanel[0].active = true;
+      $leftMenuActivator.addClass("active");
+      $leftPanel.addClass("active");
+    } else {
+      $leftPanel[0].active = false;
+      $leftMenuActivator.removeClass("active");
+      $leftPanel.removeClass("active");
+    }
+  });
+
+  $leftPanel.height($("body").height());
+
+});

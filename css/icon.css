@@ -1,0 +1,97 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../font/icomoon.eot?vrd7mf');
+	src:url('../font/icomoon.eot?#iefixvrd7mf') format('embedded-opentype'),
+		url('../font/icomoon.woff?vrd7mf') format('woff'),
+		url('../font/icomoon.ttf?vrd7mf') format('truetype'),
+		url('../font/icomoon.svg?vrd7mf#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-checked:before {
+	content: "\e611";
+}
+
+.icon-delete:before {
+	content: "\e60f";
+}
+
+.icon-pagination-right:before {
+	content: "\e610";
+}
+
+.icon-pagination-left:before {
+	content: "\e60e";
+}
+
+.icon-edit:before {
+	content: "\e60c";
+}
+
+.icon-view:before {
+	content: "\e60d";
+}
+
+.icon-status:before {
+	content: "\e60b";
+}
+
+.icon-property:before {
+	content: "\e60a";
+}
+
+.icon-setting:before {
+	content: "\e608";
+}
+
+.icon-search:before {
+	content: "\e609";
+}
+
+.icon-templates:before {
+	content: "\e600";
+}
+
+.icon-import:before {
+	content: "\e601";
+}
+
+.icon-reservation-center:before {
+	content: "\e602";
+}
+
+.icon-properties:before {
+	content: "\e603";
+}
+
+.icon-contacts:before {
+	content: "\e604";
+}
+
+.icon-dashboard:before {
+	content: "\e605";
+}
+
+.icon-availability:before {
+	content: "\e606";
+}
+
+.icon-inquiries:before {
+	content: "\e607";
+}
+
