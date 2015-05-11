@@ -66,8 +66,8 @@ $(function() {
 
   // Responsive left menu
 
-  $leftPanel = $(".left-panel");
-  $leftMenuActivator = $(".left-panel-activator");
+  $leftPanel = $(".left-panel-container");
+  $leftMenuActivator = $(".left-panel-activator-container");
 
   $leftMenuActivator.bind("click", function() {
     if (!$leftPanel[0].active) {
@@ -80,7 +80,5 @@ $(function() {
       $leftPanel.removeClass("active");
     }
   });
-
-  $leftPanel.height($("body").height());
 
 });
