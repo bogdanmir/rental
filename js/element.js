@@ -1,5 +1,25 @@
 $(function() {
 
+  // User menu settings
+
+  var userContainer = $(".user-info");
+
+  userContainer.on("click", function() {
+    $element = $(this).closest(".user");
+    $userSettings = $element.find(".user-settings");
+
+    if (!$element.hasClass("active")) {
+      $element.addClass("active");
+      $userSettings.css({ display: "block" }).animate({ opacity: 1 }, 200);
+    } else {
+      $userSettings.animate({ opacity: 0 }, 200, function() {
+        $userSettings.css({ display: "none" });
+      });
+      $element.removeClass("active");
+    }
+
+  });
+
   // Property box
 
   var $propertyBox = $(".property-box");
@@ -22,7 +42,7 @@ $(function() {
     }
   };
 
-  $propertyBoxChecker.bind("click", propertyBoxToggler);
+  $propertyBoxChecker.on("click", propertyBoxToggler);
 
   // Table items
 
@@ -31,7 +51,7 @@ $(function() {
   var $articleTableTbody = $articleTable.find("tbody");
   var $articleTableTbodyChecker = $articleTableTbody.find("input[type=\"checkbox\"]");
 
-  $articleTableChecker.bind("change", function() {
+  $articleTableChecker.on("change", function() {
     var $container = $(this).closest(".table");
     var $tbody = $container.find("tbody");
     var $chackers = $tbody.find("input[type=\"checkbox\"]");
@@ -45,7 +65,7 @@ $(function() {
     $chackers.trigger("change");
   });
 
-  $articleTableTbodyChecker.bind("change", function() {
+  $articleTableTbodyChecker.on("change", function() {
     var $container = $(this).closest(".table");
     var $tbody = $container.find("tbody");
     var $chackers = $tbody.find("input[type=\"checkbox\"]");
@@ -69,7 +89,7 @@ $(function() {
   $leftPanel = $(".left-panel-container");
   $leftMenuActivator = $(".left-panel-activator-container");
 
-  $leftMenuActivator.bind("click", function() {
+  $leftMenuActivator.on("click", function() {
     if (!$leftPanel[0].active) {
       $leftPanel[0].active = true;
       $leftMenuActivator.addClass("active");

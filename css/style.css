@@ -460,26 +460,95 @@ label.checkbox {
       vertical-align: middle;
       text-align: right; }
       .main-container .main-header .user-container .user {
-        display: table;
+        width: 204px;
         float: right;
-        height: inherit; }
-        .main-container .main-header .user-container .user .title {
-          display: table-cell;
-          color: #515151;
-          font-family: "Avenir LT Std";
-          font-size: 16px;
-          font-weight: 300;
-          line-height: 19px;
-          vertical-align: middle;
-          text-decoration: none; }
-        .main-container .main-header .user-container .user .icon-setting {
-          display: table-cell;
-          padding-left: 8px;
-          padding-right: 10px;
-          font-size: 18px;
-          color: #858d9c;
-          vertical-align: middle;
-          text-decoration: none; }
+        height: 38px;
+        padding-left: 18px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        position: relative;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
+        .main-container .main-header .user-container .user .user-info {
+          height: inherit; }
+          .main-container .main-header .user-container .user .user-info .title {
+            display: table-cell;
+            height: inherit;
+            color: #515151;
+            font-family: "Avenir LT Std";
+            font-size: 16px;
+            font-weight: 300;
+            vertical-align: middle;
+            text-decoration: none; }
+          .main-container .main-header .user-container .user .user-info .icon-setting {
+            display: table-cell;
+            height: inherit;
+            padding-left: 8px;
+            font-size: 18px;
+            color: #858d9c;
+            vertical-align: middle;
+            text-decoration: none;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -ms-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out; }
+        .main-container .main-header .user-container .user .user-settings {
+          display: none;
+          opacity: 0;
+          width: 204px;
+          padding: 9px 18px;
+          position: absolute;
+          left: -1px;
+          top: 100%;
+          background-color: white;
+          border: 1px solid #e9e9e9;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          -o-box-sizing: border-box;
+          -ms-box-sizing: border-box;
+          box-sizing: border-box;
+          -webkit-border-radius: 0 0 5px 5px;
+          -moz-border-radius: 0 0 5px 5px;
+          -ms-border-radius: 0 0 5px 5px;
+          border-radius: 0 0 5px 5px; }
+          .main-container .main-header .user-container .user .user-settings ul li {
+            padding-top: 6px;
+            padding-bottom: 6px;
+            text-align: left; }
+            .main-container .main-header .user-container .user .user-settings ul li a {
+              text-decoration: none;
+              font-family: "Avenir LT Std";
+              font-size: 14px; }
+              .main-container .main-header .user-container .user .user-settings ul li a:hover {
+                text-decoration: underline; }
+        .main-container .main-header .user-container .user:hover {
+          border: 1px solid #e9e9e9; }
+        .main-container .main-header .user-container .user.active {
+          border: 1px solid #e9e9e9;
+          -webkit-border-radius: 5px 5px 0 0;
+          -moz-border-radius: 5px 5px 0 0;
+          -ms-border-radius: 5px 5px 0 0;
+          border-radius: 5px 5px 0 0; }
+          .main-container .main-header .user-container .user.active .icon-setting {
+            color: #4a4a4a !important; }
   .main-container .main-content {
     padding: 17px 18px;
     -webkit-box-sizing: border-box;
