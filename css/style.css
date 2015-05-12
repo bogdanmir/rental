@@ -21,6 +21,7 @@
 body {
   margin: 0;
   height: inherit;
+  background-color: #f7f7f9;
   width: 100%; }
 
 p, h1, h4, ul {
@@ -31,7 +32,8 @@ ul {
   padding-left: 0; }
 
 input {
-  outline: none; }
+  outline: none;
+  border: none; }
 
 a {
   cursor: pointer;
@@ -407,8 +409,7 @@ label.checkbox {
       font-size: 14px; }
 
 .main-container {
-  margin-left: 227px;
-  background-color: #f7f7f9; }
+  margin-left: 227px; }
   .main-container .main-header {
     height: 75px;
     background-color: white;
@@ -864,6 +865,25 @@ article {
           -o-box-sizing: border-box;
           -ms-box-sizing: border-box;
           box-sizing: border-box; }
+          .table-container .table table thead tr th.cell-50 {
+            width: 50px; }
+          .table-container .table table thead tr th.cell-30 {
+            width: 30px;
+            padding-left: 0; }
+          .table-container .table table thead tr th.cell-150 {
+            width: 150px; }
+          .table-container .table table thead tr th.cell-200 {
+            width: 200px; }
+          .table-container .table table thead tr th.cell-300 {
+            width: 300px; }
+          .table-container .table table thead tr th.cell-45 {
+            width: 45px; }
+          .table-container .table table thead tr th.cell-all {
+            min-width: 100%; }
+          .table-container .table table thead tr th.cell-content {
+            width: 100%; }
+          .table-container .table table thead tr th.cell-filename {
+            width: 150px; }
       .table-container .table table tbody tr {
         height: 44px; }
         .table-container .table table tbody tr:nth-child(2n+1) {
@@ -952,26 +972,6 @@ article {
 
   .left-panel-activator-container {
     display: block; } }
-.table-container .table table thead tr th.cell-50 {
-  width: 50px; }
-.table-container .table table thead tr th.cell-30 {
-  width: 30px;
-  padding-left: 0; }
-.table-container .table table thead tr th.cell-150 {
-  width: 150px; }
-.table-container .table table thead tr th.cell-200 {
-  width: 200px; }
-.table-container .table table thead tr th.cell-300 {
-  width: 300px; }
-.table-container .table table thead tr th.cell-45 {
-  width: 45px; }
-.table-container .table table thead tr th.cell-all {
-  min-width: 100%; }
-.table-container .table table thead tr th.cell-content {
-  width: 100%; }
-.table-container .table table thead tr th.cell-filename {
-  width: 150px; }
-
 @media screen and (min-width: 1500px) {
   .table-container .table table thead tr th.cell-150 {
     width: 200px; }
@@ -1022,5 +1022,101 @@ article {
   .main-container .main-content .menu-container .menu a {
     padding-left: 5px;
     padding-right: 5px; } }
+.filters-container {
+  margin-top: 32px; }
+  .filters-container .filters header {
+    cursor: pointer; }
+    .filters-container .filters header .icon-opener {
+      font-size: 18px;
+      width: 18px;
+      height: 18px;
+      margin-left: 8px;
+      position: absolute;
+      margin-top: 4px;
+      display: inline-block;
+      -moz-transform: rotateZ(90deg);
+      -o-transform: rotateZ(90deg);
+      -ms-transform: rotateZ(90deg);
+      -webkit-transform: rotateZ(90deg);
+      transform: rotateZ(90deg); }
+  .filters-container .filters .filter-list {
+    border-top: 1px solid #ddd;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box; }
+    .filters-container .filters .filter-list .filter-row {
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-left: 20px;
+      height: 80px;
+      display: table;
+      width: 100%;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box; }
+      .filters-container .filters .filter-list .filter-row label {
+        display: table-cell;
+        padding-left: 23px;
+        cursor: pointer; }
+        .filters-container .filters .filter-list .filter-row label:first-child {
+          padding-left: 0; }
+        .filters-container .filters .filter-list .filter-row label p {
+          color: #515151;
+          font-family: "Montserrat Regular";
+          font-size: 14px; }
+        .filters-container .filters .filter-list .filter-row label .date-field {
+          border: 1px solid #e0e0e0;
+          margin-top: 6px;
+          display: table;
+          width: 100%;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          -o-user-select: none;
+          user-select: none;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          -ms-border-radius: 3px;
+          border-radius: 3px; }
+          .filters-container .filters .filter-list .filter-row label .date-field .field-container {
+            display: table-cell; }
+            .filters-container .filters .filter-list .filter-row label .date-field .field-container input {
+              width: 100%;
+              padding: 10px;
+              color: #878787;
+              font-family: "Roboto";
+              font-size: 14px;
+              font-weight: 300;
+              -webkit-box-sizing: border-box;
+              -moz-box-sizing: border-box;
+              -o-box-sizing: border-box;
+              -ms-box-sizing: border-box;
+              box-sizing: border-box; }
+          .filters-container .filters .filter-list .filter-row label .date-field .icon-container {
+            display: table-cell;
+            vertical-align: middle;
+            width: 51px;
+            padding-left: 18px;
+            padding-right: 18px;
+            text-align: center;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box; }
+            .filters-container .filters .filter-list .filter-row label .date-field .icon-container .icon-date {
+              color: #969696;
+              font-size: 18px;
+              -webkit-transition: all 0.2s ease-in-out;
+              -moz-transition: all 0.2s ease-in-out;
+              -ms-transition: all 0.2s ease-in-out;
+              -o-transition: all 0.2s ease-in-out;
+              transition: all 0.2s ease-in-out; }
+        .filters-container .filters .filter-list .filter-row label:hover .date-field .icon-container .icon-date {
+          color: #4a4a4a !important; }
 
 /*# sourceMappingURL=style.css.map */

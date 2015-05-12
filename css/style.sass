@@ -42,7 +42,7 @@
   -webkit-transform: $transforms
   transform: $transforms
 
-@mixin user-select ($setting)
+@mixin user-select ($setting: none)
   -webkit-user-select: $setting
   -moz-user-select: $setting
   -ms-user-select: $setting
@@ -54,7 +54,7 @@
 body
   margin: 0
   height: inherit
-  // display: table
+  background-color: #f7f7f9
   width: 100%
 
 // common
@@ -68,6 +68,7 @@ ul
 
 input
   outline: none
+  border: none
 
 a
   cursor: pointer
@@ -102,7 +103,7 @@ label.checkbox
   cursor: pointer
   position: relative
   overflow: hidden
-  @include user-select(none)
+  @include user-select()
   @include box-sizing()
   input[type="checkbox"]
     margin: 0
@@ -133,7 +134,7 @@ label.checkbox
   width: 15px
   margin-left: auto
   margin-right: auto
-  @include user-select(none)
+  @include user-select()
   .icon-property
     font-size: 10px
     color: #bbc3c9
@@ -367,7 +368,7 @@ label.checkbox
     display: table-cell
     vertical-align: middle
     text-align: center
-    @include user-select(none)
+    @include user-select()
     @include border-radius(0 3px 3px 0)
     @include box-sizing()
     .icon-delete
@@ -378,7 +379,6 @@ label.checkbox
 
 .main-container
   margin-left: 227px
-  background-color: #f7f7f9
   .main-header
     height: 75px
     background-color: white
@@ -430,7 +430,7 @@ label.checkbox
         border: 1px solid transparent
         position: relative
         @include box-sizing()
-        @include user-select(none)
+        @include user-select()
         @include border-radius(5px)
         @include transition(all, 0.2s, ease-in-out)
         .user-info
@@ -727,6 +727,25 @@ article
             white-space: nowrap
             text-overflow: ellipsis
             @include box-sizing()
+            &.cell-50
+              width: 50px
+            &.cell-30
+              width: 30px
+              padding-left: 0
+            &.cell-150
+              width: 150px
+            &.cell-200
+              width: 200px
+            &.cell-300
+              width: 300px
+            &.cell-45
+              width: 45px
+            &.cell-all
+              min-width: 100%
+            &.cell-content
+              width: 100%
+            &.cell-filename
+              width: 150px
       tbody
         tr
           height: 44px
@@ -801,32 +820,6 @@ article
     left: -227px
   .left-panel-activator-container
     display: block
-
-.table-container
-  .table
-    table
-      thead
-        tr
-          th
-            &.cell-50
-              width: 50px
-            &.cell-30
-              width: 30px
-              padding-left: 0
-            &.cell-150
-              width: 150px
-            &.cell-200
-              width: 200px
-            &.cell-300
-              width: 300px
-            &.cell-45
-              width: 45px
-            &.cell-all
-              min-width: 100%
-            &.cell-content
-              width: 100%
-            &.cell-filename
-              width: 150px
 
 @media screen and (min-width: 1500px)
   .table-container
@@ -905,3 +898,76 @@ article
           a
             padding-left: 5px
             padding-right: 5px
+
+
+// Availability page
+
+.filters-container
+  margin-top: 32px
+  .filters
+    header
+      cursor: pointer
+      .icon-opener
+        font-size: 18px
+        width: 18px
+        height: 18px
+        margin-left: 8px
+        position: absolute
+        margin-top: 4px
+        display: inline-block
+        @include transform(rotateZ(90deg))
+    .filter-list
+      border-top: 1px solid #ddd
+      @include box-sizing()
+      .filter-row
+        padding-top: 20px
+        padding-right: 20px
+        padding-left: 20px
+        height: 80px
+        display: table
+        width: 100%
+        @include box-sizing()
+        label
+          display: table-cell
+          padding-left: 23px
+          cursor: pointer
+          &:first-child
+            padding-left: 0
+          p
+            color: #515151
+            font-family: "Montserrat Regular"
+            font-size: 14px
+          .date-field
+            border: 1px solid #e0e0e0
+            margin-top: 6px
+            display: table
+            width: 100%
+            @include user-select()
+            @include border-radius(3px)
+            .field-container
+              display: table-cell
+              input
+                width: 100%
+                padding: 10px
+                color: #878787
+                font-family: "Roboto"
+                font-size: 14px
+                font-weight: 300
+                @include box-sizing()
+            .icon-container
+              display: table-cell
+              vertical-align: middle
+              width: 51px
+              padding-left: 18px
+              padding-right: 18px
+              text-align: center
+              @include box-sizing()
+              .icon-date
+                color: #969696
+                font-size: 18px
+                @include transition(all, 0.2s, ease-in-out)
+          &:hover
+            .date-field
+              .icon-container
+                .icon-date
+                  color: #4a4a4a !important

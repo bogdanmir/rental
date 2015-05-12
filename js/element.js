@@ -20,6 +20,25 @@ $(function() {
 
   });
 
+  // Responsive left menu
+
+  $leftPanel = $(".left-panel-container");
+  $leftMenuActivator = $(".left-panel-activator-container");
+
+  $leftMenuActivator.on("click", function() {
+    if (!$leftPanel[0].active) {
+      $leftPanel[0].active = true;
+      $leftMenuActivator.addClass("active");
+      $leftPanel.addClass("active");
+    } else {
+      $leftPanel[0].active = false;
+      $leftMenuActivator.removeClass("active");
+      $leftPanel.removeClass("active");
+    }
+  });
+
+  // Contact page
+
   // Property box
 
   var $propertyBox = $(".property-box");
@@ -84,21 +103,8 @@ $(function() {
     }
   });
 
-  // Responsive left menu
+  // Availability page
 
-  $leftPanel = $(".left-panel-container");
-  $leftMenuActivator = $(".left-panel-activator-container");
-
-  $leftMenuActivator.on("click", function() {
-    if (!$leftPanel[0].active) {
-      $leftPanel[0].active = true;
-      $leftMenuActivator.addClass("active");
-      $leftPanel.addClass("active");
-    } else {
-      $leftPanel[0].active = false;
-      $leftMenuActivator.removeClass("active");
-      $leftPanel.removeClass("active");
-    }
-  });
+  $(".start-date").datepicker();
 
 });
