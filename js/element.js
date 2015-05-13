@@ -105,6 +105,25 @@ $(function() {
 
   // Availability page
 
-  $(".start-date").datepicker();
+  // Date elements
+
+  var dateElements = $(".start-date");
+  if (dateElements.length) $(".start-date").datepicker();
+
+  // Filter activator
+
+  var $filterActivator = $(".filter-activator");
+
+  $filterActivator.on("click", function() {
+    var $filters = $(this).closest(".filters");
+    var $filterListWrap = $filters.find(".filter-list-wrap");
+
+    if (!$filters.hasClass("active")) {
+      $filters.addClass("active");
+    } else {
+      $filters.removeClass("active");
+    }
+
+  });
 
 });

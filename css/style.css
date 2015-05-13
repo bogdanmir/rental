@@ -24,14 +24,14 @@ body {
   background-color: #f7f7f9;
   width: 100%; }
 
-p, h1, h4, ul {
+p, h1, h3, h4, ul {
   margin: 0; }
 
 ul {
   list-style: none;
   padding-left: 0; }
 
-input {
+input, select {
   outline: none;
   border: none; }
 
@@ -216,6 +216,34 @@ label.checkbox {
   transition: all 0.2s ease-in-out; }
   .button:hover {
     background-color: #1a98d6; }
+
+.simple-button {
+  width: 86px;
+  height: 35px;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px; }
+  .simple-button.green {
+    background-color: #44cd7e;
+    color: white; }
+  .simple-button.white {
+    text-transform: none;
+    border: 1px solid #d9d9d9;
+    color: #bebebe; }
 
 .left-panel-container {
   position: fixed;
@@ -1024,99 +1052,294 @@ article {
     padding-right: 5px; } }
 .filters-container {
   margin-top: 32px; }
-  .filters-container .filters header {
-    cursor: pointer; }
-    .filters-container .filters header .icon-opener {
-      font-size: 18px;
-      width: 18px;
-      height: 18px;
-      margin-left: 8px;
-      position: absolute;
-      margin-top: 4px;
-      display: inline-block;
+  .filters-container .filters {
+    padding-bottom: 0; }
+    .filters-container .filters header {
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none; }
+      .filters-container .filters header .icon-opener {
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
+        margin-left: 8px;
+        position: absolute;
+        margin-top: 4px;
+        display: inline-block;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
+    .filters-container .filters.active .filter-list-wrap {
+      height: 245px;
+      opacity: 1; }
+    .filters-container .filters.active .icon-opener {
       -moz-transform: rotateZ(90deg);
       -o-transform: rotateZ(90deg);
       -ms-transform: rotateZ(90deg);
       -webkit-transform: rotateZ(90deg);
       transform: rotateZ(90deg); }
-  .filters-container .filters .filter-list {
-    border-top: 1px solid #ddd;
+    .filters-container .filters .filter-list-wrap {
+      overflow: hidden;
+      height: 0;
+      opacity: 0;
+      width: 100%;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+      .filters-container .filters .filter-list-wrap .filter-list {
+        width: 100%;
+        max-width: 100%;
+        min-width: 600px;
+        border-top: 1px solid #ddd;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box; }
+        .filters-container .filters .filter-list-wrap .filter-list .filter-row {
+          padding-top: 20px;
+          padding-right: 20px;
+          padding-left: 20px;
+          height: 80px;
+          display: table;
+          width: 100%;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          -o-box-sizing: border-box;
+          -ms-box-sizing: border-box;
+          box-sizing: border-box; }
+          .filters-container .filters .filter-list-wrap .filter-list .filter-row label {
+            display: table-cell;
+            padding-left: 23px;
+            cursor: pointer;
+            width: 25%; }
+            .filters-container .filters .filter-list-wrap .filter-list .filter-row label:first-child {
+              padding-left: 0; }
+            .filters-container .filters .filter-list-wrap .filter-list .filter-row label p {
+              color: #515151;
+              font-family: "Montserrat Regular";
+              font-size: 14px; }
+            .filters-container .filters .filter-list-wrap .filter-list .filter-row label .date-field {
+              border: 1px solid #e0e0e0;
+              margin-top: 6px;
+              display: table;
+              width: 100%;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              -o-user-select: none;
+              user-select: none;
+              -webkit-border-radius: 3px;
+              -moz-border-radius: 3px;
+              -ms-border-radius: 3px;
+              border-radius: 3px; }
+              .filters-container .filters .filter-list-wrap .filter-list .filter-row label .date-field .field-container {
+                display: table-cell; }
+                .filters-container .filters .filter-list-wrap .filter-list .filter-row label .date-field .field-container input {
+                  height: 35px;
+                  width: 100%;
+                  padding: 10px;
+                  color: #878787;
+                  font-family: "Roboto";
+                  font-size: 14px;
+                  font-weight: 300;
+                  -webkit-box-sizing: border-box;
+                  -moz-box-sizing: border-box;
+                  -o-box-sizing: border-box;
+                  -ms-box-sizing: border-box;
+                  box-sizing: border-box; }
+              .filters-container .filters .filter-list-wrap .filter-list .filter-row label .date-field .icon-container {
+                display: table-cell;
+                vertical-align: middle;
+                padding-left: 13px;
+                padding-right: 13px;
+                text-align: center;
+                border-left: 1px solid #e0e0e0;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -o-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                box-sizing: border-box; }
+                .filters-container .filters .filter-list-wrap .filter-list .filter-row label .date-field .icon-container .icon-date {
+                  color: #969696;
+                  font-size: 18px;
+                  -webkit-transition: all 0.2s ease-in-out;
+                  -moz-transition: all 0.2s ease-in-out;
+                  -ms-transition: all 0.2s ease-in-out;
+                  -o-transition: all 0.2s ease-in-out;
+                  transition: all 0.2s ease-in-out; }
+            .filters-container .filters .filter-list-wrap .filter-list .filter-row label .select-field {
+              cursor: pointer;
+              border: 1px solid #e0e0e0;
+              margin-top: 6px;
+              display: table;
+              width: 100%;
+              position: relative;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              -o-user-select: none;
+              user-select: none;
+              -webkit-border-radius: 3px;
+              -moz-border-radius: 3px;
+              -ms-border-radius: 3px;
+              border-radius: 3px; }
+              .filters-container .filters .filter-list-wrap .filter-list .filter-row label .select-field .field-container {
+                display: table-cell;
+                width: 100%; }
+                .filters-container .filters .filter-list-wrap .filter-list .filter-row label .select-field .field-container select {
+                  height: 35px;
+                  width: 100%;
+                  padding: 8px 10px;
+                  color: #878787;
+                  font-family: "Roboto";
+                  font-size: 14px;
+                  padding-top: 8px;
+                  font-weight: 300;
+                  -webkit-box-sizing: border-box;
+                  -moz-box-sizing: border-box;
+                  -o-box-sizing: border-box;
+                  -ms-box-sizing: border-box;
+                  box-sizing: border-box; }
+              .filters-container .filters .filter-list-wrap .filter-list .filter-row label .select-field .icon-container {
+                position: absolute;
+                background-color: white;
+                height: 100%;
+                display: block;
+                right: 0;
+                font-size: 8px;
+                color: #8a8a8a;
+                padding-right: 15px;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -o-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                box-sizing: border-box; }
+                .filters-container .filters .filter-list-wrap .filter-list .filter-row label .select-field .icon-container .icon-select-arrow {
+                  display: table-cell;
+                  height: 35px;
+                  vertical-align: middle;
+                  -webkit-transition: all 0.2s ease-in-out;
+                  -moz-transition: all 0.2s ease-in-out;
+                  -ms-transition: all 0.2s ease-in-out;
+                  -o-transition: all 0.2s ease-in-out;
+                  transition: all 0.2s ease-in-out; }
+            .filters-container .filters .filter-list-wrap .filter-list .filter-row label:hover .date-field .icon-container .icon-date {
+              color: #4a4a4a !important; }
+            .filters-container .filters .filter-list-wrap .filter-list .filter-row label:hover .select-field .icon-container .icon-select-arrow {
+              color: #4a4a4a !important; }
+      .filters-container .filters .filter-list-wrap .buttons-container {
+        margin-top: 2px;
+        padding: 20px; }
+        .filters-container .filters .filter-list-wrap .buttons-container .button-wrap {
+          float: left;
+          margin-left: 10px; }
+          .filters-container .filters .filter-list-wrap .buttons-container .button-wrap:first-child {
+            margin-left: 0; }
+
+.room-table-container {
+  border: 1px solid #d3d7df;
+  background-color: white;
+  margin-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px; }
+  .room-table-container header {
+    height: 72px;
+    display: table;
+    width: 100%;
+    position: relative;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box; }
-    .filters-container .filters .filter-list .filter-row {
-      padding-top: 20px;
-      padding-right: 20px;
-      padding-left: 20px;
-      height: 80px;
+    .room-table-container header h3 {
+      display: table-cell;
+      vertical-align: middle;
+      color: #656565;
+      font-family: "Avenir LT Std";
+      font-size: 24px;
+      font-weight: 300;
+      text-align: center; }
+      .room-table-container header h3 .icon-arrow-left, .room-table-container header h3 .icon-arrow-right {
+        font-size: 15px;
+        color: #858d9c;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none; }
+      .room-table-container header h3 .icon-arrow-left {
+        margin-right: 15px; }
+      .room-table-container header h3 .icon-arrow-right {
+        margin-left: 15px; }
+    .room-table-container header .date-switcher {
       display: table;
+      border: 1px solid #e0e0e0;
+      height: 32px;
+      position: absolute;
+      top: 15px;
+      left: 0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      border-radius: 3px; }
+      .room-table-container header .date-switcher a {
+        display: table-cell;
+        text-decoration: none;
+        color: #565c56;
+        text-align: center;
+        vertical-align: middle;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-left: 1px solid #e0e0e0;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
+        .room-table-container header .date-switcher a:first-child {
+          border-left: none; }
+        .room-table-container header .date-switcher a.active, .room-table-container header .date-switcher a:hover {
+          background-color: #eaeaee; }
+  .room-table-container .date-table-container {
+    border: 1px solid #ddd;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px; }
+    .room-table-container .date-table-container .date-table {
       width: 100%;
+      background-color: white;
+      border-collapse: collapse;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       -o-box-sizing: border-box;
       -ms-box-sizing: border-box;
       box-sizing: border-box; }
-      .filters-container .filters .filter-list .filter-row label {
-        display: table-cell;
-        padding-left: 23px;
-        cursor: pointer; }
-        .filters-container .filters .filter-list .filter-row label:first-child {
-          padding-left: 0; }
-        .filters-container .filters .filter-list .filter-row label p {
-          color: #515151;
-          font-family: "Montserrat Regular";
-          font-size: 14px; }
-        .filters-container .filters .filter-list .filter-row label .date-field {
-          border: 1px solid #e0e0e0;
-          margin-top: 6px;
-          display: table;
-          width: 100%;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          -o-user-select: none;
-          user-select: none;
-          -webkit-border-radius: 3px;
-          -moz-border-radius: 3px;
-          -ms-border-radius: 3px;
-          border-radius: 3px; }
-          .filters-container .filters .filter-list .filter-row label .date-field .field-container {
-            display: table-cell; }
-            .filters-container .filters .filter-list .filter-row label .date-field .field-container input {
-              width: 100%;
-              padding: 10px;
-              color: #878787;
-              font-family: "Roboto";
-              font-size: 14px;
-              font-weight: 300;
-              -webkit-box-sizing: border-box;
-              -moz-box-sizing: border-box;
-              -o-box-sizing: border-box;
-              -ms-box-sizing: border-box;
-              box-sizing: border-box; }
-          .filters-container .filters .filter-list .filter-row label .date-field .icon-container {
-            display: table-cell;
-            vertical-align: middle;
-            width: 51px;
-            padding-left: 18px;
-            padding-right: 18px;
-            text-align: center;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            -o-box-sizing: border-box;
-            -ms-box-sizing: border-box;
-            box-sizing: border-box; }
-            .filters-container .filters .filter-list .filter-row label .date-field .icon-container .icon-date {
-              color: #969696;
-              font-size: 18px;
-              -webkit-transition: all 0.2s ease-in-out;
-              -moz-transition: all 0.2s ease-in-out;
-              -ms-transition: all 0.2s ease-in-out;
-              -o-transition: all 0.2s ease-in-out;
-              transition: all 0.2s ease-in-out; }
-        .filters-container .filters .filter-list .filter-row label:hover .date-field .icon-container .icon-date {
-          color: #4a4a4a !important; }
+      .room-table-container .date-table-container .date-table .header {
+        height: 37px;
+        background-color: #f7f7f9;
+        color: #515151;
+        font-family: "Montserrat Bold";
+        font-size: 14px;
+        font-weight: 400; }
 
 /*# sourceMappingURL=style.css.map */

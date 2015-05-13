@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> -->
   <!-- <link rel="stylesheet" type="text/css" href="css/icon.css"> -->
-  <link rel="stylesheet" href="http://i.icomoon.io/public/temp/5f3bceafdf/layout/style.css">
+  <link rel="stylesheet" href="http://i.icomoon.io/public/temp/63f3476ca9/layout/style.css">
   <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
   <script src="js/lib/jquery-ui.min.js"></script>
   <script type="text/javascript" src="js/element.js"></script>
@@ -45,7 +45,7 @@
             <span class="title">inquiries</span>
           </a>
         </div>
-        <div class="link active">
+        <div class="link">
           <a href="">
             <span class="icon icon-contacts"></span>
             <span class="title">contacts</span>
@@ -57,7 +57,7 @@
             <span class="title">reservation center</span>
           </a>
         </div>
-        <div class="link">
+        <div class="link active">
           <a href="">
             <span class="icon icon-availability"></span>
             <span class="title">availability</span>
@@ -115,38 +115,189 @@
       </header>
       <div class="filters-container">
         <article class="filters">
-          <header>
+          <header class="filter-activator">
             <h4>Filters<span class="icon-opener"></span></h4>
           </header>
-          <div class="filter-list">
-            <div class="filter-row">
-              <label>
-                <p>Start date:</p>
-                <div class="date-field">
-                  <div class="field-container">
-                    <input class="date start-date" type="text" />
+          <div class="filter-list-wrap">
+            <div class="filter-list">
+              <div class="filter-row">
+                <label>
+                  <p>Start date:</p>
+                  <div class="date-field">
+                    <div class="field-container">
+                      <input class="date start-date" type="text" />
+                    </div>
+                    <div class="icon-container">
+                      <span class="icon-date"></span>
+                    </div>
                   </div>
-                  <div class="icon-container">
-                    <span class="icon-date"></span>
+                </label>
+                <label>
+                  <p>End date:</p>
+                  <div class="date-field">
+                    <div class="field-container">
+                      <input class="date start-date" type="text" />
+                    </div>
+                    <div class="icon-container">
+                      <span class="icon-date"></span>
+                    </div>
                   </div>
-                </div>
-              </label>
-              <label>
-                <p>Start date:</p>
-                <input class="date start-date" type="text" />
-              </label>
-              <label>
-                <p>Start date:</p>
-                <input class="date start-date" type="text" />
-              </label>
-              <label>
-                <p>Start date:</p>
-                <input class="date start-date" type="text" />
-              </label>
+                </label>
+                <label>
+                  <p>Bedrooms:</p>
+                  <div class="select-field">
+                    <div class="field-container">
+                      <select value="">
+                        <option value="">Select bedrooms</option>
+                        <option>3</option>
+                      </select>
+                    </div>
+                    <div class="icon-container">
+                      <span class="icon-select-arrow"></span>
+                    </div>
+                  </div>
+                </label>
+                <label>
+                  <p>City:</p>
+                  <div class="select-field">
+                    <div class="field-container">
+                      <select value="">
+                        <option value="">Select city</option>
+                        <option>Harlem</option>
+                      </select>
+                    </div>
+                    <div class="icon-container">
+                      <span class="icon-select-arrow"></span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="filter-row">
+                <label>
+                  <p>Country:</p>
+                  <div class="select-field">
+                    <div class="field-container">
+                      <select value="">
+                        <option value="">Select country</option>
+                        <option>US</option>
+                      </select>
+                    </div>
+                    <div class="icon-container">
+                      <span class="icon-select-arrow"></span>
+                    </div>
+                  </div>
+                </label>
+                <label>
+                  <p>Choose a property:</p>
+                  <div class="select-field">
+                    <div class="field-container">
+                      <select value="">
+                        <option value="">Select property</option>
+                        <option>2109-2 Room 3</option>
+                      </select>
+                    </div>
+                    <div class="icon-container">
+                      <span class="icon-select-arrow"></span>
+                    </div>
+                  </div>
+                </label>
+                <label>
+                  <p>Availability:</p>
+                  <div class="select-field">
+                    <div class="field-container">
+                      <select value="">
+                        <option value="">Select availability</option>
+                        <option>Available</option>
+                      </select>
+                    </div>
+                    <div class="icon-container">
+                      <span class="icon-select-arrow"></span>
+                    </div>
+                  </div>
+                </label>
+                <label>
+                  <p>Sort by Availability:</p>
+                  <div class="select-field">
+                    <div class="field-container">
+                      <select value="">
+                        <option value="">Select availability</option>
+                        <option>Available last</option>
+                      </select>
+                    </div>
+                    <div class="icon-container">
+                      <span class="icon-select-arrow"></span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="buttons-container">
+              <div class="button-wrap">
+                <div class="simple-button green">search</div>
+              </div>
+              <div class="button-wrap">
+                <div class="simple-button white">Clear</div>
+              </div>
             </div>
           </div>
         </article>
       </div>
+      <article class="room-table-container">
+        <header>
+          <div class="date-switcher">
+            <a class="active" href="">daily</a>
+            <a href="">monthly</a>
+          </div>
+          <h3>
+            <span class="icon-arrow-left"></span>April 2015<span class="icon-arrow-right"></span>
+          </h3>
+        </header>
+        <div class="date-table-container">
+          <table class="date-table">
+            <thead>
+              <tr class="header">
+                <th>Property</th>
+                <th colspan="50">Dates</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td>01</td>
+                <td>02</td>
+                <td>03</td>
+                <td>04</td>
+                <td>05</td>
+                <td>06</td>
+                <td>07</td>
+                <td>08</td>
+                <td>09</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>01</td>
+                <td>02</td>
+                <td>03</td>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </article>
     </section>
   </div>
 
