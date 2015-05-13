@@ -946,7 +946,7 @@ article
       .icon-opener
         @include transform(rotateZ(90deg))
     .filter-list-wrap
-      overflow: hidden
+      overflow-y: hidden
       height: 0
       opacity: 0
       width: 100%
@@ -1118,16 +1118,151 @@ article
           background-color: #eaeaee
   .date-table-container
     border: 1px solid #ddd
+    width: 100%
+    overflow-y: hidden
     @include border-radius(3px)
     .date-table
       width: 100%
+      max-width: 100%
       background-color: white
       border-collapse: collapse
       @include box-sizing()
-      .header
+      .month
+        color: #ef4a4a
+        font-family: "Montserrat Bold"
+        font-size: 13px
+        font-weight: 400
+        text-align: center
+        background-color: #f7f6f4
+        border: none
+        td
+          height: 20px
+          vertical-align: middle
+      td
+        &:first-child
+          border-left: none
+        &.sat, &.sun
+          background-color: #f7f6f4
+          color: #ef4a4a !important
+        &.sun + td
+          border-left: 1px dashed #858d9c !important
+        &.month-border
+          border-left: 3px solid #ffa1a1 !important
+      .name-header
         height: 37px
         background-color: #f7f7f9
         color: #515151
         font-family: "Montserrat Bold"
         font-size: 14px
         font-weight: 400
+      .header
+        border-top: 1px solid #aeb4bf
+        border-bottom: 1px solid #aeb4bf
+        td
+          border-left: 1px solid #ddd
+          color: #656565
+          font-family: "Avenir LT Std"
+          font-weight: 300
+          font-size: 10px
+          text-align: center
+          @include box-sizing()
+          &:first-child
+            border-left: none
+          &:nth-child(2)
+            border-color: #aeb4bf
+          &:last-child
+            width: 38px
+          p
+            padding: 3px
+      tbody
+        border-top: 1px solid #aeb4bf
+        tr
+          height: 37px
+          border-top: 1px solid #ddd
+          &:first-child
+            border-top: none
+          td
+            border-left: 1px solid #ddd
+            padding: 0
+            @include box-sizing()
+            &:first-child
+              padding: 10px
+              white-space: nowrap
+              color: #515151
+              font-family: "Montserrat Bold"
+              font-size: 13px
+              font-weight: 400
+            &.mark-title
+              padding: 4px 0 4px 4px
+              position: relative
+              &:before
+                content: ""
+                display: block
+                width: 100%
+                height: 30px
+                @include border-radius(4px 0 0 4px)
+              .title
+                z-index: 3
+                position: absolute
+                font-family: "Avenir LT Std"
+                color: white
+                font-weight: 300
+                padding: 3px 8px
+                font-size: 13px 
+                top: 50%
+                left: 10px
+                background-color: #515151
+                @include border-radius(3px)
+                @include transform(translateY(-50%))
+              &.blue
+                &:before
+                  background-color: #8295aa
+              &.orange
+                &:before
+                  background-color: #f5a623
+            &.mark
+              position: relative
+              &:before
+                content: ""
+                display: block
+                width: 100%
+                height: 30px
+              &.blue
+                &:before
+                  background-color: #8295aa
+              &.orange
+                &:before
+                  background-color: #f5a623
+            &.mark-end
+              position: relative
+              padding: 4px 4px 4px 0
+              &:before
+                content: ""
+                display: block
+                width: 100%
+                height: 30px
+                @include border-radius(0 4px 4px 0)
+              &.blue
+                &:before
+                  background-color: #8295aa
+              &.orange
+                &:before
+                  background-color: #f5a623
+            .count
+              position: absolute
+              height: 19px
+              width: 19px
+              display: inline-block
+              background-color: #7ed321
+              border: 2px solid white
+              top: 50%
+              left: 50%
+              color: white
+              font-family: "Montserrat Bold"
+              font-size: 12px
+              font-weight: 700
+              text-align: center
+              padding-left: 1px
+              @include box-sizing()
+              @include border-radius(50%)
+              @include transform(translateX(-50%) translateY(-50%))

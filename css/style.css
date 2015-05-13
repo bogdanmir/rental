@@ -1084,7 +1084,7 @@ article {
       -webkit-transform: rotateZ(90deg);
       transform: rotateZ(90deg); }
     .filters-container .filters .filter-list-wrap {
-      overflow: hidden;
+      overflow-y: hidden;
       height: 0;
       opacity: 0;
       width: 100%;
@@ -1321,12 +1321,15 @@ article {
           background-color: #eaeaee; }
   .room-table-container .date-table-container {
     border: 1px solid #ddd;
+    width: 100%;
+    overflow-y: hidden;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     border-radius: 3px; }
     .room-table-container .date-table-container .date-table {
       width: 100%;
+      max-width: 100%;
       background-color: white;
       border-collapse: collapse;
       -webkit-box-sizing: border-box;
@@ -1334,12 +1337,169 @@ article {
       -o-box-sizing: border-box;
       -ms-box-sizing: border-box;
       box-sizing: border-box; }
-      .room-table-container .date-table-container .date-table .header {
+      .room-table-container .date-table-container .date-table .month {
+        color: #ef4a4a;
+        font-family: "Montserrat Bold";
+        font-size: 13px;
+        font-weight: 400;
+        text-align: center;
+        background-color: #f7f6f4;
+        border: none; }
+        .room-table-container .date-table-container .date-table .month td {
+          height: 20px;
+          vertical-align: middle; }
+      .room-table-container .date-table-container .date-table td:first-child {
+        border-left: none; }
+      .room-table-container .date-table-container .date-table td.sat, .room-table-container .date-table-container .date-table td.sun {
+        background-color: #f7f6f4;
+        color: #ef4a4a !important; }
+      .room-table-container .date-table-container .date-table td.sun + td {
+        border-left: 1px dashed #858d9c !important; }
+      .room-table-container .date-table-container .date-table td.month-border {
+        border-left: 3px solid #ffa1a1 !important; }
+      .room-table-container .date-table-container .date-table .name-header {
         height: 37px;
         background-color: #f7f7f9;
         color: #515151;
         font-family: "Montserrat Bold";
         font-size: 14px;
         font-weight: 400; }
+      .room-table-container .date-table-container .date-table .header {
+        border-top: 1px solid #aeb4bf;
+        border-bottom: 1px solid #aeb4bf; }
+        .room-table-container .date-table-container .date-table .header td {
+          border-left: 1px solid #ddd;
+          color: #656565;
+          font-family: "Avenir LT Std";
+          font-weight: 300;
+          font-size: 10px;
+          text-align: center;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          -o-box-sizing: border-box;
+          -ms-box-sizing: border-box;
+          box-sizing: border-box; }
+          .room-table-container .date-table-container .date-table .header td:first-child {
+            border-left: none; }
+          .room-table-container .date-table-container .date-table .header td:nth-child(2) {
+            border-color: #aeb4bf; }
+          .room-table-container .date-table-container .date-table .header td:last-child {
+            width: 38px; }
+          .room-table-container .date-table-container .date-table .header td p {
+            padding: 3px; }
+      .room-table-container .date-table-container .date-table tbody {
+        border-top: 1px solid #aeb4bf; }
+        .room-table-container .date-table-container .date-table tbody tr {
+          height: 37px;
+          border-top: 1px solid #ddd; }
+          .room-table-container .date-table-container .date-table tbody tr:first-child {
+            border-top: none; }
+          .room-table-container .date-table-container .date-table tbody tr td {
+            border-left: 1px solid #ddd;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box; }
+            .room-table-container .date-table-container .date-table tbody tr td:first-child {
+              padding: 10px;
+              white-space: nowrap;
+              color: #515151;
+              font-family: "Montserrat Bold";
+              font-size: 13px;
+              font-weight: 400; }
+            .room-table-container .date-table-container .date-table tbody tr td.mark-title {
+              padding: 4px 0 4px 4px;
+              position: relative; }
+              .room-table-container .date-table-container .date-table tbody tr td.mark-title:before {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 30px;
+                -webkit-border-radius: 4px 0 0 4px;
+                -moz-border-radius: 4px 0 0 4px;
+                -ms-border-radius: 4px 0 0 4px;
+                border-radius: 4px 0 0 4px; }
+              .room-table-container .date-table-container .date-table tbody tr td.mark-title .title {
+                z-index: 3;
+                position: absolute;
+                font-family: "Avenir LT Std";
+                color: white;
+                font-weight: 300;
+                padding: 3px 8px;
+                font-size: 13px;
+                top: 50%;
+                left: 10px;
+                background-color: #515151;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                -ms-border-radius: 3px;
+                border-radius: 3px;
+                -moz-transform: translateY(-50%);
+                -o-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%); }
+              .room-table-container .date-table-container .date-table tbody tr td.mark-title.blue:before {
+                background-color: #8295aa; }
+              .room-table-container .date-table-container .date-table tbody tr td.mark-title.orange:before {
+                background-color: #f5a623; }
+            .room-table-container .date-table-container .date-table tbody tr td.mark {
+              position: relative; }
+              .room-table-container .date-table-container .date-table tbody tr td.mark:before {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 30px; }
+              .room-table-container .date-table-container .date-table tbody tr td.mark.blue:before {
+                background-color: #8295aa; }
+              .room-table-container .date-table-container .date-table tbody tr td.mark.orange:before {
+                background-color: #f5a623; }
+            .room-table-container .date-table-container .date-table tbody tr td.mark-end {
+              position: relative;
+              padding: 4px 4px 4px 0; }
+              .room-table-container .date-table-container .date-table tbody tr td.mark-end:before {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 30px;
+                -webkit-border-radius: 0 4px 4px 0;
+                -moz-border-radius: 0 4px 4px 0;
+                -ms-border-radius: 0 4px 4px 0;
+                border-radius: 0 4px 4px 0; }
+              .room-table-container .date-table-container .date-table tbody tr td.mark-end.blue:before {
+                background-color: #8295aa; }
+              .room-table-container .date-table-container .date-table tbody tr td.mark-end.orange:before {
+                background-color: #f5a623; }
+            .room-table-container .date-table-container .date-table tbody tr td .count {
+              position: absolute;
+              height: 19px;
+              width: 19px;
+              display: inline-block;
+              background-color: #7ed321;
+              border: 2px solid white;
+              top: 50%;
+              left: 50%;
+              color: white;
+              font-family: "Montserrat Bold";
+              font-size: 12px;
+              font-weight: 700;
+              text-align: center;
+              padding-left: 1px;
+              -webkit-box-sizing: border-box;
+              -moz-box-sizing: border-box;
+              -o-box-sizing: border-box;
+              -ms-box-sizing: border-box;
+              box-sizing: border-box;
+              -webkit-border-radius: 50%;
+              -moz-border-radius: 50%;
+              -ms-border-radius: 50%;
+              border-radius: 50%;
+              -moz-transform: translateX(-50%) translateY(-50%);
+              -o-transform: translateX(-50%) translateY(-50%);
+              -ms-transform: translateX(-50%) translateY(-50%);
+              -webkit-transform: translateX(-50%) translateY(-50%);
+              transform: translateX(-50%) translateY(-50%); }
 
 /*# sourceMappingURL=style.css.map */
