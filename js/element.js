@@ -134,11 +134,14 @@ $(function() {
   $filterActivator.on("click", function() {
     var $filters = $(this).closest(".filters");
     var $filterListWrap = $filters.find(".filter-list-wrap");
+    var $filterListHeight = $filterListWrap.find(".filter-list-height");
 
     if (!$filters.hasClass("active")) {
       $filters.addClass("active");
+      $filterListWrap.animate({ height: $filterListHeight.height() }, 600);
     } else {
       $filters.removeClass("active");
+      $filterListWrap.animate({ height: 0 }, 600);
     }
 
   });
