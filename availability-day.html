@@ -1,0 +1,681 @@
+<!doctype html>
+<html>
+<head>
+  <title>Rental</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/custom_jquery-ui.min.css">
+  <link rel="stylesheet" type="text/css" href="css/icon.css">
+</head>
+<body>
+
+  <div class="left-panel-activator-container"><div class="left-panel-activator"><span class="icon-property"></span><span class="icon-delete"></span></div></div>
+  <div class="left-panel-container">
+    <div class="left-panel">
+      <div class="logo-container">
+        <img src="img/rentalsforce-logo-bold-inverse-print.png" alt="Rental force" />
+      </div>
+      <div class="user-container">
+        <div class="icon-container-wrap">
+          <div class="icon-container">
+            <img src="img/bitmap.png" alt="User">
+            <div class="note"></div>
+          </div>
+        </div>
+        <div class="info-container">
+          <header>Welcome</header>
+          <p>Konstantin Western</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <div class="link">
+          <a href="">
+            <span class="icon icon-dashboard"><span class="tasks">19</span></span>
+            <span class="title">dashboard</span>
+          </a>
+        </div>
+        <div class="link">
+          <a href="">
+            <span class="icon icon-inquiries"><span class="tasks">9</span></span>
+            <span class="title">inquiries</span>
+          </a>
+        </div>
+        <div class="link">
+          <a href="">
+            <span class="icon icon-contacts"><span class="tasks">3</span></span>
+            <span class="title">contacts</span>
+          </a>
+        </div>
+        <div class="link">
+          <a href="">
+            <span class="icon icon-reservation-center"></span>
+            <span class="title">reservation center</span>
+          </a>
+        </div>
+        <div class="link active">
+          <a href="">
+            <span class="icon icon-availability"></span>
+            <span class="title">availability</span>
+          </a>
+        </div>
+        <div class="link">
+          <a href="">
+            <span class="icon icon-properties"></span>
+            <span class="title">properties</span>
+          </a>
+        </div>
+        <div class="link">
+          <a href="">
+            <span class="icon icon-import"></span>
+            <span class="title">import</span>
+          </a>
+        </div>
+        <div class="link">
+          <a href="">
+            <span class="icon icon-templates"></span>
+            <span class="title">templates</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="main-container">
+    <aside class="main-header">
+      <div class="search-container">
+        <div class="search">
+          <input type="text" placeholder="Type to search …" />
+          <span class="icon-search"></span>
+        </div>
+      </div>
+      <div class="user-container">
+        <div class="user">
+          <div class="user-info">
+            <span class="title">Konstantin Western</span>
+            <span class="icon-setting"></span>
+          </div>
+          <div class="user-settings">
+            <ul>
+              <li><a href="">Edit Profile</a></li>
+              <li><a href="">Setting</a></li>
+              <li><a href="">Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <section class="main-content">
+      <header class="main-title">
+        <h1>Availabilityn</h1>
+        <p>Here the filters and calendar for rent apartmentsl</p>
+      </header>
+      <div class="filters-container">
+        <aside class="filters">
+          <header class="filter-activator">
+            <h4>Filters<span class="icon-opener"></span></h4>
+          </header>
+          <div class="filter-list-wrap">
+            <div class="filter-list-height">
+              <div class="filter-list clear">
+                <label>
+                  <span class="label">Start date:</span>
+                  <span class="date-field">
+                    <span class="field-container">
+                      <input class="date start-date" id="from" name="from" type="text" />
+                    </span>
+                    <span class="icon-container">
+                      <span class="icon-date"></span>
+                    </span>
+                  </span>
+                </label>
+                <label>
+                  <span class="label">End date:</span>
+                  <span class="date-field">
+                    <span class="field-container">
+                      <input class="date start-date" id="to" name="to" type="text" />
+                    </span>
+                    <span class="icon-container">
+                      <span class="icon-date"></span>
+                    </span>
+                  </span>
+                </label>
+                <label>
+                  <span class="label">Bedrooms:</span>
+                  <span class="select-field">
+                    <span class="field-container">
+                      <select>
+                        <option value="">Select bedrooms</option>
+                        <option>3</option>
+                      </select>
+                    </span>
+                    <span class="icon-container">
+                      <span class="icon-select-arrow"></span>
+                    </span>
+                  </span>
+                </label>
+                <label>
+                  <span class="label">City:</span>
+                  <span class="select-field">
+                    <span class="field-container">
+                      <select>
+                        <option value="">Select city</option>
+                        <option>Harlem</option>
+                      </select>
+                    </span>
+                    <span class="icon-container">
+                      <span class="icon-select-arrow"></span>
+                    </span>
+                  </span>
+                </label>
+                <label>
+                  <span class="label">Country:</span>
+                  <span class="select-field">
+                    <span class="field-container">
+                      <select>
+                        <option value="">Select country</option>
+                        <option>US</option>
+                      </select>
+                    </span>
+                    <span class="icon-container">
+                      <span class="icon-select-arrow"></span>
+                    </span>
+                  </span>
+                </label>
+                <label>
+                  <span class="label">Choose a property:</span>
+                  <span class="select-field">
+                    <span class="field-container">
+                      <select>
+                        <option value="">Select property</option>
+                        <option>2109-2 Room 3</option>
+                      </select>
+                    </span>
+                    <span class="icon-container">
+                      <span class="icon-select-arrow"></span>
+                    </span>
+                  </span>
+                </label>
+                <label>
+                  <span class="label">Availability:</span>
+                  <span class="select-field">
+                    <span class="field-container">
+                      <select>
+                        <option value="">Select availability</option>
+                        <option>Available</option>
+                      </select>
+                    </span>
+                    <span class="icon-container">
+                      <span class="icon-select-arrow"></span>
+                    </span>
+                  </span>
+                </label>
+                <label>
+                  <span class="label">Sort by Availability:</scriptan>
+                  <span class="select-field">
+                    <span class="field-container">
+                      <select>
+                        <option value="">Select availability</option>
+                        <option>Available last</option>
+                      </select>
+                    </span>
+                    <span class="icon-container">
+                      <span class="icon-select-arrow"></span>
+                    </span>
+                  </span>
+                </label>
+              </div>
+              <div class="buttons-container">
+                <div class="button-wrap">
+                  <div class="simple-button green">search</div>
+                </div>
+                <div class="button-wrap">
+                  <div class="simple-button white">Clear</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <article class="room-table-container">
+        <header>
+          <div class="date-switcher">
+            <a class="active" href="">daily</a>
+            <a href="">monthly</a>
+          </div>
+          <h3>
+            <span class="icon-arrow-left"></span>April 9, 2015<span class="icon-arrow-right"></span>
+          </h3>
+        </header>
+        <div class="date-table-container">
+          <table class="date-table">
+            <thead>
+              <tr class="name-header">
+                <th>Property</th>
+                <th colspan="24">Hours</th>
+              </tr>
+              <tr class="header-3">
+                <td></td>
+                <td colspan="24">Thursday April 9, 2015</td>
+              </tr>
+              <tr class="header">
+                <td></td>
+                <td><p>01 AM</p></td>
+                <td><p>02 AM</p></td>
+                <td><p>03 AM</p></td>
+                <td><p>04 AM</p></td>
+                <td><p>05 AM</p></td>
+                <td><p>06 AM</p></td>
+                <td><p>07 AM</p></td>
+                <td><p>08 AM</p></td>
+                <td><p>09 AM</p></td>
+                <td><p>10 AM</p></td>
+                <td><p>11 AM</p></td>
+                <td><p>12 AM</p></td>
+                <td><p>01 PM</p></td>
+                <td><p>02 PM</p></td>
+                <td><p>03 PM</p></td>
+                <td><p>04 PM</p></td>
+                <td><p>05 PM</p></td>
+                <td><p>06 PM</p></td>
+                <td><p>07 PM</p></td>
+                <td><p>08 PM</p></td>
+                <td><p>09 PM</p></td>
+                <td><p>10 PM</p></td>
+                <td><p>11 PM</p></td>
+                <td><p>12 PM</p></td>
+              </tr>
+              <tr class="month">
+                <td></td>
+                <td colspan="24">April</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>8308-2 Room 3A</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>174-4 Room 1</td>
+                <td class="mark-title blue"><span class="title">Inessa</span></td>
+                <td class="mark blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark-end blue"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>3722-2 Room 2</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="mark-title blue"><span class="title">Margret</span></td>
+                <td class="mark blue"></td>
+                <td class="mark-end blue"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>4013-1 Room 1</td>
+                <td class="mark-title orange"><span class="title">Andre</span></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark-end orange"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>8308-2 Room 3A</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>174-4 Room 1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>3722-2 Room 2</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="mark-title orange"><span class="title">Alex</span></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark orange"></td>
+                <td class="mark-end orange"></td>
+              </tr>
+              <tr>
+                <td>4013-1 Room 1</td>
+                <td></td>
+                <td></td>
+                <td class="mark-title blue"><span class="title">Cristopher</span></td>
+                <td class="mark blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark-end blue"></td>
+                <td></td>
+                <td class="mark-title blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark-end blue"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>3722-2 Room 2</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>4013-1 Room 1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>8308-2 Room 3A</td>
+                <td class="mark-title blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark blue"></td>
+                <td class="mark-end blue"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>174-4 Room 1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>3722-2 Room 2</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>4013-1 Room 1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+  </div>
+  <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
+  <script src="js/lib/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/element.js"></script>
+</body>
+</html>

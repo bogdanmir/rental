@@ -92,6 +92,12 @@ h4
   font-weight: 400
   line-height: 24px
 
+.clear
+  &:after
+    content: ""
+    display: block
+    clear: both
+
 label.checkbox
   display: block
   width: 16px
@@ -233,13 +239,18 @@ label.checkbox
   cursor: pointer
   @include box-sizing()
   @include border-radius(3px)
+  @include transition(all, 0.2s, ease-in-out)
   &.green
     background-color: #44cd7e
     color: white
+    &:hover
+      background-color: #1b894a
   &.white
     text-transform: none
     border: 1px solid #d9d9d9
     color: #bebebe
+    &:hover
+      background-color: #eaeaee
 
 // carcase
 
@@ -320,24 +331,51 @@ label.checkbox
           text-decoration: none
           @include transition(all, 0.2s, ease-in-out)
           .icon
+            position: relative
             display: block
             font-size: 28px
+            width: 28px
+            margin-left: auto
+            margin-right: auto
             &.icon-dashboard
+              width: 31px
               font-size: 31px
             &.icon-inquiries
               font-size: 28px
+              width: 28px
             &.icon-contacts
               font-size: 28px
+              width: 28px
             &.icon-reservation-center
               font-size: 32px
+              width: 32px
             &.icon-availability
               font-size: 29px
+              width: 29px
             &.icon-properties
               font-size: 27px
+              width: 27px
             &.icon-import
               font-size: 26px
+              width: 26px
             &.icon-templates
               font-size: 23px
+              width: 23px
+            .tasks
+              position: absolute
+              top: -6px
+              right: -6px
+              width: 22px
+              height: 22px
+              padding-top: 6px
+              background-color: #ff4646
+              text-align: center
+              color: white
+              font-family: "Avenir LT Std"
+              font-size: 12px
+              font-weight: 300
+              @include border-radius(50%)
+              @include box-sizing()
           .title
             display: block
             margin-top: 10px
@@ -365,7 +403,7 @@ label.checkbox
           position: relative
 
 .left-panel-activator-container
-  position: absolute
+  position: fixed
   left: 0
   top: 60px
   display: none
@@ -607,9 +645,6 @@ article
         padding-left: 20px
         padding-right: 20px
   .contact-reservations-container
-    // float: left
-    // display: table-cell
-    // padding-left: 11.5px
     margin-left: 484px
     min-width: 300px
     .contact-reservations
@@ -920,16 +955,31 @@ article
             padding-left: 5px
             padding-right: 5px
 
-
 // Availability page
 
 .filters-container
   margin-top: 32px
   .filters
+    padding-bottom: 30px
+    background-color: white
+    border: 1px solid #d3d7df
+    @include box-sizing()
+    @include border-radius(3px)
     padding-bottom: 0
     header
+      width: 100%
+      padding-left: 20px
+      border-top: 1px solid #ddd
       cursor: pointer
+      @include box-sizing()
       @include user-select()
+      &:first-child
+        border-top: none
+      h4
+        width: 100%
+        height: 67px
+        display: table-cell
+        vertical-align: middle
       .icon-opener
         font-size: 18px
         width: 18px
@@ -941,125 +991,135 @@ article
         @include transition(all, 0.2s, ease-in-out)
     &.active
       .filter-list-wrap
-        height: 245px
-        opacity: 1
+        display: block
       .icon-opener
         @include transform(rotateZ(90deg))
     .filter-list-wrap
-      overflow-y: hidden
       height: 0
-      opacity: 0
+      // display: none
       width: 100%
-      @include transition(all, 0.2s, ease-in-out)
+      overflow: hidden
+      @include box-sizing()
       .filter-list
-        width: 100%
-        max-width: 100%
-        min-width: 600px
         border-top: 1px solid #ddd
         @include box-sizing()
-        .filter-row
-          padding-top: 20px
-          padding-right: 20px
+        label
+          display: block
           padding-left: 20px
-          height: 80px
-          display: table
-          width: 100%
+          padding-right: 20px
+          width: 25%
+          float: left
+          cursor: pointer
+          padding-top: 15px
           @include box-sizing()
-          label
-            display: table-cell
-            padding-left: 23px
-            cursor: pointer
-            width: 25%
-            &:first-child
-              padding-left: 0
-            p
-              color: #515151
-              font-family: "Montserrat Regular"
-              font-size: 14px
-            .date-field
-              border: 1px solid #e0e0e0
-              margin-top: 6px
-              display: table
-              width: 100%
-              @include user-select()
-              @include border-radius(3px)
-              .field-container
-                display: table-cell
-                input
-                  height: 35px                
-                  width: 100%
-                  padding: 10px
-                  color: #878787
-                  font-family: "Roboto"
-                  font-size: 14px
-                  font-weight: 300
-                  @include box-sizing()
-              .icon-container
-                display: table-cell
-                vertical-align: middle
-                padding-left: 13px
-                padding-right: 13px
-                text-align: center
-                border-left: 1px solid #e0e0e0
-                @include box-sizing()
-                .icon-date
-                  color: #969696
-                  font-size: 18px
-                  @include transition(all, 0.2s, ease-in-out)
-            .select-field
-              cursor: pointer
-              border: 1px solid #e0e0e0
-              margin-top: 6px
-              display: table
-              width: 100%
-              position: relative
-              @include user-select()
-              @include border-radius(3px)
-              .field-container
-                display: table-cell
+          .label
+            color: #515151
+            font-family: "Montserrat Regular"
+            font-size: 14px
+            white-space: nowrap
+            @include user-select()
+          .date-field
+            border: 1px solid #e0e0e0
+            margin-top: 6px
+            display: table
+            width: 100%
+            @include user-select()
+            @include border-radius(3px)
+            .field-container
+              display: table-cell
+              input
+                height: 35px                
                 width: 100%
-                select
-                  height: 35px
-                  width: 100%
-                  padding: 8px 10px
-                  color: #878787
-                  font-family: "Roboto"
-                  font-size: 14px
-                  padding-top: 8px
-                  font-weight: 300
-                  @include box-sizing()
-              .icon-container
-                position: absolute
-                background-color: white
-                height: 100%
-                display: block
-                right: 0
-                font-size: 8px
-                color: #8a8a8a
-                padding-right: 15px
+                padding: 10px
+                color: #878787
+                font-family: "Roboto"
+                font-size: 14px
+                font-weight: 300
                 @include box-sizing()
+            .icon-container
+              display: table-cell
+              vertical-align: middle
+              padding-left: 13px
+              padding-right: 13px
+              text-align: center
+              border-left: 1px solid #e0e0e0
+              @include box-sizing()
+              .icon-date
+                color: #969696
+                font-size: 18px
+                @include transition(all, 0.2s, ease-in-out)
+          .select-field
+            cursor: pointer
+            border: 1px solid #e0e0e0
+            margin-top: 6px
+            display: table
+            width: 100%
+            position: relative
+            @include user-select()
+            @include border-radius(3px)
+            .field-container
+              display: table-cell
+              width: 100%
+              select
+                cursor: pointer
+                height: 35px
+                width: 100%
+                padding: 8px 10px
+                color: #878787
+                font-family: "Roboto"
+                font-size: 14px
+                padding-top: 8px
+                font-weight: 300
+                @include box-sizing()
+            .icon-container
+              position: absolute
+              background-color: white
+              height: 100%
+              display: block
+              right: 0
+              font-size: 8px
+              color: #8a8a8a
+              padding-right: 15px
+              @include box-sizing()
+              .icon-select-arrow
+                display: table-cell
+                height: 35px
+                vertical-align: middle
+                @include transition(all, 0.2s, ease-in-out)
+          &:hover
+            .date-field
+              .icon-container
+                .icon-date
+                  color: #4a4a4a !important
+            .select-field
+              .icon-container
                 .icon-select-arrow
-                  display: table-cell
-                  height: 35px
-                  vertical-align: middle
-                  @include transition(all, 0.2s, ease-in-out)
-            &:hover
-              .date-field
-                .icon-container
-                  .icon-date
-                    color: #4a4a4a !important
-              .select-field
-                .icon-container
-                  .icon-select-arrow
-                    color: #4a4a4a !important
+                  color: #4a4a4a !important
       .buttons-container
         margin-top: 2px
         padding: 20px
+        padding-bottom: 60px
         .button-wrap
           float: left
           margin-left: 10px
           &:first-child
             margin-left: 0
+
+@media screen and (max-width: 900px)
+  .filters-container
+    .filters
+      .filter-list-wrap
+        .filter-list
+          label
+            width: 50%
+
+@media screen and (max-width: 500px)
+  .filters-container
+    .filters
+      .filter-list-wrap
+        .filter-list
+          label
+            width: 100%
 
 // Room tables
 
@@ -1075,6 +1135,7 @@ article
     display: table
     width: 100%
     position: relative
+    padding-left: 122px
     @include box-sizing()
     h3
       display: table-cell
@@ -1167,6 +1228,44 @@ article
           text-align: center
           @include box-sizing()
           &:first-child
+            width: 100px
+            border-left: none
+          &:nth-child(2)
+            border-color: #aeb4bf
+          &:last-child
+            width: 38px
+          p
+            padding: 3px
+      .header-2
+        background-color: #f7f6f4
+        border-top: 1px solid #aeb4bf
+        border-bottom: 1px solid #aeb4bf
+        th
+          padding: 12px 12px
+          color: #656565
+          font-family: "Avenir LT Std"
+          font-size: 12px
+          font-weight: 300
+          border-left: 1px solid #ddd
+          &:first-child
+            width: 100px
+            border-left: none
+          &:nth-child(2)
+            border-left: 1px solid #aeb4bf
+      .header-3
+        border-top: 1px solid #aeb4bf
+        border-bottom: 1px solid #aeb4bf
+        td
+          border-left: 1px solid #ddd
+          color: #656565
+          font-family: "Avenir LT Std"
+          font-weight: 300
+          font-size: 14px
+          text-align: center
+          padding: 12px
+          @include box-sizing()
+          &:first-child
+            width: 100px
             border-left: none
           &:nth-child(2)
             border-color: #aeb4bf
@@ -1182,16 +1281,20 @@ article
           &:first-child
             border-top: none
           td
+            width: auto
             border-left: 1px solid #ddd
             padding: 0
             @include box-sizing()
             &:first-child
-              padding: 10px
+              width: 100px
+              padding: 10px 30px 10px 10px
               white-space: nowrap
               color: #515151
               font-family: "Montserrat Bold"
               font-size: 13px
               font-weight: 400
+            &:last-child[colspan="2"]
+              min-width: 30px
             &.mark-title
               padding: 4px 0 4px 4px
               position: relative
@@ -1266,3 +1369,10 @@ article
               @include box-sizing()
               @include border-radius(50%)
               @include transform(translateX(-50%) translateY(-50%))
+
+@media screen and (max-width: 520px)
+  .room-table-container
+    header
+      h3
+        padding-top: 60px
+        padding-bottom: 15px
