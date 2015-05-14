@@ -1532,7 +1532,7 @@ article {
               font-family: "Montserrat Bold";
               font-size: 13px;
               font-weight: 400; }
-            .room-table-container .date-table-container .date-table tbody tr td:last-child[colspan="3"] {
+            .room-table-container .date-table-container .date-table tbody tr td:last-child[colspan="2"] {
               min-width: 30px; }
             .room-table-container .date-table-container .date-table tbody tr td.mark-title {
               padding: 4px 0 4px 4px;
@@ -1597,6 +1597,40 @@ article {
                 background-color: #8295aa; }
               .room-table-container .date-table-container .date-table tbody tr td.mark-end.orange:before {
                 background-color: #f5a623; }
+            .room-table-container .date-table-container .date-table tbody tr td.mark-single {
+              position: relative;
+              padding: 4px; }
+              .room-table-container .date-table-container .date-table tbody tr td.mark-single:before {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 30px;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                -ms-border-radius: 4px;
+                border-radius: 4px; }
+              .room-table-container .date-table-container .date-table tbody tr td.mark-single .title {
+                z-index: 3;
+                position: absolute;
+                font-family: "Avenir LT Std";
+                color: white;
+                font-weight: 300;
+                padding: 3px 8px;
+                font-size: 13px;
+                top: 50%;
+                left: 10px;
+                background-color: #515151;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                -ms-border-radius: 3px;
+                border-radius: 3px;
+                -moz-transform: translateY(-50%);
+                -o-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%); }
+              .room-table-container .date-table-container .date-table tbody tr td.mark-single.blue:before {
+                background-color: #8295aa; }
             .room-table-container .date-table-container .date-table tbody tr td .count {
               position: absolute;
               height: 19px;

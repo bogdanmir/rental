@@ -996,7 +996,6 @@ article
         @include transform(rotateZ(90deg))
     .filter-list-wrap
       height: 0
-      // display: none
       width: 100%
       overflow: hidden
       @include box-sizing()
@@ -1351,6 +1350,31 @@ article
               &.orange
                 &:before
                   background-color: #f5a623
+            &.mark-single
+              position: relative
+              padding: 4px
+              &:before
+                content: ""
+                display: block
+                width: 100%
+                height: 30px
+                @include border-radius(4px)
+              .title
+                z-index: 3
+                position: absolute
+                font-family: "Avenir LT Std"
+                color: white
+                font-weight: 300
+                padding: 3px 8px
+                font-size: 13px 
+                top: 50%
+                left: 10px
+                background-color: #515151
+                @include border-radius(3px)
+                @include transform(translateY(-50%))
+              &.blue
+                &:before
+                  background-color: #8295aa
             .count
               position: absolute
               height: 19px
