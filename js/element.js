@@ -105,6 +105,43 @@ $(function() {
 
   // Availability page
 
-  $(".start-date").datepicker();
+  // Date elements
+ $(function() {
+    $( "#from" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 1,
+      onClose: function( selectedDate ) {
+        $( "#to" ).datepicker( "option", "minDate", selectedDate );
+      }
+    });
+    $( "#to" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 1,
+      onClose: function( selectedDate ) {
+        $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+      }
+
+    });
+  });
+  // var dateElements = $(".start-date");
+  // if (dateElements.length) $(".start-date").datepicker();
+
+  // Filter activator
+
+  var $filterActivator = $(".filter-activator");
+
+  $filterActivator.on("click", function() {
+    var $filters = $(this).closest(".filters");
+    var $filterListWrap = $filters.find(".filter-list-wrap");
+
+    if (!$filters.hasClass("active")) {
+      $filters.addClass("active");
+    } else {
+      $filters.removeClass("active");
+    }
+
+  });
 
 });
