@@ -328,29 +328,48 @@ label.checkbox
             position: relative
             display: block
             font-size: 28px
+            width: 28px
+            margin-left: auto
+            margin-right: auto
             &.icon-dashboard
+              width: 31px
               font-size: 31px
             &.icon-inquiries
               font-size: 28px
+              width: 28px
             &.icon-contacts
               font-size: 28px
+              width: 28px
             &.icon-reservation-center
               font-size: 32px
+              width: 32px
             &.icon-availability
               font-size: 29px
+              width: 29px
             &.icon-properties
               font-size: 27px
+              width: 27px
             &.icon-import
               font-size: 26px
+              width: 26px
             &.icon-templates
               font-size: 23px
+              width: 23px
             .tasks
               position: absolute
-              top: 0
-              right: 0
+              top: -6px
+              right: -6px
               width: 22px
               height: 22px
+              padding-top: 6px
               background-color: #ff4646
+              text-align: center
+              color: white
+              font-family: "Avenir LT Std"
+              font-size: 12px
+              font-weight: 300
+              @include border-radius(50%)
+              @include box-sizing()
           .title
             display: block
             margin-top: 10px
@@ -933,16 +952,31 @@ article
             padding-left: 5px
             padding-right: 5px
 
-
 // Availability page
 
 .filters-container
   margin-top: 32px
   .filters
+    padding-bottom: 30px
+    background-color: white
+    border: 1px solid #d3d7df
+    @include box-sizing()
+    @include border-radius(3px)
     padding-bottom: 0
     header
+      width: 100%
+      padding-left: 20px
+      border-top: 1px solid #ddd
       cursor: pointer
+      @include box-sizing()
       @include user-select()
+      &:first-child
+        border-top: none
+      h4
+        width: 100%
+        height: 67px
+        display: table-cell
+        vertical-align: middle
       .icon-opener
         font-size: 18px
         width: 18px
@@ -985,11 +1019,12 @@ article
             width: 25%
             &:first-child
               padding-left: 0
-            p
+            .label
               color: #515151
               font-family: "Montserrat Regular"
               font-size: 14px
               white-space: nowrap
+              @include user-select()
             .date-field
               border: 1px solid #e0e0e0
               margin-top: 6px
@@ -1033,6 +1068,7 @@ article
                 display: table-cell
                 width: 100%
                 select
+                  cursor: pointer
                   height: 35px
                   width: 100%
                   padding: 8px 10px
@@ -1089,6 +1125,7 @@ article
     display: table
     width: 100%
     position: relative
+    padding-left: 122px
     @include box-sizing()
     h3
       display: table-cell
@@ -1181,6 +1218,44 @@ article
           text-align: center
           @include box-sizing()
           &:first-child
+            width: 100px
+            border-left: none
+          &:nth-child(2)
+            border-color: #aeb4bf
+          &:last-child
+            width: 38px
+          p
+            padding: 3px
+      .header-2
+        background-color: #f7f6f4
+        border-top: 1px solid #aeb4bf
+        border-bottom: 1px solid #aeb4bf
+        th
+          padding: 12px 12px
+          color: #656565
+          font-family: "Avenir LT Std"
+          font-size: 12px
+          font-weight: 300
+          border-left: 1px solid #ddd
+          &:first-child
+            width: 100px
+            border-left: none
+          &:nth-child(2)
+            border-left: 1px solid #aeb4bf
+      .header-3
+        border-top: 1px solid #aeb4bf
+        border-bottom: 1px solid #aeb4bf
+        td
+          border-left: 1px solid #ddd
+          color: #656565
+          font-family: "Avenir LT Std"
+          font-weight: 300
+          font-size: 14px
+          text-align: center
+          padding: 12px
+          @include box-sizing()
+          &:first-child
+            width: 100px
             border-left: none
           &:nth-child(2)
             border-color: #aeb4bf
@@ -1196,11 +1271,13 @@ article
           &:first-child
             border-top: none
           td
+            width: auto
             border-left: 1px solid #ddd
             padding: 0
             @include box-sizing()
             &:first-child
-              padding: 10px
+              width: 100px
+              padding: 10px 30px 10px 10px
               white-space: nowrap
               color: #515151
               font-family: "Montserrat Bold"

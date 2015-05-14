@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('../font/icomoon.eot?vrd7mf');
-	src:url('../font/icomoon.eot?#iefixvrd7mf') format('embedded-opentype'),
-		url('../font/icomoon.woff?vrd7mf') format('woff'),
-		url('../font/icomoon.ttf?vrd7mf') format('truetype'),
-		url('../font/icomoon.svg?vrd7mf#icomoon') format('svg');
+	src:url('../font/icomoon.eot?-4tp0qe');
+	src:url('../font/icomoon.eot?#iefix-4tp0qe') format('embedded-opentype'),
+		url('../font/icomoon.woff?-4tp0qe') format('woff'),
+		url('../font/icomoon.ttf?-4tp0qe') format('truetype'),
+		url('../font/icomoon.svg?-4tp0qe#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,6 +23,26 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-select-arrow:before {
+	content: "\e614";
+}
+
+.icon-date:before {
+	content: "\e613";
+}
+
+.icon-arrow-right:before {
+	content: "\e616";
+}
+
+.icon-arrow-left:before {
+	content: "\e615";
+}
+
+.icon-opener:before {
+	content: "\e612";
+}
+
 .icon-checked:before {
 	content: "\e611";
 }
@@ -35,7 +55,7 @@
 	content: "\e610";
 }
 
-.icon-pagination-left:before {
+.icon-pagination -left:before {
 	content: "\e60e";
 }
 
