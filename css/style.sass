@@ -233,13 +233,18 @@ label.checkbox
   cursor: pointer
   @include box-sizing()
   @include border-radius(3px)
+  @include transition(all, 0.2s, ease-in-out)
   &.green
     background-color: #44cd7e
     color: white
+    &:hover
+      background-color: #1b894a
   &.white
     text-transform: none
     border: 1px solid #d9d9d9
     color: #bebebe
+    &:hover
+      background-color: #eaeaee
 
 // carcase
 
@@ -320,6 +325,7 @@ label.checkbox
           text-decoration: none
           @include transition(all, 0.2s, ease-in-out)
           .icon
+            position: relative
             display: block
             font-size: 28px
             &.icon-dashboard
@@ -338,6 +344,13 @@ label.checkbox
               font-size: 26px
             &.icon-templates
               font-size: 23px
+            .tasks
+              position: absolute
+              top: 0
+              right: 0
+              width: 22px
+              height: 22px
+              background-color: #ff4646
           .title
             display: block
             margin-top: 10px
@@ -976,6 +989,7 @@ article
               color: #515151
               font-family: "Montserrat Regular"
               font-size: 14px
+              white-space: nowrap
             .date-field
               border: 1px solid #e0e0e0
               margin-top: 6px
@@ -1266,3 +1280,10 @@ article
               @include box-sizing()
               @include border-radius(50%)
               @include transform(translateX(-50%) translateY(-50%))
+
+@media screen and (max-width: 520px)
+  .room-table-container
+    header
+      h3
+        padding-top: 60px
+        padding-bottom: 15px

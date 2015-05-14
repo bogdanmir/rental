@@ -106,7 +106,7 @@ $(function() {
   // Availability page
 
   // Date elements
-<<<<<<< HEAD
+// <<<<<<< HEAD
  $(function() {
     $( "#from" ).datepicker({
       defaultDate: "+1w",
@@ -126,13 +126,6 @@ $(function() {
 
     });
   });
-  // var dateElements = $(".start-date");
-  // if (dateElements.length) $(".start-date").datepicker();
-=======
-
-  var dateElements = $(".start-date");
-  if (dateElements.length) $(".start-date").datepicker();
->>>>>>> 728312ec5c421dee8e7eb6fa91ecfbfb09e460cb
 
   // Filter activator
 
