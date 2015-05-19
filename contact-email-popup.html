@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/icon.css">
-  <link rel="stylesheet" href="http://i.icomoon.io/public/temp/91921b2f11/layout/style.css">
   <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
   <script type="text/javascript" src="js/element.js"></script>
 </head>
@@ -301,91 +300,93 @@
       <div class="table-container container">
         <!-- Email popup -->
         <div class="popup-container">
-          <div class="popup">
-            <article>
-              <form>
-                <header>
-                  <h4>Send mail</h4>
-                  <div class="button-wrap popup-close-activator">
-                    <span class="icon-delete"></span>
-                  </div>
-                </header>
-                <div class="params-panel">
-                  <label class="panel-row">
-                    <span class="title">Template:</span>
-                    <span class="content">
-                      <div class="select-container">
-                        <select>
-                          <option value="">Mail to</option>
-                          <option>to</option>
-                        </select>
-                        <div class="icon-container">
-                          <span class="icon-select-arrow"></span>
+          <div class="popup-wrap">
+            <div class="popup">
+              <article>
+                <form>
+                  <header>
+                    <h4>Send mail</h4>
+                    <div class="button-wrap popup-close-activator">
+                      <span class="icon-delete"></span>
+                    </div>
+                  </header>
+                  <div class="params-panel">
+                    <label class="panel-row">
+                      <span class="title">Template:</span>
+                      <span class="content">
+                        <div class="select-container">
+                          <select>
+                            <option value="">Mail to</option>
+                            <option>to</option>
+                          </select>
+                          <div class="icon-container">
+                            <span class="icon-select-arrow"></span>
+                          </div>
                         </div>
-                      </div>
-                    </span>
-                  </label>
-                  <label class="panel-row">
-                    <span class="title">Subject:</span>
-                    <span class="content">
-                      <div class="input-container">
-                        <input type="text" placeholder="Title" />
-                      </div>
-                    </span>
-                  </label>
-                  <div class="panel-row">
-                    <span class="title">Message:</span>
-                    <span class="content">
-                      <div class="edit-container">
-                        <span class="edit icon-edit-bold"></span>
-                        <span class="edit icon-edit-italic"></span>
-                        <span class="edit icon-edit-uppercase"></span>
-                        <span class="edit icon-edit-strike"></span>
-                      </div>
-                      <div class="edit-container">
-                        <span class="edit icon-edit-link"></span>
-                        <span class="edit icon-edit-image"></span>
-                      </div>
-                      <div class="edit-container">
-                        <span class="edit icon-edit-left"></span>
-                        <span class="edit icon-edit-center"></span>
-                        <span class="edit icon-edit-right"></span>
-                      </div>
-                      <div class="edit-container">
-                        <span class="edit icon-edit-ul"></span>
-                        <span class="edit icon-edit-ol"></span>
-                        <span class="edit icon-float-left"></span>
-                        <span class="edit icon-float-right"></span>
-                      </div>
-                    </span>
+                      </span>
+                    </label>
+                    <label class="panel-row">
+                      <span class="title">Subject:</span>
+                      <span class="content">
+                        <div class="input-container">
+                          <input type="text" placeholder="Title" />
+                        </div>
+                      </span>
+                    </label>
+                    <div class="panel-row">
+                      <span class="title">Message:</span>
+                      <span class="content">
+                        <div class="edit-container">
+                          <span class="edit icon-edit-bold"></span>
+                          <span class="edit icon-edit-italic"></span>
+                          <span class="edit icon-edit-uppercase"></span>
+                          <span class="edit icon-edit-strike"></span>
+                        </div>
+                        <div class="edit-container">
+                          <span class="edit icon-edit-link"></span>
+                          <span class="edit icon-edit-image"></span>
+                        </div>
+                        <div class="edit-container">
+                          <span class="edit icon-edit-left"></span>
+                          <span class="edit icon-edit-center"></span>
+                          <span class="edit icon-edit-right"></span>
+                        </div>
+                        <div class="edit-container">
+                          <span class="edit icon-edit-ul"></span>
+                          <span class="edit icon-edit-ol"></span>
+                          <span class="edit icon-float-left"></span>
+                          <span class="edit icon-float-right"></span>
+                        </div>
+                      </span>
+                    </div>
+                    <div class="panel-row">
+                      <span class="title"></span>
+                      <span class="content">
+                        <div class="area-container">
+                          <textarea placeholder="Text"></textarea>
+                        </div>
+                      </span>
+                    </div>
+                    <div class="panel-row">
+                      <span class="title"></span>
+                      <span class="content">
+                        <label class="attach-container">
+                          <span class="icon-attach"></span><span class="description">Upload files</span>
+                        </label>
+                      </span>
+                    </div>
+                    <div class="panel-row">
+                      <span class="title"></span>
+                      <span class="content">
+                        <div class="button-container">
+                          <button class="button">Send mail</button>
+                        </div>
+                      </span>
+                    </div>
                   </div>
-                  <div class="panel-row">
-                    <span class="title"></span>
-                    <span class="content">
-                      <div class="area-container">
-                        <textarea placeholder="Text"></textarea>
-                      </div>
-                    </span>
-                  </div>
-                  <div class="panel-row">
-                    <span class="title"></span>
-                    <span class="content">
-                      <label class="attach-container">
-                        <span class="icon-attach"></span><span class="description">Upload files</span>
-                      </label>
-                    </span>
-                  </div>
-                  <div class="panel-row">
-                    <span class="title"></span>
-                    <span class="content">
-                      <div class="button-container">
-                        <button class="button">Send mail</button>
-                      </div>
-                    </span>
-                  </div>
-                </div>
-              </form>
-            </article>
+                </form>
+              </article>
+            </div>
           </div>
         </div><!-- Email popup end -->
         <article class="table">

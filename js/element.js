@@ -160,7 +160,7 @@ $(function() {
     var $container = $this.closest(".container");
     var $popupContainer = $container.find(".popup-container");
     var $popup = $popupContainer.find(".popup");
-    var $iconDelete = $popupContainer.find(".icon-delete");
+    var $iconDelete = $popupContainer.find(".popup-close-activator");
     var closeHandler = function() {
       $popupContainer.removeClass("active");
       setTimeout(function() {
