@@ -106,8 +106,9 @@ $(function() {
   // Availability page
 
   // Date elements
-// <<<<<<< HEAD
- $(function() {
+
+$(function() {
+  try {
     $( "#from" ).datepicker({
       defaultDate: "+1w",
       changeMonth: true,
@@ -125,7 +126,10 @@ $(function() {
       }
 
     });
-  });
+  } catch (error) {
+    // console.error(error);
+  }
+});
 
   // Filter activator
 
@@ -144,6 +148,33 @@ $(function() {
       $filterListWrap.animate({ height: 0 }, 600);
     }
 
+  });
+
+  // Popup
+
+  var $body = $("body");
+  var $sendMailActivator = $(".send-mail-activator")
+
+  $sendMailActivator.on("click", function() {
+    var $this = $(this);
+    var $container = $this.closest(".container");
+    var $popupContainer = $container.find(".popup-container");
+    var $popup = $popupContainer.find(".popup");
+    var $iconDelete = $popupContainer.find(".icon-delete");
+    var closeHandler = function() {
+      $popupContainer.removeClass("active");
+      setTimeout(function() {
+        $body.removeClass("hidden");
+        $popupContainer.css({ display: "none" });
+        $iconDelete.off("click", closeHandler);
+      }, 600);
+    };
+    $popupContainer.css({ display: "block" });
+    setTimeout(function() {
+      $popupContainer.addClass("active");
+    }, 60);
+    $body.addClass("hidden");
+    $iconDelete.on("click", closeHandler);
   });
 
 });
