@@ -153,7 +153,7 @@ $(function() {
   // Popup
 
   var $body = $("body");
-  var $sendMailActivator = $(".send-mail-activator")
+  var $sendMailActivator = $(".popup-open-activator")
 
   $sendMailActivator.on("click", function() {
     var $this = $(this);

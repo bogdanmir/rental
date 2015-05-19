@@ -297,8 +297,13 @@
           </article>
         </div>
       </div>
-      <div class="table-container container">
-        <!-- Email popup -->
+      <div class="table-container container"> 
+        <!-- Email popup:
+             insert .popup-container tree to target container
+             add .container class to main container
+             add .popup-open-activator to button who must open popup
+             add .popup-close-activator to closer
+             parent containers cant contain position: relative / absolute / fixed rules -->
         <div class="popup-container">
           <div class="popup-wrap">
             <div class="popup">
@@ -314,57 +319,57 @@
                     <label class="panel-row">
                       <span class="title">Template:</span>
                       <span class="content">
-                        <div class="select-container">
+                        <span class="select-container">
                           <select>
                             <option value="">Mail to</option>
                             <option>to</option>
                           </select>
-                          <div class="icon-container">
+                          <span class="icon-container">
                             <span class="icon-select-arrow"></span>
-                          </div>
-                        </div>
+                          </span>
+                        </span>
                       </span>
                     </label>
                     <label class="panel-row">
                       <span class="title">Subject:</span>
                       <span class="content">
-                        <div class="input-container">
+                        <span class="input-container">
                           <input type="text" placeholder="Title" />
-                        </div>
+                        </span>
                       </span>
                     </label>
                     <div class="panel-row">
                       <span class="title">Message:</span>
                       <span class="content">
-                        <div class="edit-container">
+                        <span class="edit-container">
                           <span class="edit icon-edit-bold"></span>
                           <span class="edit icon-edit-italic"></span>
                           <span class="edit icon-edit-uppercase"></span>
                           <span class="edit icon-edit-strike"></span>
-                        </div>
-                        <div class="edit-container">
+                        </span>
+                        <span class="edit-container">
                           <span class="edit icon-edit-link"></span>
                           <span class="edit icon-edit-image"></span>
-                        </div>
-                        <div class="edit-container">
+                        </span>
+                        <span class="edit-container">
                           <span class="edit icon-edit-left"></span>
                           <span class="edit icon-edit-center"></span>
                           <span class="edit icon-edit-right"></span>
-                        </div>
-                        <div class="edit-container">
+                        </span>
+                        <span class="edit-container">
                           <span class="edit icon-edit-ul"></span>
                           <span class="edit icon-edit-ol"></span>
                           <span class="edit icon-float-left"></span>
                           <span class="edit icon-float-right"></span>
-                        </div>
+                        </span>
                       </span>
                     </div>
                     <div class="panel-row">
                       <span class="title"></span>
                       <span class="content">
-                        <div class="area-container">
+                        <span class="area-container">
                           <textarea placeholder="Text"></textarea>
-                        </div>
+                        </span>
                       </span>
                     </div>
                     <div class="panel-row">
@@ -378,9 +383,9 @@
                     <div class="panel-row">
                       <span class="title"></span>
                       <span class="content">
-                        <div class="button-container">
+                        <span class="button-container">
                           <button class="button">Send mail</button>
-                        </div>
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -393,7 +398,7 @@
           <header>
             <h4>Emails</h4>
             <div class="button-wrap">
-              <a class="button send-mail-activator">
+              <a class="button popup-open-activator">
                 send mail
               </a>
             </div>
