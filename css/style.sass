@@ -278,6 +278,105 @@ label.checkbox
     &:hover
       background-color: #eaeaee
 
+.select-container
+  position: relative
+  border: 1px solid #e0e0e0
+  display: block
+  +border-radius(3px)
+  select
+    cursor: pointer
+    height: 35px
+    width: 100%
+    padding: 6px
+    color: #878787
+    font-family: "Roboto"
+    font-size: 14px
+    font-weight: 300
+    background-color: white
+    +box-sizing()
+    option:first-child
+      color: #bbc3c9
+  .icon-container
+    position: absolute
+    background-color: white
+    height: 100%
+    display: block
+    top: 0
+    right: 0
+    font-size: 8px
+    color: #8a8a8a
+    padding-right: 15px
+    cursor: pointer
+    +user-select()
+    +box-sizing()
+    .icon-select-arrow
+      display: table-cell
+      height: 35px
+      vertical-align: middle
+      +transition(all, 0.2s, ease-in-out)
+
+.input-container
+  border: 1px solid #e0e0e0
+  display: block
+  +border-radius(3px)
+  input
+    padding: 9px
+    width: 100%
+    color: #878787
+    font-family: "Roboto"
+    font-size: 14px
+    font-weight: 300
+    background-color: white
+    +box-sizing
+    +placeholder
+      color: #bbc3c9
+
+.date-field
+  border: 1px solid #e0e0e0
+  display: table
+  width: 100%
+  cursor: pointer
+  +user-select()
+  +border-radius(3px)
+  .field-container
+    display: table-cell
+    input
+      height: 35px                
+      width: 100%
+      padding: 10px
+      color: #878787
+      font-family: "Roboto"
+      font-size: 14px
+      font-weight: 300
+      +box-sizing()
+  .icon-container
+    display: table-cell
+    vertical-align: middle
+    padding-left: 13px
+    padding-right: 13px
+    text-align: center
+    border-left: 1px solid #e0e0e0
+    +box-sizing()
+    .icon-date
+      color: #969696
+      font-size: 18px
+      +transition(all, 0.2s, ease-in-out)
+
+textarea
+  border: 1px solid #e0e0e0
+  display: block
+  padding: 10px 10px
+  color: #878787
+  font-family: "Roboto"
+  font-size: 14px
+  font-weight: 300
+  line-height: 23px
+  resize: vertical
+  +border-radius(3px)
+  +box-sizing()
+  +placeholder
+    color: #bbc3c9
+
 // carcase
 
 .left-panel-container
@@ -1660,55 +1759,69 @@ article
               padding-top: 0
               padding-bottom: 0
 
-.select-container
-  position: relative
-  border: 1px solid #e0e0e0
-  display: block
-  +border-radius(3px)
-  select
-    cursor: pointer
-    height: 35px
-    width: 100%
-    padding: 6px
-    color: #878787
-    font-family: "Roboto"
-    font-size: 14px
-    font-weight: 300
-    background-color: white
-    +box-sizing()
-    option:first-child
-      color: #bbc3c9
-  .icon-container
-    position: absolute
-    background-color: white
-    height: 100%
-    display: block
-    top: 0
-    right: 0
-    font-size: 8px
-    color: #8a8a8a
-    padding-right: 15px
-    cursor: pointer
-    +user-select()
-    +box-sizing()
-    .icon-select-arrow
-      display: table-cell
-      height: 35px
-      vertical-align: middle
-      +transition(all, 0.2s, ease-in-out)
 
-.input-container
-  border: 1px solid #e0e0e0
-  display: block
-  +border-radius(3px)
-  input
-    padding: 9px
+// Add reservation page
+
+.add-reservation
+  margin-top: 20px
+  padding-top: 45px
+  padding-bottom: 130px
+  form
+    display: table
+    padding-left: 15px
+    padding-right: 15px
     width: 100%
-    color: #878787
-    font-family: "Roboto"
-    font-size: 14px
-    font-weight: 300
-    background-color: white
-    +box-sizing
-    +placeholder
-      color: #bbc3c9
+    +box-sizing()
+    label, .form-row
+      display: table-row
+      cursor: pointer
+      .title
+        display: table-cell
+        padding-top: 10px
+        padding-bottom: 10px
+        width: 40%
+        text-align: right
+        color: #515151
+        font-family: "Montserrat Regular"
+        font-size: 14px
+        font-weight: 400
+      .content
+        padding-top: 10px
+        padding-bottom: 10px
+        display: table-cell
+        padding-left: 30px
+        text-align: left
+        padding-right: 50px
+        .date-field, .select-container
+          width: 251px
+        .area-container
+          textarea
+            width: 100%
+            max-width: 413px
+            height: 80px
+
+@media screen and (min-width: 320px) and (max-width: 480px)
+  .add-reservation
+    form
+      label, .form-row
+        display: block
+        .title
+          text-align: left
+          display: block
+        .content
+          display: block
+          padding-left: 0
+          padding-right: 5px
+
+@media screen and (min-width: 0) and (max-width: 320px)
+  .add-reservation
+    form
+      label, .form-row
+        display: block
+        .title
+          text-align: left
+          display: block
+        .content
+          display: block
+          padding-left: 0
+          padding-right: 5px

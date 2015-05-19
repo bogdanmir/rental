@@ -5,10 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/custom_jquery-ui.min.css">
   <link rel="stylesheet" type="text/css" href="css/icon.css">
-  <link rel="stylesheet" href="http://i.icomoon.io/public/temp/91921b2f11/layout/style.css">
-  <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
-  <script type="text/javascript" src="js/element.js"></script>
 </head>
 <body>
 
@@ -111,9 +109,142 @@
         <h1>Carl Tompson</h1>
         <p>New Lead for rental</p>
       </header>
-      <article></article>
+      <article class="add-reservation">
+        <form>
+          <label>
+            <span class="title">Start date:</span>
+            <span class="content">
+              <span class="date-field">
+                <span class="field-container">
+                  <input class="date start-date" id="from" name="from" type="text" />
+                </span>
+                <span class="icon-container">
+                  <span class="icon-date"></span>
+                </span>
+              </span>
+            </span>
+          </label>
+          <label>
+            <span class="title">End date:</span>
+            <span class="content">
+              <span class="date-field">
+                <span class="field-container">
+                  <input class="date start-date" id="to" name="to" type="text" />
+                </span>
+                <span class="icon-container">
+                  <span class="icon-date"></span>
+                </span>
+              </span>
+            </span>
+          </label>
+          <label>
+            <span class="title">Number of guests:</span>
+            <span class="content">
+              <span class="select-container">
+                <select>
+                  <option value="">Number</option>
+                  <option>24</option>
+                </select>
+                <span class="icon-container">
+                  <span class="icon-select-arrow"></span>
+                </span>
+              </span>
+            </span>
+          </label>
+          <label>
+            <span class="title">Number of childrens:</span>
+            <span class="content">
+              <span class="select-container">
+                <select>
+                  <option value="">Number</option>
+                  <option>12</option>
+                </select>
+                <span class="icon-container">
+                  <span class="icon-select-arrow"></span>
+                </span>
+              </span>
+            </span>
+          </label>
+          <label>
+            <span class="title">Status:</span>
+            <span class="content">
+              <span class="select-container">
+                <select>
+                  <option value="">Status</option>
+                  <option>Qualified</option>
+                </select>
+                <span class="icon-container">
+                  <span class="icon-select-arrow"></span>
+                </span>
+              </span>
+            </span>
+          </label>
+          <label>
+            <span class="title">Payment type:</span>
+            <span class="content">
+              <span class="select-container">
+                <select>
+                  <option value="">Type</option>
+                  <option>Cash</option>
+                </select>
+                <span class="icon-container">
+                  <span class="icon-select-arrow"></span>
+                </span>
+              </span>
+            </span>
+          </label>
+          <label>
+            <span class="title">Choose property:</span>
+            <span class="content">
+              <span class="select-container">
+                <select>
+                  <option value="">Property</option>
+                  <option>Property</option>
+                </select>
+                <span class="icon-container">
+                  <span class="icon-select-arrow"></span>
+                </span>
+              </span>
+            </span>
+          </label>
+          <label>
+            <span class="title">Choose contact:</span>
+            <span class="content">
+              <span class="select-container">
+                <select>
+                  <option value="">Contact</option>
+                  <option>Contact</option>
+                </select>
+                <span class="icon-container">
+                  <span class="icon-select-arrow"></span>
+                </span>
+              </span>
+            </span>
+          </label>
+          <label>
+            <span class="title">Comments:</span>
+            <span class="content">
+              <span class="area-container">
+                <textarea placeholder="Comments"></textarea>
+              </span>
+            </span>
+          </label>
+          <div class="form-row">
+            <span class="title"></span>
+            <span class="content">
+              <span class="button-container">
+                <button class="button">Save</button>
+              </span>
+            </span>
+          </div>
+        </form>
+      </article>
     </section>
   </div>
+
+  <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/element.js"></script>
 
 </body>
 </html>
