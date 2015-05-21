@@ -81,6 +81,10 @@ body
   &.hidden
     overflow: hidden
 
+.body
+  &.hidden
+    -webkit-filter: blur(3px)
+
 // common
 
 p, h1, h3, h4, ul
@@ -279,6 +283,7 @@ label.checkbox
       background-color: #eaeaee
 
 .select-container
+  cursor: pointer
   position: relative
   border: 1px solid #e0e0e0
   display: block
@@ -314,28 +319,36 @@ label.checkbox
       height: 35px
       vertical-align: middle
       +transition(all, 0.2s, ease-in-out)
+  &:hover
+    .icon-container
+      .icon-select-arrow
+        color: #4a4a4a !important
 
-.input-container
-  border: 1px solid #e0e0e0
+.input-field
+  cursor: pointer
+  width: 100%
   display: block
-  +border-radius(3px)
-  input
-    padding: 9px
-    width: 100%
-    color: #878787
-    font-family: "Roboto"
-    font-size: 14px
-    font-weight: 300
-    background-color: white
-    +box-sizing
-    +placeholder
-      color: #bbc3c9
+  .input-container
+    border: 1px solid #e0e0e0
+    display: block
+    +border-radius(3px)
+    input
+      padding: 9px
+      width: 100%
+      color: #878787
+      font-family: "Roboto"
+      font-size: 14px
+      font-weight: 300
+      background-color: white
+      +box-sizing
+      +placeholder
+        color: #bbc3c9
 
 .date-field
+  cursor: pointer
   border: 1px solid #e0e0e0
   display: table
   width: 100%
-  cursor: pointer
   +user-select()
   +border-radius(3px)
   .field-container
@@ -361,6 +374,10 @@ label.checkbox
       color: #969696
       font-size: 18px
       +transition(all, 0.2s, ease-in-out)
+  &:hover
+    .icon-container
+      .icon-date
+        color: #4a4a4a !important
 
 textarea
   border: 1px solid #e0e0e0
@@ -687,6 +704,7 @@ textarea
         height: 32px
         display: table
         border: 1px solid #e0e0e0
+        +user-select()
         +border-radius(3px)
         +box-sizing()
         a
@@ -1529,9 +1547,22 @@ article
 
 // Email popup
 
+.popup-filter
+  background-color: rgba(74, 73, 74, 0.71)
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 999
+  opacity: 0
+  display: none
+  +transition(all, 0.6s, ease-in-out)
+  &.active
+    opacity: 1
+
 .popup-container
   position: fixed
-  background-color: rgba(74, 73, 74, 0.71)
   overflow-x: hidden
   overflow-y: auto
   width: 100%
@@ -1555,6 +1586,7 @@ article
     padding-top: 30px
     padding-bottom: 30px
     .popup
+      z-index: 1000
       position: relative
       padding-left: 20%
       padding-right: 20%
@@ -1780,7 +1812,6 @@ article
     +box-sizing()
     label, .form-row
       display: table-row
-      cursor: pointer
       .title
         display: table-cell
         padding-top: 10px
@@ -1831,3 +1862,90 @@ article
           display: block
           padding-left: 0
           padding-right: 5px
+
+// Add lead page
+
+.tab-box
+  margin-top: 20px
+  padding-bottom: 130px
+  .menu-container-wrap
+    height: 75px
+    display: table
+    width: 100%
+    border-bottom: 1px solid #ddd
+    .menu-container
+      padding-left: 10px
+      padding-right: 10px
+      margin-top: 0 !important
+      display: table-cell
+      vertical-align: middle
+      text-align: center
+  .tab
+    display: none
+    opacity: 0
+    +transition(all, 0.2s, ease-in-out)
+    &.active
+      display: block
+      &.show
+        opacity: 1
+    form
+      display: table
+      padding-top: 30px
+      padding-left: 15px
+      padding-right: 15px
+      width: 100%
+      +box-sizing()
+      label, .form-row
+        display: table-row
+        .title
+          display: table-cell
+          padding-top: 10px
+          padding-bottom: 10px
+          width: 40%
+          text-align: right
+          color: #515151
+          font-family: "Montserrat Regular"
+          font-size: 14px
+          font-weight: 400
+        .content
+          padding-top: 10px
+          padding-bottom: 10px
+          display: table-cell
+          padding-left: 30px
+          text-align: left
+          padding-right: 50px
+          .date-field, .select-container, .input-field
+            width: 251px
+          .area-container
+            textarea
+              width: 100%
+              max-width: 413px
+              height: 80px
+
+@media screen and (min-width: 320px) and (max-width: 480px)
+  .tab-box
+    .tab
+      form
+        label, .form-row
+          display: block
+          .title
+            text-align: left
+            display: block
+          .content
+            display: block
+            padding-left: 0
+            padding-right: 5px
+
+@media screen and (min-width: 0) and (max-width: 320px)
+  .tab-box
+    .tab
+      form
+        label, .form-row
+          display: block
+          .title
+            text-align: left
+            display: block
+          .content
+            display: block
+            padding-left: 0
+            padding-right: 5px

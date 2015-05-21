@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+<head>
+  <title>Rental</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/custom_jquery-ui.min.css">
+  <link rel="stylesheet" type="text/css" href="css/icon.css">
+</head>
+<body>
+
+  <div class="left-panel-activator-container"><div class="left-panel-activator"><span class="icon-property"></span><span class="icon-delete"></span></div></div>
+  <div class="left-panel-container">
+    <div class="left-panel">
+      <div class="logo-container">
+        <img src="img/rentalsforce-logo-bold-inverse-print.png" alt="Rental force" />
+      </div>
+      <div class="user-container">
+        <div class="icon-container-wrap">
+          <div class="icon-container">
+            <img src="img/bitmap.png" alt="User">
+            <div class="note"></div>
+          </div>
+        </div>
+        <div class="info-container">
+          <header>Welcome</header>
+          <p>Konstantin Western</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <div class="link">
+          <a href="">
+            <span class="icon icon-dashboard"><span class="tasks">19</span></span>
+            <span class="title">dashboard</span>
+          </a>
+        </div>
+        <div class="link">
+          <a href="">
+            <span class="icon icon-inquiries"></span>
+            <span class="title">inquiries</span>
+          </a>
+        </div>
+        <div class="link active">
+          <a href="">
+            <span class="icon icon-contacts"></span>
+            <span class="title">contacts</span>
+          </a>
+        </div>
+        <div class="link">
+          <a href="">
+            <span class="icon icon-reservation-center"></span>
+            <span class="title">reservation center</span>
+          </a>
+        </div>
+        <div class="link">
+          <a href="">
+            <span class="icon icon-availability"></span>
+            <span class="title">availability</span>
+          </a>
+        </div>
+        <div class="link">
+          <a href="">
+            <span class="icon icon-properties"></span>
+            <span class="title">properties</span>
+          </a>
+        </div>
+        <div class="link">
+          <a href="">
+            <span class="icon icon-import"></span>
+            <span class="title">import</span>
+          </a>
+        </div>
+        <div class="link">
+          <a href="">
+            <span class="icon icon-templates"></span>
+            <span class="title">templates</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="main-container">
+    <aside class="main-header">
+      <div class="search-container">
+        <div class="search">
+          <input type="text" placeholder="Type to search …" />
+          <span class="icon-search"></span>
+        </div>
+      </div>
+      <div class="user-container">
+        <div class="user">
+          <div class="user-info">
+            <span class="title">Konstantin Western</span>
+            <span class="icon-setting"></span>
+          </div>
+          <div class="user-settings">
+            <ul>
+              <li><a href="">Edit Profile</a></li>
+              <li><a href="">Setting</a></li>
+              <li><a href="">Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <section class="main-content">
+      <header class="main-title">
+        <h1>Add new inquiries</h1>
+        <p>New Lead for rental</p>
+      </header>
+      <article class="tab-box add-lead">
+        <aside class="menu-container-wrap">
+          <div class="menu-container">
+            <nav class="menu">
+              <a class="active">Personal information</a>
+              <a>Address</a>
+              <a>Request information</a>
+            </nav>
+          </div>
+        </aside>
+        <div class="tab active show">
+          <header>
+            <h4>Request information</h4>
+          </header>
+          <form>
+            <div class="form-row">
+              <span class="title">Request location:</span>
+              <span class="content">
+                <span class="input-field">
+                  <span class="input-container">
+                    <input type="text" />
+                  </span>
+                </span>
+              </span>
+            </div>
+            <div class="form-row">
+              <span class="title">Lead source:</span>
+              <span class="content">
+                <span class="select-container">
+                  <select>
+                    <option value="">Sourse</option>
+                    <option>Facebook</option>
+                  </select>
+                  <span class="icon-container">
+                    <span class="icon-select-arrow"></span>
+                  </span>
+                </span>
+              </span>
+            </div>
+            <div class="form-row">
+              <span class="title">Start date:</span>
+              <span class="content">
+                <span class="date-field">
+                  <span class="field-container">
+                    <input class="date start-date" id="from" name="from" type="text" />
+                  </span>
+                  <span class="icon-container">
+                    <span class="icon-date"></span>
+                  </span>
+                </span>
+              </span>
+            </div>
+            <div class="form-row">
+              <span class="title">End date:</span>
+              <span class="content">
+                <span class="date-field">
+                  <span class="field-container">
+                    <input class="date start-date" id="to" name="to" type="text" />
+                  </span>
+                  <span class="icon-container">
+                    <span class="icon-date"></span>
+                  </span>
+                </span>
+              </span>
+            </div>
+            <div class="form-row">
+              <span class="title">Status:</span>
+              <span class="content">
+                <span class="select-container">
+                  <select>
+                    <option value="">Status</option>
+                    <option>Qualified</option>
+                  </select>
+                  <span class="icon-container">
+                    <span class="icon-select-arrow"></span>
+                  </span>
+                </span>
+              </span>
+            </div>
+            <div class="form-row">
+              <span class="title">Property:</span>
+              <span class="content">
+                <span class="select-container">
+                  <select>
+                    <option value="">Property</option>
+                    <option>2120-2 Room 2</option>
+                  </select>
+                  <span class="icon-container">
+                    <span class="icon-select-arrow"></span>
+                  </span>
+                </span>
+              </span>
+            </div>
+            <div class="form-row">
+              <span class="title">Nomber of guests:</span>
+              <span class="content">
+                <span class="select-container">
+                  <select>
+                    <option value="">Guests</option>
+                    <option>24</option>
+                  </select>
+                  <span class="icon-container">
+                    <span class="icon-select-arrow"></span>
+                  </span>
+                </span>
+              </span>
+            </div>
+            <div class="form-row">
+              <span class="title">Nomber of childrens:</span>
+              <span class="content">
+                <span class="select-container">
+                  <select>
+                    <option value="">Childrens</option>
+                    <option>12</option>
+                  </select>
+                  <span class="icon-container">
+                    <span class="icon-select-arrow"></span>
+                  </span>
+                </span>
+              </span>
+            </div>
+            <div class="form-row">
+              <span class="title"></span>
+              <span class="content">
+                <span class="button-container">
+                  <button class="button">Save</button>
+                </span>
+              </span>
+            </div>
+          </form>
+        </div>
+        <div class="tab">
+          <header>
+            <h4>Tab 2</h4>
+          </header>
+        </div>
+        <div class="tab">
+          <header>
+            <h4>Tab 3</h4>
+          </header>
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/element.js"></script>
+
+</body>
+</html>
