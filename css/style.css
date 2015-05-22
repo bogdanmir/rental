@@ -232,6 +232,14 @@ label.checkbox {
   transition: all 0.2s ease-in-out; }
   .button:hover {
     background-color: #1a98d6; }
+  .button.dark-blue {
+    background-color: #657084; }
+    .button.dark-blue:hover {
+      background-color: #7182a1; }
+  .button.dark-red {
+    background-color: #c86767; }
+    .button.dark-red:hover {
+      background-color: #ff7b7b; }
 
 .simple-button {
   width: 86px;
@@ -334,13 +342,9 @@ label.checkbox {
   width: 100%;
   display: block; }
   .input-field .input-container {
-    border: 1px solid #e0e0e0;
-    display: block;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    border-radius: 3px; }
+    display: block; }
     .input-field .input-container input {
+      border: 1px solid #e0e0e0;
       padding: 9px;
       width: 100%;
       color: #878787;
@@ -352,7 +356,11 @@ label.checkbox {
       -moz-box-sizing: border-box;
       -o-box-sizing: border-box;
       -ms-box-sizing: border-box;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      border-radius: 3px; }
       .input-field .input-container input::-webkit-input-placeholder {
         color: #bbc3c9; }
       .input-field .input-container input:-moz-placeholder {
@@ -2215,8 +2223,7 @@ article {
     width: 100%;
     border-bottom: 1px solid #ddd; }
     .tab-box .menu-container-wrap .menu-container {
-      padding-left: 10px;
-      padding-right: 10px;
+      padding: 10px;
       margin-top: 0 !important;
       display: table-cell;
       vertical-align: middle;
@@ -2271,6 +2278,10 @@ article {
             height: 80px; }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
+  .tab-box .menu-container-wrap .menu-container .menu a {
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px; }
   .tab-box .tab form label, .tab-box .tab form .form-row {
     display: block; }
     .tab-box .tab form label .title, .tab-box .tab form .form-row .title {
@@ -2281,6 +2292,10 @@ article {
       padding-left: 0;
       padding-right: 5px; } }
 @media screen and (min-width: 0) and (max-width: 320px) {
+  .tab-box .menu-container-wrap .menu-container .menu a {
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px; }
   .tab-box .tab form label, .tab-box .tab form .form-row {
     display: block; }
     .tab-box .tab form label .title, .tab-box .tab form .form-row .title {
@@ -2290,5 +2305,71 @@ article {
       display: block;
       padding-left: 0;
       padding-right: 5px; } }
+.panel-one-wrap {
+  margin-top: 30px;
+  width: 100%; }
+  .panel-one-wrap .panel-one-container {
+    padding-right: 11.5px; }
+    .panel-one-wrap .panel-one-container .panel-one {
+      padding-bottom: 30px;
+      background-color: white;
+      border: 1px solid #d3d7df;
+      overflow-x: auto;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      border-radius: 3px; }
+      .panel-one-wrap .panel-one-container .panel-one header {
+        overflow-x: auto; }
+        .panel-one-wrap .panel-one-container .panel-one header .button-wrap {
+          display: table-cell;
+          padding-right: 12px;
+          padding-top: 5px;
+          vertical-align: middle; }
+      .panel-one-wrap .panel-one-container .panel-one .first-column {
+        width: 100%;
+        max-width: 100%;
+        padding: 16px;
+        border-top: 1px solid #ddd;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box; }
+        .panel-one-wrap .panel-one-container .panel-one .first-column tr {
+          height: 33px; }
+          .panel-one-wrap .panel-one-container .panel-one .first-column tr td {
+            font-size: 14px; }
+            .panel-one-wrap .panel-one-container .panel-one .first-column tr td:first-child {
+              width: 170px;
+              white-space: nowrap;
+              text-align: right;
+              color: #515151;
+              font-family: "Montserrat Bold";
+              vertical-align: middle; }
+            .panel-one-wrap .panel-one-container .panel-one .first-column tr td:last-child {
+              text-align: left;
+              color: #878787;
+              font-family: "Roboto";
+              font-weight: 300;
+              padding-left: 33px;
+              vertical-align: middle; }
+          .panel-one-wrap .panel-one-container .panel-one .first-column tr.total-container td {
+            padding-top: 36px;
+            color: #515151;
+            font-family: "Montserrat Bold"; }
+      .panel-one-wrap .panel-one-container .panel-one .input-field {
+        width: 251px; }
+      .panel-one-wrap .panel-one-container .panel-one .button-wrap {
+        margin-top: 18px; }
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .panel-one-wrap .panel-one-container .panel-one .first-column {
+    padding-left: 15px; } }
 
 /*# sourceMappingURL=style.css.map */

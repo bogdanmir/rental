@@ -255,6 +255,14 @@ label.checkbox
   +transition(all, 0.2s, ease-in-out)
   &:hover
     background-color: #1a98d6
+  &.dark-blue
+    background-color: #657084
+    &:hover
+      background-color: #7182a1
+  &.dark-red
+    background-color: #c86767
+    &:hover
+      background-color: #ff7b7b
 
 .simple-button
   width: 86px
@@ -329,10 +337,9 @@ label.checkbox
   width: 100%
   display: block
   .input-container
-    border: 1px solid #e0e0e0
     display: block
-    +border-radius(3px)
     input
+      border: 1px solid #e0e0e0
       padding: 9px
       width: 100%
       color: #878787
@@ -341,6 +348,7 @@ label.checkbox
       font-weight: 300
       background-color: white
       +box-sizing
+      +border-radius(3px)
       +placeholder
         color: #bbc3c9
 
@@ -1874,8 +1882,7 @@ article
     width: 100%
     border-bottom: 1px solid #ddd
     .menu-container
-      padding-left: 10px
-      padding-right: 10px
+      padding: 10px
       margin-top: 0 !important
       display: table-cell
       vertical-align: middle
@@ -1924,6 +1931,13 @@ article
 
 @media screen and (min-width: 320px) and (max-width: 480px)
   .tab-box
+    .menu-container-wrap
+      .menu-container
+        .menu
+          a
+            display: block
+            padding-top: 15px
+            padding-bottom: 15px
     .tab
       form
         label, .form-row
@@ -1938,6 +1952,13 @@ article
 
 @media screen and (min-width: 0) and (max-width: 320px)
   .tab-box
+    .menu-container-wrap
+      .menu-container
+        .menu
+          a
+            display: block
+            padding-top: 15px
+            padding-bottom: 15px
     .tab
       form
         label, .form-row
@@ -1949,3 +1970,66 @@ article
             display: block
             padding-left: 0
             padding-right: 5px
+
+
+// cont page
+
+.panel-one-wrap
+  margin-top: 30px
+  width: 100%
+  .panel-one-container
+    padding-right: 11.5px
+    .panel-one
+      padding-bottom: 30px
+      background-color: white
+      border: 1px solid #d3d7df
+      overflow-x: auto
+      +box-sizing()
+      +border-radius(3px)
+      header
+        overflow-x: auto
+        .button-wrap
+          display: table-cell
+          padding-right: 12px
+          padding-top: 5px
+          vertical-align: middle
+      .first-column
+        width: 100%
+        max-width: 100%
+        padding: 16px
+        border-top: 1px solid #ddd
+        +box-sizing()
+        tr
+          height: 33px
+          td
+            font-size: 14px
+            &:first-child
+              width: 170px
+              white-space: nowrap
+              text-align: right
+              color: #515151
+              font-family: "Montserrat Bold"
+              vertical-align: middle
+            &:last-child
+              text-align: left
+              color: #878787
+              font-family: "Roboto"
+              font-weight: 300
+              padding-left: 33px
+              vertical-align: middle
+          &.total-container
+            td
+              padding-top: 36px
+              color: #515151
+              font-family: "Montserrat Bold"
+      .input-field
+        width: 251px
+      .button-wrap
+        margin-top: 18px
+
+@media screen and (min-width: 320px) and (max-width: 480px)
+  .panel-one-wrap
+    .panel-one-container
+      .panel-one
+        .first-column
+          padding-left: 15px
