@@ -82,8 +82,12 @@ body
     overflow: hidden
 
 .body
+  -webkit-filter: blur(0)
+  +transition(padding-right, 0s 0.6s, ease-in-out)
   &.hidden
+    padding-right: 17px
     -webkit-filter: blur(3px)
+    +transition(padding-right, 0s 0s, ease-in-out)
 
 // common
 
@@ -1845,21 +1849,9 @@ article
             max-width: 413px
             height: 80px
 
-@media screen and (min-width: 320px) and (max-width: 480px)
+@media screen and (min-width: 0) and (max-width: 480px)
   .add-reservation
-    form
-      label, .form-row
-        display: block
-        .title
-          text-align: left
-          display: block
-        .content
-          display: block
-          padding-left: 0
-          padding-right: 5px
-
-@media screen and (min-width: 0) and (max-width: 320px)
-  .add-reservation
+    padding-bottom: 45px
     form
       label, .form-row
         display: block
@@ -1929,44 +1921,30 @@ article
               max-width: 413px
               height: 80px
 
-@media screen and (min-width: 320px) and (max-width: 480px)
+@media screen and (min-width: 0) and (max-width: 480px)
   .tab-box
+    padding-bottom: 45px
     .menu-container-wrap
       .menu-container
         .menu
+          margin-top: 15px
+          margin-bottom: 15px
           a
             display: block
             padding-top: 15px
             padding-bottom: 15px
     .tab
       form
+        padding-top: 0
+        padding-bottom: 0
+        padding-left: 20px
         label, .form-row
           display: block
           .title
             text-align: left
             display: block
           .content
-            display: block
-            padding-left: 0
-            padding-right: 5px
-
-@media screen and (min-width: 0) and (max-width: 320px)
-  .tab-box
-    .menu-container-wrap
-      .menu-container
-        .menu
-          a
-            display: block
-            padding-top: 15px
-            padding-bottom: 15px
-    .tab
-      form
-        label, .form-row
-          display: block
-          .title
-            text-align: left
-            display: block
-          .content
+            padding-top: 0
             display: block
             padding-left: 0
             padding-right: 5px
@@ -2019,17 +1997,60 @@ article
               vertical-align: middle
           &.total-container
             td
-              padding-top: 36px
               color: #515151
               font-family: "Montserrat Bold"
+              vertical-align: bottom
+              &:first-child
+                padding-top: 36px
       .input-field
         width: 251px
       .button-wrap
         margin-top: 18px
 
-@media screen and (min-width: 320px) and (max-width: 480px)
+@media screen and (min-width: 480px) and (max-width: 768px)
   .panel-one-wrap
     .panel-one-container
       .panel-one
+        header
+          .button-wrap
+            margin-top: 0
+            margin-bottom: 15px
+            float: left
+            display: block
         .first-column
-          padding-left: 15px
+          tr
+            td
+              display: block
+              padding-bottom: 10px
+              &:first-child
+                padding-top: 10px
+                padding-left: 33px
+                text-align: left
+
+@media screen and (min-width: 0) and (max-width: 480px)
+  .panel-one-wrap
+    .panel-one-container
+      .panel-one
+        header
+          .button-wrap
+            margin-top: 0
+            margin-bottom: 15px
+            float: left
+            display: block
+        .first-column
+          tr
+            td
+              display: block
+              padding-bottom: 3px
+              &:first-child
+                padding-top: 10px
+                padding-left: 15px
+                text-align: left
+              &:last-child
+                padding-left: 15px
+            &.total-container
+              td
+                &:first-child
+                  padding-top: 16px
+          .button-wrap
+            margin-top: 5px

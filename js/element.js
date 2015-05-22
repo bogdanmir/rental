@@ -155,18 +155,18 @@ $(function() {
   var $body = $("body");
   var $bodyContainer = $body.find(".body");
   var $popupFilter = $body.find(".popup-filter");
-  var $sendMailActivator = $(".popup-open-activator");
+  var $popupActivator = $(".popup-open-activator");
 
-  $sendMailActivator.on("click", function() {
+  $popupActivator.on("click", function() {
     var $popupContainer = $body.find(".email-popup");
     var $popup = $popupContainer.find(".popup");
     var $iconDelete = $popupContainer.find(".popup-close-activator");
     var closeHandler = function() {
       $popupContainer.removeClass("active");
+      $popupFilter.removeClass("active");
+      $bodyContainer.removeClass("hidden");
       setTimeout(function() {
         $body.removeClass("hidden");
-        $popupFilter.removeClass("active");
-        $bodyContainer.removeClass("hidden");
         $popupContainer.css({ display: "none" });
         $popupFilter.css({ display: "none" });
         $iconDelete.off("click", closeHandler);

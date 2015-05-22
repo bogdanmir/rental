@@ -26,8 +26,21 @@ body {
   body.hidden {
     overflow: hidden; }
 
-.body.hidden {
-  -webkit-filter: blur(3px); }
+.body {
+  -webkit-filter: blur(0);
+  -webkit-transition: padding-right 0s 0.6s ease-in-out;
+  -moz-transition: padding-right 0s 0.6s ease-in-out;
+  -ms-transition: padding-right 0s 0.6s ease-in-out;
+  -o-transition: padding-right 0s 0.6s ease-in-out;
+  transition: padding-right 0s 0.6s ease-in-out; }
+  .body.hidden {
+    padding-right: 17px;
+    -webkit-filter: blur(3px);
+    -webkit-transition: padding-right 0s 0s ease-in-out;
+    -moz-transition: padding-right 0s 0s ease-in-out;
+    -ms-transition: padding-right 0s 0s ease-in-out;
+    -o-transition: padding-right 0s 0s ease-in-out;
+    transition: padding-right 0s 0s ease-in-out; }
 
 p, h1, h3, h4, ul {
   margin: 0; }
@@ -2194,26 +2207,18 @@ article {
           max-width: 413px;
           height: 80px; }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
-  .add-reservation form label, .add-reservation form .form-row {
-    display: block; }
-    .add-reservation form label .title, .add-reservation form .form-row .title {
-      text-align: left;
+@media screen and (min-width: 0) and (max-width: 480px) {
+  .add-reservation {
+    padding-bottom: 45px; }
+    .add-reservation form label, .add-reservation form .form-row {
       display: block; }
-    .add-reservation form label .content, .add-reservation form .form-row .content {
-      display: block;
-      padding-left: 0;
-      padding-right: 5px; } }
-@media screen and (min-width: 0) and (max-width: 320px) {
-  .add-reservation form label, .add-reservation form .form-row {
-    display: block; }
-    .add-reservation form label .title, .add-reservation form .form-row .title {
-      text-align: left;
-      display: block; }
-    .add-reservation form label .content, .add-reservation form .form-row .content {
-      display: block;
-      padding-left: 0;
-      padding-right: 5px; } }
+      .add-reservation form label .title, .add-reservation form .form-row .title {
+        text-align: left;
+        display: block; }
+      .add-reservation form label .content, .add-reservation form .form-row .content {
+        display: block;
+        padding-left: 0;
+        padding-right: 5px; } }
 .tab-box {
   margin-top: 20px;
   padding-bottom: 130px; }
@@ -2277,34 +2282,30 @@ article {
             max-width: 413px;
             height: 80px; }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
-  .tab-box .menu-container-wrap .menu-container .menu a {
-    display: block;
-    padding-top: 15px;
-    padding-bottom: 15px; }
-  .tab-box .tab form label, .tab-box .tab form .form-row {
-    display: block; }
-    .tab-box .tab form label .title, .tab-box .tab form .form-row .title {
-      text-align: left;
-      display: block; }
-    .tab-box .tab form label .content, .tab-box .tab form .form-row .content {
-      display: block;
-      padding-left: 0;
-      padding-right: 5px; } }
-@media screen and (min-width: 0) and (max-width: 320px) {
-  .tab-box .menu-container-wrap .menu-container .menu a {
-    display: block;
-    padding-top: 15px;
-    padding-bottom: 15px; }
-  .tab-box .tab form label, .tab-box .tab form .form-row {
-    display: block; }
-    .tab-box .tab form label .title, .tab-box .tab form .form-row .title {
-      text-align: left;
-      display: block; }
-    .tab-box .tab form label .content, .tab-box .tab form .form-row .content {
-      display: block;
-      padding-left: 0;
-      padding-right: 5px; } }
+@media screen and (min-width: 0) and (max-width: 480px) {
+  .tab-box {
+    padding-bottom: 45px; }
+    .tab-box .menu-container-wrap .menu-container .menu {
+      margin-top: 15px;
+      margin-bottom: 15px; }
+      .tab-box .menu-container-wrap .menu-container .menu a {
+        display: block;
+        padding-top: 15px;
+        padding-bottom: 15px; }
+    .tab-box .tab form {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 20px; }
+      .tab-box .tab form label, .tab-box .tab form .form-row {
+        display: block; }
+        .tab-box .tab form label .title, .tab-box .tab form .form-row .title {
+          text-align: left;
+          display: block; }
+        .tab-box .tab form label .content, .tab-box .tab form .form-row .content {
+          padding-top: 0;
+          display: block;
+          padding-left: 0;
+          padding-right: 5px; } }
 .panel-one-wrap {
   margin-top: 30px;
   width: 100%; }
@@ -2360,16 +2361,47 @@ article {
               padding-left: 33px;
               vertical-align: middle; }
           .panel-one-wrap .panel-one-container .panel-one .first-column tr.total-container td {
-            padding-top: 36px;
             color: #515151;
-            font-family: "Montserrat Bold"; }
+            font-family: "Montserrat Bold";
+            vertical-align: bottom; }
+            .panel-one-wrap .panel-one-container .panel-one .first-column tr.total-container td:first-child {
+              padding-top: 36px; }
       .panel-one-wrap .panel-one-container .panel-one .input-field {
         width: 251px; }
       .panel-one-wrap .panel-one-container .panel-one .button-wrap {
         margin-top: 18px; }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
-  .panel-one-wrap .panel-one-container .panel-one .first-column {
-    padding-left: 15px; } }
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .panel-one-wrap .panel-one-container .panel-one header .button-wrap {
+    margin-top: 0;
+    margin-bottom: 15px;
+    float: left;
+    display: block; }
+  .panel-one-wrap .panel-one-container .panel-one .first-column tr td {
+    display: block;
+    padding-bottom: 10px; }
+    .panel-one-wrap .panel-one-container .panel-one .first-column tr td:first-child {
+      padding-top: 10px;
+      padding-left: 33px;
+      text-align: left; } }
+@media screen and (min-width: 0) and (max-width: 480px) {
+  .panel-one-wrap .panel-one-container .panel-one header .button-wrap {
+    margin-top: 0;
+    margin-bottom: 15px;
+    float: left;
+    display: block; }
+  .panel-one-wrap .panel-one-container .panel-one .first-column tr td {
+    display: block;
+    padding-bottom: 3px; }
+    .panel-one-wrap .panel-one-container .panel-one .first-column tr td:first-child {
+      padding-top: 10px;
+      padding-left: 15px;
+      text-align: left; }
+    .panel-one-wrap .panel-one-container .panel-one .first-column tr td:last-child {
+      padding-left: 15px; }
+  .panel-one-wrap .panel-one-container .panel-one .first-column tr.total-container td:first-child {
+    padding-top: 16px; }
+  .panel-one-wrap .panel-one-container .panel-one .first-column .button-wrap {
+    margin-top: 5px; } }
 
 /*# sourceMappingURL=style.css.map */
