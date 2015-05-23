@@ -83,11 +83,10 @@ body
 
 .body
   -webkit-filter: blur(0)
-  // +transition(padding-right, 0s 0.6s, ease-in-out)
+  filter: none
   &.hidden
-    // padding-right: 17px
     -webkit-filter: blur(3px)
-    // +transition(padding-right, 0s 0s, ease-in-out)
+    filter: url("data:image/svg+xml;utf8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cfilter%20id%3D%22blur%22%3E%3CfeGaussianBlur%20stdDeviation%3D%223%22%20%2F%3E%3C%2Ffilter%3E%3C%2Fsvg%3E#blur")
 
 // common
 
@@ -239,7 +238,7 @@ label.checkbox
 .error
   color: #f14a4a
 
-.button
+a.button, button.button
   display: table-cell
   vertical-align: middle
   text-align: center
@@ -312,23 +311,10 @@ label.checkbox
     padding-left: 6px
     +box-sizing()
     +border-radius(3px)
-  .icon-select-arrow
-    display: block
-    position: absolute
-    background-color: white
-    width: 25px
-    right: 1px
-    top: 50%
-    margin-top: -5px
-    font-size: 7px
-    background-color: white
-    color: #8a8a8a
-    +user-select()
 
 .select-container
   cursor: pointer
   position: relative
-  border: 1px solid #e0e0e0
   display: block
   +border-radius(3px)
   select
@@ -394,6 +380,8 @@ label.checkbox
   width: 100%
   +user-select()
   +border-radius(3px)
+  label
+    cursor: pointer
   .field-container
     display: table-cell
     input
@@ -1292,27 +1280,12 @@ article
                 +transition(all, 0.2s, ease-in-out)
           .select-field
             cursor: pointer
-            border: 1px solid #e0e0e0
             margin-top: 6px
             display: table
             width: 100%
-            position: relative
-            +user-select()
-            +border-radius(3px)
             .field-container
               display: table-cell
               width: 100%
-              select
-                cursor: pointer
-                height: 35px
-                width: 100%
-                padding: 8px 10px
-                color: #878787
-                font-family: "Roboto"
-                font-size: 14px
-                padding-top: 8px
-                font-weight: 300
-                +box-sizing()
             .icon-container
               position: absolute
               background-color: white
@@ -1672,8 +1645,6 @@ article
   left: 0
   display: none
   opacity: 0
-  +perspective(600px)
-  +transform-style(preserve-3d)
   +transition(all, 0.6s, ease-in-out)
   &.active
     opacity: 1
@@ -1686,6 +1657,8 @@ article
     display: table
     padding-top: 30px
     padding-bottom: 30px
+    +perspective(600px)
+    +transform-style(preserve-3d)
     .popup
       z-index: 1000
       position: relative
@@ -2065,6 +2038,7 @@ article
         max-width: 100%
         padding: 16px
         border-top: 1px solid #ddd
+        border-spacing: 0
         +box-sizing()
         tr
           height: 33px

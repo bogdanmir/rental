@@ -214,4 +214,10 @@ $(function() {
     });
   });
 
+  try {
+    $("select").selectric();
+  } catch (error) {
+    
+  }
+
 });
