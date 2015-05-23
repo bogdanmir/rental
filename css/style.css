@@ -141,7 +141,6 @@ label.checkbox {
     position: absolute;
     opacity: 0;
     width: 188px;
-    height: 107px;
     top: -6.5px;
     left: -11px;
     background-color: white;
@@ -166,7 +165,7 @@ label.checkbox {
       .property-box .property-container ul li {
         display: table-row;
         height: 31px; }
-        .property-box .property-container ul li a .icon-edit, .property-box .property-container ul li a .icon-view {
+        .property-box .property-container ul li a .icon-edit, .property-box .property-container ul li a .icon-convert, .property-box .property-container ul li a .icon-view {
           display: table-cell;
           color: #858d9c;
           line-height: 30px;
@@ -178,6 +177,8 @@ label.checkbox {
           transition: all 0.2s ease-in-out; }
         .property-box .property-container ul li a .icon-edit {
           font-size: 17px; }
+        .property-box .property-container ul li a .icon-convert {
+          font-size: 15px; }
         .property-box .property-container ul li a .icon-view {
           font-size: 11px; }
         .property-box .property-container ul li a .title {
@@ -188,7 +189,7 @@ label.checkbox {
           font-size: 14px;
           font-weight: 300;
           padding-left: 6px; }
-        .property-box .property-container ul li a:hover .icon-view, .property-box .property-container ul li a:hover .icon-edit {
+        .property-box .property-container ul li a:hover .icon-view, .property-box .property-container ul li a:hover .icon-convert, .property-box .property-container ul li a:hover .icon-edit {
           color: #4a4a4a; }
         .property-box .property-container ul li a:hover .title {
           text-decoration: underline; }
