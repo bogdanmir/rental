@@ -83,11 +83,11 @@ body
 
 .body
   -webkit-filter: blur(0)
-  +transition(padding-right, 0s 0.6s, ease-in-out)
+  // +transition(padding-right, 0s 0.6s, ease-in-out)
   &.hidden
-    padding-right: 17px
+    // padding-right: 17px
     -webkit-filter: blur(3px)
-    +transition(padding-right, 0s 0s, ease-in-out)
+    // +transition(padding-right, 0s 0s, ease-in-out)
 
 // common
 
@@ -293,6 +293,36 @@ label.checkbox
     color: #bebebe
     &:hover
       background-color: #eaeaee
+
+.simple-select
+  position: relative
+  width: 251px
+  height: 35px
+  select
+    cursor: pointer
+    width: 100%
+    height: 35px
+    border: 1px solid #e0e0e0
+    background-color: white
+    color: #878787
+    font-family: "Roboto"
+    font-size: 14px
+    font-weight: 300
+    padding-left: 6px
+    +box-sizing()
+    +border-radius(3px)
+  .icon-select-arrow
+    display: block
+    position: absolute
+    background-color: white
+    width: 25px
+    right: 1px
+    top: 50%
+    margin-top: -5px
+    font-size: 7px
+    background-color: white
+    color: #8a8a8a
+    +user-select()
 
 .select-container
   cursor: pointer
@@ -849,6 +879,8 @@ article
               &:nth-child(2)
                 padding-left: 0
 
+// Pagination styles
+
 .pagintaion-container
   padding-top: 23px
   padding-left: 15px
@@ -899,6 +931,43 @@ article
         .icon-pagination-left
           color: #5b5b5b
 
+
+// On list styles
+
+.on-list-container
+  padding-top: 23px
+  padding-left: 15px
+  +box-sizing()
+  .on-list
+    width: 204px
+    height: 39px
+    border: 1px solid #e0e0e0
+    display: table
+    +border-radius(3px)
+    a
+      width: 51px
+      display: table-cell
+      vertical-align: middle
+      text-align: center
+      color: gainsboro
+      font-family: "Avenir LT Std"
+      font-size: 16px
+      font-weight: 300
+      border-left: 1px solid #e0e0e0
+      text-decoration: none
+      padding-top: 2px
+      color: #838383
+      +box-sizing()
+      +transition(all, 0.2s, ease-in-out)
+      &:first-child
+        border-left: none
+      &.active
+        color: #575757
+        background-color: #f0f0f6
+      &:hover
+        color: #575757
+        background-color: #f0f0f6
+
 // emails
 
 .table-container
@@ -912,12 +981,13 @@ article
       padding-left: 26px
       padding-top: 5px
       vertical-align: middle
+    header + table
+      border-top: 1px solid #ddd
     table
       border-collapse: collapse
       width: 100%
       max-width: 100%
       table-layout: fixed
-      border-top: 1px solid #ddd
       border-bottom: 1px solid #ddd
       th, td
         border-left: 1px solid rgba(221, 221, 221, 0.47)
@@ -933,16 +1003,21 @@ article
             font-weight: 400
             text-align: left
             padding-left: 18px
+            padding-right: 18px
             padding-top: 8px
             overflow: hidden
             white-space: nowrap
-            text-overflow: ellipsis
+            // text-overflow: ellipsis
             +box-sizing()
             &.cell-50
               width: 50px
             &.cell-30
               width: 30px
               padding-left: 0
+            &.cell-125
+              width: 125px
+            &.cell-100
+              width: 100px
             &.cell-150
               width: 150px
             &.cell-200
@@ -1594,6 +1669,7 @@ article
         +transform(translateY(0) translateZ(0) rotateX(0))
   .popup-wrap
     height: 100%
+    width: 100%
     display: table
     padding-top: 30px
     padding-bottom: 30px
@@ -1894,7 +1970,7 @@ article
       padding-right: 15px
       width: 100%
       +box-sizing()
-      label, .form-row
+      .form-row
         display: table-row
         .title
           display: table-cell
@@ -2054,3 +2130,143 @@ article
                   padding-top: 16px
           .button-wrap
             margin-top: 5px
+
+
+// Table filter box
+
+.table-filter-container
+  margin-top: 25px
+  display: table
+  width: 100%
+  .table-filter
+    height: 103px
+    background-color: white
+    border: 1px solid #d3d7df
+    border-radius: 3px
+    display: table-cell
+    vertical-align: middle
+    padding: 20px
+    width: 100%
+    +box-sizing()
+    .button-wrap
+      float: left
+      margin-top: 10px
+      margin-bottom: 10px
+      margin-right: 20px
+      .button
+        display: table
+        padding-left: 0
+        padding-right: 0
+        height: 35px
+        .icon-add-new
+          display: table-cell
+          vertical-align: middle
+          font-size: 21px
+          padding-left: 10px
+          padding-right: 10px
+        .title
+          display: table-cell
+          vertical-align: middle
+          text-transform: none
+          padding-right: 15px
+          padding-top: 3px
+    .right-container-wrap
+      .right-container
+        float: right
+        .filter
+          margin-top: 10px
+          margin-bottom: 10px
+          float: left
+          display: table
+          padding-right: 26px
+          .title
+            display: table-cell
+            width: 1px
+            color: #515151
+            font-family: "Montserrat Bold"
+            font-size: 14px
+            font-weight: 400
+            white-space: nowrap
+            vertical-align: middle
+          .simple-select
+            padding-left: 15px
+            display: table-cell
+        .search-container
+          float: left
+          width: 400px
+          height: 35px
+          margin-right: 15px
+          position: relative
+          margin-top: 10px
+          margin-bottom: 10px
+          input
+            width: 100%
+            height: 100%
+            border: 1px solid #e0e0e0
+            padding: 12px 12px
+            color: #878787
+            font-family: "Roboto"
+            font-size: 14px
+            +box-sizing()
+            +border-radius(3px)
+          .icon-search
+            cursor: pointer
+            position: absolute
+            right: 12px
+            top: 50%
+            margin-top: -9px
+            font-size: 18px
+            color: #a2a2a2
+        .button-container
+          float: left
+          margin-top: 10px
+          margin-bottom: 10px
+          height: 35px
+          .button-wrap
+            margin-top: 0
+            margin-bottom: 0
+            margin-right: 10px
+            height: 35px
+            &:last-child
+              margin-right: 0
+            .simple-button
+              height: 35px
+
+@media screen and (min-width: 0) and (max-width: 480px)
+  .table-filter-container
+    .table-filter
+      .right-container-wrap
+        .right-container
+          .filter
+            width: 100%
+          .search-container
+            width: 100%
+          .button-container
+
+
+// 
+
+.reservation-center
+  .table
+    header + table
+      border-top: 1px solid #ddd
+    table
+      th:nth-child(7), td:nth-child(7), th:nth-child(8), td:nth-child(8)
+        padding-left: 30px
+      th:nth-child(7), td:nth-child(7)
+        border-left: 1px solid rgba(221, 221, 221, 0.47) !important
+      td:nth-child(7)
+        padding-left: 47.5px
+
+.pagination-list-container
+  padding-top: 23px
+  padding-left: 15px
+  padding-right: 15px
+  .pagintaion-container
+    float: left
+    padding-top: 0
+    padding-left: 0
+  .on-list-container
+    float: right
+    padding-top: 0
+    padding-left: 0

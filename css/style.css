@@ -27,20 +27,9 @@ body {
     overflow: hidden; }
 
 .body {
-  -webkit-filter: blur(0);
-  -webkit-transition: padding-right 0s 0.6s ease-in-out;
-  -moz-transition: padding-right 0s 0.6s ease-in-out;
-  -ms-transition: padding-right 0s 0.6s ease-in-out;
-  -o-transition: padding-right 0s 0.6s ease-in-out;
-  transition: padding-right 0s 0.6s ease-in-out; }
+  -webkit-filter: blur(0); }
   .body.hidden {
-    padding-right: 17px;
-    -webkit-filter: blur(3px);
-    -webkit-transition: padding-right 0s 0s ease-in-out;
-    -moz-transition: padding-right 0s 0s ease-in-out;
-    -ms-transition: padding-right 0s 0s ease-in-out;
-    -o-transition: padding-right 0s 0s ease-in-out;
-    transition: padding-right 0s 0s ease-in-out; }
+    -webkit-filter: blur(3px); }
 
 p, h1, h3, h4, ul {
   margin: 0; }
@@ -290,6 +279,47 @@ label.checkbox {
     color: #bebebe; }
     .simple-button.white:hover {
       background-color: #eaeaee; }
+
+.simple-select {
+  position: relative;
+  width: 251px;
+  height: 35px; }
+  .simple-select select {
+    cursor: pointer;
+    width: 100%;
+    height: 35px;
+    border: 1px solid #e0e0e0;
+    background-color: white;
+    color: #878787;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 300;
+    padding-left: 6px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px; }
+  .simple-select .icon-select-arrow {
+    display: block;
+    position: absolute;
+    background-color: white;
+    width: 25px;
+    right: 1px;
+    top: 50%;
+    margin-top: -5px;
+    font-size: 7px;
+    background-color: white;
+    color: #8a8a8a;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none; }
 
 .select-container {
   cursor: pointer;
@@ -1106,6 +1136,55 @@ article {
         .pagintaion-container .pagination a:hover .icon-pagination-left {
           color: #5b5b5b; }
 
+.on-list-container {
+  padding-top: 23px;
+  padding-left: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+  .on-list-container .on-list {
+    width: 204px;
+    height: 39px;
+    border: 1px solid #e0e0e0;
+    display: table;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px; }
+    .on-list-container .on-list a {
+      width: 51px;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      color: gainsboro;
+      font-family: "Avenir LT Std";
+      font-size: 16px;
+      font-weight: 300;
+      border-left: 1px solid #e0e0e0;
+      text-decoration: none;
+      padding-top: 2px;
+      color: #838383;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+      .on-list-container .on-list a:first-child {
+        border-left: none; }
+      .on-list-container .on-list a.active {
+        color: #575757;
+        background-color: #f0f0f6; }
+      .on-list-container .on-list a:hover {
+        color: #575757;
+        background-color: #f0f0f6; }
+
 .table-container {
   margin-top: 32px; }
   .table-container .table {
@@ -1117,12 +1196,13 @@ article {
       padding-left: 26px;
       padding-top: 5px;
       vertical-align: middle; }
+    .table-container .table header + table {
+      border-top: 1px solid #ddd; }
     .table-container .table table {
       border-collapse: collapse;
       width: 100%;
       max-width: 100%;
       table-layout: fixed;
-      border-top: 1px solid #ddd;
       border-bottom: 1px solid #ddd; }
       .table-container .table table th, .table-container .table table td {
         border-left: 1px solid rgba(221, 221, 221, 0.47); }
@@ -1137,10 +1217,10 @@ article {
           font-weight: 400;
           text-align: left;
           padding-left: 18px;
+          padding-right: 18px;
           padding-top: 8px;
           overflow: hidden;
           white-space: nowrap;
-          text-overflow: ellipsis;
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
           -o-box-sizing: border-box;
@@ -1151,6 +1231,10 @@ article {
           .table-container .table table thead tr th.cell-30 {
             width: 30px;
             padding-left: 0; }
+          .table-container .table table thead tr th.cell-125 {
+            width: 125px; }
+          .table-container .table table thead tr th.cell-100 {
+            width: 100px; }
           .table-container .table table thead tr th.cell-150 {
             width: 150px; }
           .table-container .table table thead tr th.cell-200 {
@@ -1922,6 +2006,7 @@ article {
       transform: translateY(0) translateZ(0) rotateX(0); }
   .popup-container .popup-wrap {
     height: 100%;
+    width: 100%;
     display: table;
     padding-top: 30px;
     padding-bottom: 30px; }
@@ -2256,9 +2341,9 @@ article {
       -o-box-sizing: border-box;
       -ms-box-sizing: border-box;
       box-sizing: border-box; }
-      .tab-box .tab form label, .tab-box .tab form .form-row {
+      .tab-box .tab form .form-row {
         display: table-row; }
-        .tab-box .tab form label .title, .tab-box .tab form .form-row .title {
+        .tab-box .tab form .form-row .title {
           display: table-cell;
           padding-top: 10px;
           padding-bottom: 10px;
@@ -2268,16 +2353,16 @@ article {
           font-family: "Montserrat Regular";
           font-size: 14px;
           font-weight: 400; }
-        .tab-box .tab form label .content, .tab-box .tab form .form-row .content {
+        .tab-box .tab form .form-row .content {
           padding-top: 10px;
           padding-bottom: 10px;
           display: table-cell;
           padding-left: 30px;
           text-align: left;
           padding-right: 50px; }
-          .tab-box .tab form label .content .date-field, .tab-box .tab form label .content .select-container, .tab-box .tab form label .content .input-field, .tab-box .tab form .form-row .content .date-field, .tab-box .tab form .form-row .content .select-container, .tab-box .tab form .form-row .content .input-field {
+          .tab-box .tab form .form-row .content .date-field, .tab-box .tab form .form-row .content .select-container, .tab-box .tab form .form-row .content .input-field {
             width: 251px; }
-          .tab-box .tab form label .content .area-container textarea, .tab-box .tab form .form-row .content .area-container textarea {
+          .tab-box .tab form .form-row .content .area-container textarea {
             width: 100%;
             max-width: 413px;
             height: 80px; }
@@ -2403,5 +2488,139 @@ article {
     padding-top: 16px; }
   .panel-one-wrap .panel-one-container .panel-one .first-column .button-wrap {
     margin-top: 5px; } }
+.table-filter-container {
+  margin-top: 25px;
+  display: table;
+  width: 100%; }
+  .table-filter-container .table-filter {
+    height: 103px;
+    background-color: white;
+    border: 1px solid #d3d7df;
+    border-radius: 3px;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box; }
+    .table-filter-container .table-filter .button-wrap {
+      float: left;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-right: 20px; }
+      .table-filter-container .table-filter .button-wrap .button {
+        display: table;
+        padding-left: 0;
+        padding-right: 0;
+        height: 35px; }
+        .table-filter-container .table-filter .button-wrap .button .icon-add-new {
+          display: table-cell;
+          vertical-align: middle;
+          font-size: 21px;
+          padding-left: 10px;
+          padding-right: 10px; }
+        .table-filter-container .table-filter .button-wrap .button .title {
+          display: table-cell;
+          vertical-align: middle;
+          text-transform: none;
+          padding-right: 15px;
+          padding-top: 3px; }
+    .table-filter-container .table-filter .right-container-wrap .right-container {
+      float: right; }
+      .table-filter-container .table-filter .right-container-wrap .right-container .filter {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        float: left;
+        display: table;
+        padding-right: 26px; }
+        .table-filter-container .table-filter .right-container-wrap .right-container .filter .title {
+          display: table-cell;
+          width: 1px;
+          color: #515151;
+          font-family: "Montserrat Bold";
+          font-size: 14px;
+          font-weight: 400;
+          white-space: nowrap;
+          vertical-align: middle; }
+        .table-filter-container .table-filter .right-container-wrap .right-container .filter .simple-select {
+          padding-left: 15px;
+          display: table-cell; }
+      .table-filter-container .table-filter .right-container-wrap .right-container .search-container {
+        float: left;
+        width: 400px;
+        height: 35px;
+        margin-right: 15px;
+        position: relative;
+        margin-top: 10px;
+        margin-bottom: 10px; }
+        .table-filter-container .table-filter .right-container-wrap .right-container .search-container input {
+          width: 100%;
+          height: 100%;
+          border: 1px solid #e0e0e0;
+          padding: 12px 12px;
+          color: #878787;
+          font-family: "Roboto";
+          font-size: 14px;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          -o-box-sizing: border-box;
+          -ms-box-sizing: border-box;
+          box-sizing: border-box;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          -ms-border-radius: 3px;
+          border-radius: 3px; }
+        .table-filter-container .table-filter .right-container-wrap .right-container .search-container .icon-search {
+          cursor: pointer;
+          position: absolute;
+          right: 12px;
+          top: 50%;
+          margin-top: -9px;
+          font-size: 18px;
+          color: #a2a2a2; }
+      .table-filter-container .table-filter .right-container-wrap .right-container .button-container {
+        float: left;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 35px; }
+        .table-filter-container .table-filter .right-container-wrap .right-container .button-container .button-wrap {
+          margin-top: 0;
+          margin-bottom: 0;
+          margin-right: 10px;
+          height: 35px; }
+          .table-filter-container .table-filter .right-container-wrap .right-container .button-container .button-wrap:last-child {
+            margin-right: 0; }
+          .table-filter-container .table-filter .right-container-wrap .right-container .button-container .button-wrap .simple-button {
+            height: 35px; }
+
+@media screen and (min-width: 0) and (max-width: 480px) {
+  .table-filter-container .table-filter .right-container-wrap .right-container .filter {
+    width: 100%; }
+  .table-filter-container .table-filter .right-container-wrap .right-container .search-container {
+    width: 100%; } }
+.reservation-center .table header + table {
+  border-top: 1px solid #ddd; }
+.reservation-center .table table th:nth-child(7), .reservation-center .table table td:nth-child(7), .reservation-center .table table th:nth-child(8), .reservation-center .table table td:nth-child(8) {
+  padding-left: 30px; }
+.reservation-center .table table th:nth-child(7), .reservation-center .table table td:nth-child(7) {
+  border-left: 1px solid rgba(221, 221, 221, 0.47) !important; }
+.reservation-center .table table td:nth-child(7) {
+  padding-left: 47.5px; }
+
+.pagination-list-container {
+  padding-top: 23px;
+  padding-left: 15px;
+  padding-right: 15px; }
+  .pagination-list-container .pagintaion-container {
+    float: left;
+    padding-top: 0;
+    padding-left: 0; }
+  .pagination-list-container .on-list-container {
+    float: right;
+    padding-top: 0;
+    padding-left: 0; }
 
 /*# sourceMappingURL=style.css.map */

@@ -189,27 +189,18 @@ $(function() {
   var $tabs = $tabBox.find(".tab");
 
   $leadMenuLink.each(function(indexActivator, elementActivator) {
-
     var $elementActivator = $(elementActivator);
-
     $elementActivator.on("click", function() {
-
       $leadMenuLink.each(function(indexLink, elementLink) {
-
         var $elementLink = $(elementLink);
-
         if (indexActivator === indexLink) {
           $elementLink.addClass("active");
         } else {
           $elementLink.removeClass("active");
         }
-
       });
-
       $tabs.each(function(indexTab, elementTab) {
-
         var $elementTab = $(elementTab);
-
         if (indexActivator === indexTab) {
           $elementTab.addClass("active");
           setTimeout(function() {
@@ -219,12 +210,8 @@ $(function() {
           $elementTab.removeClass("active");
           $elementTab.removeClass("show");
         }
-
       });
-
-
     });
-
   });
 
 });
