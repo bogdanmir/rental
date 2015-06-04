@@ -2258,7 +2258,6 @@ article
       //   padding-left: 30px
       th:nth-child(7), td:nth-child(7)
         border-left: 1px solid rgba(221, 221, 221, 0.47) !important
-<<<<<<< HEAD
 .wrapper-label
   display:inline-block
   position: relative
@@ -2271,7 +2270,7 @@ article
   &.lg
     max-width: 373px
     width: 100%
-    height: 146px
+    min-height: 146px
     padding: 41px 10px 41px 92px
     &.revenue:before
       display: block
@@ -2388,15 +2387,11 @@ article
   background-color: white
   border: 1px solid #d3d7df
   border-radius: 3px
-  .menu-icon
-    position:relative
-    top: 0
-    left: 0
   .menu-icon:after
     display: block
     position: absolute
-    top: 6px;
-    left: -15px;
+    top: 25px
+    right: 15px
     font-family: "dasboard-icons"
     font-size: 10px
     content: "\e605"
@@ -2408,7 +2403,7 @@ article
     margin: 36px 10px 
     .wrapper-left-bar
       display: inline-block 
-      vertical-align: top;
+      vertical-align: top
       width: 24px
       height: 260px
       span
@@ -2502,32 +2497,35 @@ article
     width: 100%
     overflow: auto
   .header
-      width:100%
-      min-height: 70px
-      padding: 23px 17px  
-      border-bottom: 1px solid #ddd;
-      box-sizing: border-box
-      h3
-        float: left 
-        padding: 0
-        margin: 0
-        font-family: "Montserrat Regular"
-        font-size: 20px
-        font-weight: 400
-        line-height: 24px
-        color: #515151
-      .right-content
+    position: relative
+    top: 0
+    left: 0
+    width:100%
+    min-height: 70px
+    padding: 23px 17px  
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box
+    h3
+      float: left 
+      padding: 0
+      margin: 0
+      font-family: "Montserrat Regular"
+      font-size: 20px
+      font-weight: 400
+      line-height: 24px
+      color: #515151
+    .right-content
+      display: inline-block
+      .counter
         display: inline-block
-        .counter
-          display: inline-block
-          padding: 5px 10px
-          background-color: #858d9c
-          border-radius: 101px
-          color: white
-          font-family: "Roboto"
-          font-size: 14px
-          font-weight: 300
-          line-height: 16px
+        padding: 5px 10px
+        background-color: #858d9c
+        border-radius: 101px
+        color: white
+        font-family: "Roboto"
+        font-size: 14px
+        font-weight: 300
+        line-height: 16px
 @media screen and (min-width: 480px)
   .custom-panel
     .header
@@ -2672,5 +2670,3 @@ article
       color: #4b5260
     .status
       font-weight: 400    
-=======
->>>>>>> 67994aefa987ad5ec49157dd44a5a4192e84106f
