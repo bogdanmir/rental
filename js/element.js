@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
 
   // User menu settings
 
@@ -106,8 +106,9 @@ $(function() {
   // Availability page
 
   // Date elements
-// <<<<<<< HEAD
- $(function() {
+
+$(function() {
+  try {
     $( "#from" ).datepicker({
       defaultDate: "+1w",
       changeMonth: true,
@@ -125,7 +126,10 @@ $(function() {
       }
 
     });
-  });
+  } catch (error) {
+    // console.error(error);
+  }
+});
 
   // Filter activator
 
@@ -145,5 +149,75 @@ $(function() {
     }
 
   });
+
+  // Popup
+
+  var $body = $("body");
+  var $bodyContainer = $body.find(".body");
+  var $popupFilter = $body.find(".popup-filter");
+  var $popupActivator = $(".popup-open-activator");
+
+  $popupActivator.on("click", function() {
+    var $popupContainer = $body.find(".email-popup");
+    var $popup = $popupContainer.find(".popup");
+    var $iconDelete = $popupContainer.find(".popup-close-activator");
+    var closeHandler = function() {
+      $popupContainer.removeClass("active");
+      $popupFilter.removeClass("active");
+      $bodyContainer.removeClass("hidden");
+      setTimeout(function() {
+        $body.removeClass("hidden");
+        $popupContainer.css({ display: "none" });
+        $popupFilter.css({ display: "none" });
+        $iconDelete.off("click", closeHandler);
+      }, 600);
+    };
+    $popupContainer.css({ display: "block" });
+    $popupFilter.css({ display: "block" });
+    setTimeout(function() {
+      $popupContainer.addClass("active");
+      $popupFilter.addClass("active");
+    }, 60);
+    $body.addClass("hidden");
+    $bodyContainer.addClass("hidden");
+    $iconDelete.on("click", closeHandler);
+  });
+
+  var $tabBox = $(".tab-box");
+  var $leadMenu = $tabBox.find(".menu");
+  var $leadMenuLink = $leadMenu.find("a");
+  var $tabs = $tabBox.find(".tab");
+
+  $leadMenuLink.each(function(indexActivator, elementActivator) {
+    var $elementActivator = $(elementActivator);
+    $elementActivator.on("click", function() {
+      $leadMenuLink.each(function(indexLink, elementLink) {
+        var $elementLink = $(elementLink);
+        if (indexActivator === indexLink) {
+          $elementLink.addClass("active");
+        } else {
+          $elementLink.removeClass("active");
+        }
+      });
+      $tabs.each(function(indexTab, elementTab) {
+        var $elementTab = $(elementTab);
+        if (indexActivator === indexTab) {
+          $elementTab.addClass("active");
+          setTimeout(function() {
+            $elementTab.addClass("show");
+          }, 50);
+        } else {
+          $elementTab.removeClass("active");
+          $elementTab.removeClass("show");
+        }
+      });
+    });
+  });
+
+  try {
+    $("select").selectric();
+  } catch (error) {
+    
+  }
 
 });

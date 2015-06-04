@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('../font/icomoon.eot?-4tp0qe');
-	src:url('../font/icomoon.eot?#iefix-4tp0qe') format('embedded-opentype'),
-		url('../font/icomoon.woff?-4tp0qe') format('woff'),
-		url('../font/icomoon.ttf?-4tp0qe') format('truetype'),
-		url('../font/icomoon.svg?-4tp0qe#icomoon') format('svg');
+	src:url('../font/icomoon.eot?uvgh51');
+	src:url('../font/icomoon.eot?#iefixuvgh51') format('embedded-opentype'),
+		url('../font/icomoon.woff?uvgh51') format('woff'),
+		url('../font/icomoon.ttf?uvgh51') format('truetype'),
+		url('../font/icomoon.svg?uvgh51#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,95 +23,120 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-add-new:before {
+	content: "\e625";
+}
+.icon-attach:before {
+	content: "\e624";
+}
+.icon-edit-ul:before {
+	content: "\e617";
+}
+.icon-edit-image:before {
+	content: "\e618";
+}
+.icon-float-left:before {
+	content: "\e619";
+}
+.icon-edit-right:before {
+	content: "\e61a";
+}
+.icon-edit-center:before {
+	content: "\e61b";
+}
+.icon-edit-left:before {
+	content: "\e61c";
+}
+.icon-edit-link:before {
+	content: "\e61d";
+}
+.icon-edit-strike:before {
+	content: "\e61e";
+}
+.icon-edit-uppercase:before {
+	content: "\e61f";
+}
+.icon-edit-italic:before {
+	content: "\e620";
+}
+.icon-edit-bold:before {
+	content: "\e621";
+}
 .icon-select-arrow:before {
 	content: "\e614";
 }
-
 .icon-date:before {
 	content: "\e613";
 }
-
+.icon-float-right:before {
+	content: "\e622";
+}
+.icon-edit-ol:before {
+	content: "\e623";
+}
 .icon-arrow-right:before {
 	content: "\e616";
 }
-
 .icon-arrow-left:before {
 	content: "\e615";
 }
-
 .icon-opener:before {
 	content: "\e612";
 }
-
 .icon-checked:before {
 	content: "\e611";
 }
-
+.icon-convert:before {
+	content: "\e626";
+}
 .icon-delete:before {
 	content: "\e60f";
 }
-
+.icon-pagination-left:before {
+	content: "\e60e";
+}
 .icon-pagination-right:before {
 	content: "\e610";
 }
-
-.icon-pagination -left:before {
-	content: "\e60e";
-}
-
 .icon-edit:before {
 	content: "\e60c";
 }
-
 .icon-view:before {
 	content: "\e60d";
 }
-
 .icon-status:before {
 	content: "\e60b";
 }
-
 .icon-property:before {
 	content: "\e60a";
 }
-
 .icon-setting:before {
 	content: "\e608";
 }
-
 .icon-search:before {
 	content: "\e609";
 }
-
 .icon-templates:before {
 	content: "\e600";
 }
-
 .icon-import:before {
 	content: "\e601";
 }
-
 .icon-reservation-center:before {
 	content: "\e602";
 }
-
 .icon-properties:before {
 	content: "\e603";
 }
-
 .icon-contacts:before {
 	content: "\e604";
 }
-
 .icon-dashboard:before {
 	content: "\e605";
 }
-
 .icon-availability:before {
 	content: "\e606";
 }
-
 .icon-inquiries:before {
 	content: "\e607";
 }
-

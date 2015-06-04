@@ -1,0 +1,931 @@
+<!doctype html>
+<html>
+<head>
+  <title>Rental</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/icon.css">
+  <link rel="stylesheet" type="text/css" href="css/selectric.css">
+</head>
+<body>
+
+  <!-- Email popup -->
+  <div class="popup-filter"></div>
+  <div class="popup-container email-popup">
+    <div class="popup-wrap">
+      <div class="popup">
+        <article>
+          <form>
+            <header>
+              <h4>Send mail</h4>
+              <div class="button-wrap popup-close-activator">
+                <span class="icon-delete"></span>
+              </div>
+            </header>
+            <div class="params-panel">
+              <label class="panel-row">
+                <span class="title">Template:</span>
+                <span class="content">
+                  <span class="select-container">
+                    <select>
+                      <option value="">Mail to</option>
+                      <option>to</option>
+                    </select>
+                  </span>
+                </span>
+              </label>
+              <label class="panel-row">
+                <span class="title">Subject:</span>
+                <span class="content">
+                  <span class="input-field">
+                    <span class="input-container">
+                      <input type="text" />
+                    </span>
+                  </span>
+                </span>
+              </label>
+              <div class="panel-row">
+                <span class="title">Message:</span>
+                <span class="content">
+                  <span class="edit-container">
+                    <span class="edit icon-edit-bold"></span>
+                    <span class="edit icon-edit-italic"></span>
+                    <span class="edit icon-edit-uppercase"></span>
+                    <span class="edit icon-edit-strike"></span>
+                  </span>
+                  <span class="edit-container">
+                    <span class="edit icon-edit-link"></span>
+                    <span class="edit icon-edit-image"></span>
+                  </span>
+                  <span class="edit-container">
+                    <span class="edit icon-edit-left"></span>
+                    <span class="edit icon-edit-center"></span>
+                    <span class="edit icon-edit-right"></span>
+                  </span>
+                  <span class="edit-container">
+                    <span class="edit icon-edit-ul"></span>
+                    <span class="edit icon-edit-ol"></span>
+                    <span class="edit icon-float-left"></span>
+                    <span class="edit icon-float-right"></span>
+                  </span>
+                </span>
+              </div>
+              <div class="panel-row">
+                <span class="title"></span>
+                <span class="content">
+                  <span class="area-container">
+                    <textarea placeholder="Text"></textarea>
+                  </span>
+                </span>
+              </div>
+              <div class="panel-row">
+                <span class="title"></span>
+                <span class="content">
+                  <label class="attach-container">
+                    <span class="icon-attach"></span><span class="description">Upload files</span>
+                  </label>
+                </span>
+              </div>
+              <div class="panel-row">
+                <span class="title"></span>
+                <span class="content">
+                  <span class="button-container">
+                    <button class="button">Send mail</button>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </form>
+        </article>
+      </div>
+    </div>
+  </div><!-- Email popup end -->
+
+  <div class="body">
+    <div class="left-panel-activator-container"><div class="left-panel-activator"><span class="icon-property"></span><span class="icon-delete"></span></div></div>
+    <div class="left-panel-container">
+      <div class="left-panel">
+        <a href="#" class="logo-container">
+          <img src="img/rentalsforce-logo-bold-inverse-print.png" alt="Rental force" />
+        </a>
+        <div class="user-container">
+          <div class="icon-container-wrap">
+            <div class="icon-container">
+              <img src="img/bitmap.png" alt="User">
+              <div class="note"></div>
+            </div>
+          </div>
+          <div class="info-container">
+            <header>Welcome</header>
+            <p>Konstantin Western</p>
+          </div>
+        </div>
+        <nav class="main-nav">
+          <div class="link">
+            <a href="">
+              <span class="icon icon-dashboard"><span class="tasks">19</span></span>
+              <span class="title">dashboard</span>
+            </a>
+          </div>
+          <div class="link">
+            <a href="">
+              <span class="icon icon-inquiries"></span>
+              <span class="title">inquiries</span>
+            </a>
+          </div>
+          <div class="link active">
+            <a href="">
+              <span class="icon icon-contacts"></span>
+              <span class="title">contacts</span>
+            </a>
+          </div>
+          <div class="link">
+            <a href="">
+              <span class="icon icon-reservation-center"></span>
+              <span class="title">reservation center</span>
+            </a>
+          </div>
+          <div class="link">
+            <a href="">
+              <span class="icon icon-availability"></span>
+              <span class="title">availability</span>
+            </a>
+          </div>
+          <div class="link">
+            <a href="">
+              <span class="icon icon-properties"></span>
+              <span class="title">properties</span>
+            </a>
+          </div>
+          <div class="link">
+            <a href="">
+              <span class="icon icon-import"></span>
+              <span class="title">import</span>
+            </a>
+          </div>
+          <div class="link">
+            <a href="">
+              <span class="icon icon-templates"></span>
+              <span class="title">templates</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="main-container">
+      <aside class="main-header">
+        <div class="search-container">
+          <div class="search">
+            <input type="text" placeholder="Type to search …" />
+            <span class="icon-search"></span>
+          </div>
+        </div>
+        <div class="user-container">
+          <div class="user">
+            <div class="user-info">
+              <span class="title">Konstantin Western</span>
+              <span class="icon-setting"></span>
+            </div>
+            <div class="user-settings">
+              <ul>
+                <li><a href="">Edit Profile</a></li>
+                <li><a href="">Setting</a></li>
+                <li><a href="">Log Out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <section class="main-content">
+        <header class="main-title">
+          <h1>Carl Tompson</h1>
+          <p>New Lead for rental</p>
+        </header>
+        <aside class="menu-container">
+          <nav class="menu">
+            <a href="">Personal information</a>
+            <a href="">Tasks</a>
+            <a class="active" href="">Files & Notes</a>
+            <a href="">Emails</a>
+          </nav>
+        </aside>
+        <div class="personal-information-wrap">
+          <div class="personal-information-container">
+            <article class="personal-information">
+              <header>
+                <h4>Personal information</h4>
+              </header>
+              <table class="information">
+                <tbody>
+                  <tr>
+                    <td>First name:</td><td>Carl</td>
+                  </tr>
+                  <tr>
+                    <td>Last name:</td><td>Tompson</td>
+                  </tr>
+                  <tr>
+                    <td>Phone:</td><td>+1 3 (945) 678-56-25</td>
+                  </tr>
+                  <tr>
+                    <td>E-Mail:</td><td>232west@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>Email Opt-in:</td><td>False</td>
+                  </tr>
+                  <tr>
+                    <td>Address:</td><td>324543 NYC, Awesome str. buildin 2, 156</td>
+                  </tr>
+                </tbody>
+              </table>
+              <header>
+                <h4>Record information</h4>
+              </header>
+              <table class="information">
+                <tbody>
+                  <tr>
+                    <td>Creation date:</td><td>1/15/2015 11:56:04 PM</td>
+                  </tr>
+                  <tr>
+                    <td>Modified date:</td><td>1/15/2015 13:56:04 PM</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="button-wrap">
+                <a class="button">
+                  edit personal information
+                </a>
+              </div>
+            </article>
+          </div>
+          <div class="table-container contact-reservations-container">
+            <article class="table contact-reservations">
+              <header>
+                <h4>Contact’s reservations</h4>
+              </header>
+              <table class="contact-reservation">
+                <thead>
+                  <tr>
+                    <th class="cell-50"><label class="checkbox"><input type="checkbox" /></label></th>
+                    <th class="cell-30"></th>
+                    <th class="cell-150">Property</th>
+                    <th class="cell-200">Dates</th>
+                    <th class="cell-all">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><label class="checkbox"><input type="checkbox" /></label></td>
+                    <td>
+                      <div class="property-box"><span class="icon-property"></span>
+                        <div class="property-container"><span class="icon-property"></span>
+                          <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                            <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                        </div>
+                      </div>
+                    </td>
+                    <td>174-4 Room 1</td>
+                    <td>23/7/2015 — 28/12/2015</td>
+                    <td><span class="icon-status ok"></span></td>
+                  </tr>
+                  <tr>
+                    <td><label class="checkbox"><input type="checkbox" /></label></td>
+                    <td>
+                      <div class="property-box"><span class="icon-property"></span>
+                        <div class="property-container"><span class="icon-property"></span>
+                          <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                            <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                        </div>
+                      </div>
+                    </td>
+                    <td>174-4 Room 1</td>
+                    <td>23/7/2015 — 28/12/2015</td>
+                    <td><span class="icon-status warning"></span></td>
+                  </tr>
+                  <tr>
+                    <td><label class="checkbox"><input type="checkbox" /></label></td>
+                    <td>
+                      <div class="property-box"><span class="icon-property"></span>
+                        <div class="property-container"><span class="icon-property"></span>
+                          <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                            <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                        </div>
+                      </div>
+                    </td>
+                    <td>174-4 Room 1</td>
+                    <td>23/7/2015 — 28/12/2015</td>
+                    <td><span class="icon-status error"></span></td>
+                  </tr>
+                  <tr>
+                    <td><label class="checkbox"><input type="checkbox" /></label></td>
+                    <td>
+                      <div class="property-box"><span class="icon-property"></span>
+                        <div class="property-container"><span class="icon-property"></span>
+                          <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                            <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                        </div>
+                      </div>
+                    </td>
+                    <td>174-4 Room 1</td>
+                    <td>23/7/2015 — 28/12/2015</td>
+                    <td><span class="icon-status ok"></span></td>
+                  </tr>
+                  <tr>
+                    <td><label class="checkbox"><input type="checkbox" /></label></td>
+                    <td>
+                      <div class="property-box"><span class="icon-property"></span>
+                        <div class="property-container"><span class="icon-property"></span>
+                          <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                            <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                        </div>
+                      </div>
+                    </td>
+                    <td>174-4 Room 1</td>
+                    <td>23/7/2015 — 28/12/2015</td>
+                    <td><span class="icon-status ok"></span></td>
+                  </tr>
+                  <tr>
+                    <td><label class="checkbox"><input type="checkbox" /></label></td>
+                    <td>
+                      <div class="property-box"><span class="icon-property"></span>
+                        <div class="property-container"><span class="icon-property"></span>
+                          <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                            <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                        </div>
+                      </div>
+                    </td>
+                    <td>174-4 Room 1</td>
+                    <td>23/7/2015 — 28/12/2015</td>
+                    <td><span class="icon-status ok"></span></td>
+                  </tr>
+                  <tr>
+                    <td><label class="checkbox"><input type="checkbox" /></label></td>
+                    <td>
+                      <div class="property-box"><span class="icon-property"></span>
+                        <div class="property-container"><span class="icon-property"></span>
+                          <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                            <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                        </div>
+                      </div>
+                    </td>
+                    <td>174-4 Room 1</td>
+                    <td>23/7/2015 — 28/12/2015</td>
+                    <td><span class="icon-status ok"></span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="pagintaion-container">
+                <div class="pagination">
+                  <a href=""><span class="icon-pagination-left"></span></a>
+                  <a href="" class="page active">1</a>
+                  <a href="" class="page">2</a>
+                  <a href="" class="page">3</a>
+                  <a href=""><span class="icon-pagination-right active"></span></a>
+                </div>
+              </div>
+              <div class="table-operation-container">
+                <a href="" class="count-to-delete"><span class="count">0</span><span class="title">items selected</span><span class=" icon-delete"></span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="table-container container"> 
+          <article class="table">
+            <header>
+              <h4>Emails</h4>
+              <div class="button-wrap">
+                <a class="button popup-open-activator">
+                  send mail
+                </a>
+              </div>
+            </header>
+            <table>
+              <thead>
+                <tr>
+                  <th class="cell-50"><label class="checkbox"><input type="checkbox" /></label></th>
+                  <th class="cell-30"></th>
+                  <th class="cell-150">Date</th>
+                  <th class="cell-150">Subject</th>
+                  <th class="cell-300">Message</th>
+                  <th class="cell-150">Attachments</th>
+                  <th class="cell-45"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>6/7/2015 23:36</td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                  <td><a href="">ver2.png, oliva.txt</a></td>
+                  <td><span class="icon-delete"></span></td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>6/7/2015 23:36</td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                  <td><a href="">ver2.png, oliva.txt</a></td>
+                  <td><span class="icon-delete"></span></td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>6/7/2015 23:36</td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                  <td><a href="">ver2.png, oliva.txt</a></td>
+                  <td><span class="icon-delete"></span></td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>6/7/2015 23:36</td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                  <td><a href="">ver2.png, oliva.txt</a></td>
+                  <td><span class="icon-delete"></span></td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>6/7/2015 23:36</td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                  <td><a href="">ver2.png, oliva.txt</a></td>
+                  <td><span class="icon-delete"></span></td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>6/7/2015 23:36</td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                  <td><a href="">ver2.png, oliva.txt</a></td>
+                  <td><span class="icon-delete"></span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="pagintaion-container">
+              <div class="pagination">
+                <a href=""><span class="icon-pagination-left"></span></a>
+                <a href="" class="page active">1</a>
+                <a href="" class="page">2</a>
+                <a href="" class="page">3</a>
+                <a href=""><span class="icon-pagination-right active"></span></a>
+              </div>
+            </div>
+            <div class="table-operation-container">
+              <a href="" class="count-to-delete"><span class="count">0</span><span class="title">items selected</span><span class="icon -delete"></span></a>
+            </div>
+          </article>
+        </div>
+        <div class="table-container">
+          <article class="table">
+            <header>
+              <h4>Tasks</h4>
+              <div class="button-wrap">
+                <a class="button">add new task</a>
+              </div>
+            </header>
+            <table>
+              <thead>
+                <tr>
+                  <th class="cell-50"><label class="checkbox"><input type="checkbox" /></label></th>
+                  <th class="cell-30"></th>
+                  <th class="cell-150">Date</th>
+                  <th class="cell-150">Subject</th>
+                  <th class="cell-all">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container active"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>6/7/2015 23:36</td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>6/7/2015 23:36</td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>6/7/2015 23:36</td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>6/7/2015 23:36</td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>6/7/2015 23:36</td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>6/7/2015 23:36</td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="table-operation-container">
+              <a href="" class="count-to-delete"><span class="count">0</span><span class="title">items selected</span><span class="icon -delete"></span></a>
+            </div>
+          </article>
+        </div>
+        <div class="table-container">
+          <article class="table">
+            <header>
+              <h4>Notes</h4>
+              <div class="button-wrap">
+                <a class="button">add new note</a>
+              </div>
+            </header>
+            <table>
+              <thead>
+                <tr>
+                  <th class="cell-50"><label class="checkbox"><input type="checkbox" /></label></th>
+                  <th class="cell-30"></th>
+                  <th class="cell-150">Title</th>
+                  <th class="cell-all">Content</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container active"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="table-operation-container">
+              <a href="" class="count-to-delete"><span class="count">0</span><span class="title">items selected</span><span class="icon -delete"></span></a>
+            </div>
+          </article>
+        </div>
+        <div class="table-container">
+          <article class="table">
+            <header>
+              <h4>File attachments</h4>
+              <div class="button-wrap">
+                <a class="button">upload new file attachment</a>
+              </div>
+            </header>
+            <table>
+              <thead>
+                <tr>
+                  <th class="cell-50"><label class="checkbox"><input type="checkbox" /></label></th>
+                  <th class="cell-30"></th>
+                  <th class="cell-150">Filename</th>
+                  <th class="cell-all">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container active"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+                <tr>
+                  <td><label class="checkbox"><input type="checkbox" /></label></td>
+                  <td>
+                    <div class="property-box"><span class="icon-property"></span>
+                      <div class="property-container"><span class="icon-property"></span>
+                        <ul><li><a><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                          <li><a><span class="icon-view"></span><span class="title">View</span></a></li></ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Hello Carl! Rental is on </td>
+                  <td>Hello Carl! I assume that you have read the rental spec - what a specific oq</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="table-operation-container">
+              <a href="" class="count-to-delete"><span class="count">0</span><span class="title">items selected</span><span class="icon-delete"></span></a>
+            </div>
+          </article>
+        </div>
+        <div class="panel-one-wrap">
+          <div class="panel-one-container">
+            <article class="panel-one">
+              <header>
+                <h4>Reservation information</h4>
+                <div class="button-wrap">
+                  <a class="button dark-blue">Print quote</a>
+                </div>
+                <div class="button-wrap">
+                  <a class="button dark-blue">Print invoice</a>
+                </div>
+                <div class="button-wrap">
+                  <a class="button dark-red">Delete</a>
+                </div>
+              </header>
+              <table class="first-column">
+                <tbody>
+                  <tr>
+                    <td>Property name:</td><td>2120-2 Room 2</td>
+                  </tr>
+                  <tr>
+                    <td>Badrooms:</td><td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Bathrooms:</td><td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Dates:</td><td>05/01/2015 — 08/12/2016, for 12 month</td>
+                  </tr>
+                  <tr>
+                    <td>Status:</td><td>Booked</td>
+                  </tr>
+                </tbody>
+              </table>
+              <header>
+                <h4>Detailed info</h4>
+              </header>
+              <table class="first-column">
+                <tbody>
+                  <tr>
+                    <td>Pricing type:</td><td>1/15/2015 11:56:04 PM</td>
+                  </tr>
+                  <tr>
+                    <td>Price:</td><td>$ 11 400</td>
+                  </tr>
+                  <tr>
+                    <td>Nomber of month:</td><td>3</td>
+                  </tr>
+                  <tr>
+                    <td>Total:</td><td>336</td>
+                  </tr>
+                  <tr>
+                    <td>Paid:</td>
+                    <td>
+                      <span class="input-field">
+                        <span class="input-container">
+                          <input type="text" />
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td><td>
+                      <div class="button-wrap">
+                        <a class="button">
+                          Update paid
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="total-container">
+                    <td>Due amount:</td><td class="total">$ 11 400</td>
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+  <script src="js/lib/jquery.selectric.min.js"></script>
+  <script type="text/javascript" src="js/element.js"></script>
+
+</body>
+</html>

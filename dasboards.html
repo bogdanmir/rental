@@ -1,0 +1,542 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Rental</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/icon.css">
+    <link rel="stylesheet" type="text/css" href="css/selectric.css">
+  </head>
+  <body>
+    <!-- Email popup -->
+    <div class="popup-filter"></div>
+    <div class="popup-container email-popup">
+      <div class="popup-wrap">
+        <div class="popup">
+          <article>
+            <form>
+              <header>
+                <h4>Send mail</h4>
+                <div class="button-wrap popup-close-activator">
+                  <span class="icon-delete"></span>
+                </div>
+              </header>
+              <div class="params-panel">
+                <label class="panel-row">
+                  <span class="title">Template:</span>
+                  <span class="content">
+                    <span class="select-container">
+                      <select>
+                        <option value="">Mail to</option>
+                        <option>to</option>
+                      </select>
+                    </span>
+                  </span>
+                </label>
+                <label class="panel-row">
+                  <span class="title">Subject:</span>
+                  <span class="content">
+                    <span class="input-field">
+                      <span class="input-container">
+                        <input type="text" />
+                      </span>
+                    </span>
+                  </span>
+                </label>
+                <div class="panel-row">
+                  <span class="title">Message:</span>
+                  <span class="content">
+                    <span class="edit-container">
+                      <span class="edit icon-edit-bold"></span>
+                      <span class="edit icon-edit-italic"></span>
+                      <span class="edit icon-edit-uppercase"></span>
+                      <span class="edit icon-edit-strike"></span>
+                    </span>
+                    <span class="edit-container">
+                      <span class="edit icon-edit-link"></span>
+                      <span class="edit icon-edit-image"></span>
+                    </span>
+                    <span class="edit-container">
+                      <span class="edit icon-edit-left"></span>
+                      <span class="edit icon-edit-center"></span>
+                      <span class="edit icon-edit-right"></span>
+                    </span>
+                    <span class="edit-container">
+                      <span class="edit icon-edit-ul"></span>
+                      <span class="edit icon-edit-ol"></span>
+                      <span class="edit icon-float-left"></span>
+                      <span class="edit icon-float-right"></span>
+                    </span>
+                  </span>
+                </div>
+                <div class="panel-row">
+                  <span class="title"></span>
+                  <span class="content">
+                    <span class="area-container">
+                      <textarea placeholder="Text"></textarea>
+                    </span>
+                  </span>
+                </div>
+                <div class="panel-row">
+                  <span class="title"></span>
+                  <span class="content">
+                    <label class="attach-container">
+                      <span class="icon-attach"></span><span class="description">Upload files</span>
+                    </label>
+                  </span>
+                </div>
+                <div class="panel-row">
+                  <span class="title"></span>
+                  <span class="content">
+                    <span class="button-container">
+                      <button class="button">Send mail</button>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </article>
+        </div>
+      </div>
+      </div><!-- Email popup end -->
+      <div class="body">
+        <div class="left-panel-activator-container"><div class="left-panel-activator"><span class="icon-property"></span><span class="icon-delete"></span></div></div>
+        <div class="left-panel-container">
+          <div class="left-panel">
+            <a href="#" class="logo-container">
+              <img src="img/rentalsforce-logo-bold-inverse-print.png" alt="Rental force" />
+            </a>
+            <div class="user-container">
+              <div class="icon-container-wrap">
+                <div class="icon-container">
+                  <img src="img/bitmap.png" alt="User">
+                  <div class="note"></div>
+                </div>
+              </div>
+              <div class="info-container">
+              <header>Welcome</header>
+              <p>Konstantin Western</p>
+            </div>
+          </div>
+          <nav class="main-nav">
+            <div class="link">
+              <a href="">
+                <span class="icon icon-dashboard"></span>
+                <span class="title">dashboard</span>
+              </a>
+            </div>
+            <div class="link">
+              <a href="">
+                <span class="icon icon-inquiries"><span class="tasks">21</span></span>
+                <span class="title">inquiries</span>
+              </a>
+            </div>
+            <div class="link active">
+              <a href="">
+                <span class="icon icon-contacts"></span>
+                <span class="title">contacts</span>
+              </a>
+            </div>
+            <div class="link">
+              <a href="">
+                <span class="icon icon-reservation-center"><span class="tasks">21</span></span>
+                <span class="title">reservation center</span>
+              </a>
+            </div>
+            <div class="link">
+              <a href="">
+                <span class="icon icon-availability"></span>
+                <span class="title">availability</span>
+              </a>
+            </div>
+            <div class="link">
+              <a href="">
+                <span class="icon icon-properties"></span>
+                <span class="title">properties</span>
+              </a>
+            </div>
+            <div class="link">
+              <a href="">
+                <span class="icon icon-import"></span>
+                <span class="title">import</span>
+              </a>
+            </div>
+            <div class="link">
+              <a href="">
+                <span class="icon icon-templates"></span>
+                <span class="title">templates</span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="main-container">
+        <aside class="main-header">
+          <div class="search-container">
+            <div class="search">
+              <input type="text" placeholder="Type to search …" />
+              <span class="icon-search"></span>
+            </div>
+          </div>
+          <div class="user-container">
+            <div class="user">
+              <div class="user-info">
+                <span class="title">Konstantin Western</span>
+                <span class="icon-setting"></span>
+              </div>
+              <div class="user-settings">
+                <ul>
+                  <li><a href="">Edit Profile</a></li>
+                  <li><a href="">Setting</a></li>
+                  <li><a href="">Log Out</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <section class="main-content">
+          <header class="main-title">
+            <h1>Reports and dasboards</h1>
+            <p>RentalsForce user dashboard</p>
+          </header>
+          <div class="wrapper">
+            <div class="wrapper-label lg revenue">
+              <p>$ 718 956</p>
+              <span class="description">This month revenue</span>
+            </div>
+            <div class="wrapper-label lg reservations">
+              <p>76</p>
+              <span class="description">This month reservations</span>
+            </div>
+            <div class="wrapper-label lg inquiries">
+              <p>8</p>
+              <span class="description">This month inquiries</span>
+            </div>
+
+            <div style="max-width: 1150px;">
+              <div class="custom-panel ocupancy-report">
+                <div class="header">
+                  <h3>Ocupancy report</h3>
+                  <div class="right-content"> 
+                    <span class="menu-icon"></span>
+                  </div>
+                </div>
+                <div class="body">
+                <div id="diagram">
+                  <div class="wrapper-left-bar">
+                    <span>100</span>
+                    <span>75</span>
+                    <span>50</span>
+                    <span>25</span>
+                    <span>0</span>
+                  </div>
+                  <div class="wrapper-months">
+                    <div class="month">
+                      <div class="diagram">
+                        <div class="level" style="height: 100%"></div>
+                      </div>
+                      <span>Jan</span>
+                      <div class="title" style="left: 31px; top: 10px">182</div>
+                    </div>
+                    <div class="month">
+                      <div class="diagram sm">
+                        <div class="level" style="height: 77px"></div>
+                      </div>
+                      <span>Feb</span>
+                    </div>
+                    <div class="month">
+                      <div class="diagram">
+                        <div class="level"></div>
+                      </div>
+                      <span>Mar</span>
+                      <div class="title" style="left: 20px; top: 60px">182</div>
+                    </div>
+                    <div class="month">
+                      <div class="diagram sm">
+                        <div class="level" style="height: 77px"></div>
+                      </div>
+                      <span>Apr</span>
+                    </div>
+                    <div class="month">
+                      <div class="diagram sm">
+                        <div class="level" style="height: 156px"></div>
+                      </div>
+                      <span>May</span>
+                    </div>
+                    <div class="month">
+                      <div class="diagram">
+                        <div class="level" style="height: 20px"></div>
+                      </div>
+                      <span>Jun</span>
+                    </div>
+                    <div class="month">
+                      <div class="diagram sm">
+                        <div class="level" style="height: 77px"></div>
+                      </div>
+                      <span>Jul</span>
+                    </div>
+                    <div class="month">
+                      <div class="diagram">
+                        <div class="level" style="height: 20px"></div>
+                      </div>
+                      <span>Aug</span>
+                    </div>
+                    <div class="month">
+                      <div class="diagram sm">
+                        <div class="level" style="height: 77px"></div>
+                      </div>
+                      <span>Sept</span>
+                    </div>
+                    <div class="month">
+                      <div class="diagram sm">
+                        <div class="level" style="height: 140px"></div>
+                      </div>
+                      <span>Oct</span>
+                    </div>
+                    <div class="month">
+                      <div class="diagram">
+                        <div class="level" style="height: 20px"></div>
+                      </div>
+                      <span>Nov</span>
+                    </div>
+                    <div class="month">
+                      <div class="diagram sm">
+                        <div class="level" style="height: 77px"></div>
+                      </div>
+                      <span>Dec</span>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+              <div class="wrapper-label sm">
+                <p>6</p>
+                <span class="description">Inquiries</span>
+              </div>
+              <div class="wrapper-label sm">
+                <p>149</p>
+                <span class="description">Contacts</span>
+              </div>
+              <div class="wrapper-label sm">
+                <p>17</p>
+                <span class="description">Upcoming reservations</span>
+              </div>
+              <div class="wrapper-label sm">
+                <p>89</p>
+                <span class="description">Active properties</span>
+              </div>
+            </div>
+            
+            <div class="custom-panel reservation">
+                <div class="header">
+                  <h3>Reservation in-House</h3>
+                  <div class="right-content"> 
+                    <span class="counter">180</span>
+                  </div> 
+                </div>
+                <div class="body">
+                <table>
+                  <col class="column1"/>
+                  <col class="column2"/>
+                  <col class="column3"/>
+                  <col class="column4"/>
+                  <col class="column5"/>
+                  <thead>
+                    <tr>
+                      <th>Contact name</th>
+                      <th>Property</th>
+                      <th>Days passed</th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Tonny Rozzetta</td>
+                      <td>2303-2 Room 2</td>
+                      <td>
+                        <div class="progress-wrapper">
+                          <div class="level"></div>
+                        </div>
+                      </td>
+                      <td>52%</td>
+                      <td>254/486</td>
+                    </tr>
+                    <tr>
+                      <td>Tonny Rozzetta</td>
+                      <td>2303-2 Room 2</td>
+                      <td>
+                        <div class="progress-wrapper">
+                          <div class="level"></div>
+                        </div>
+                      </td>
+                      <td>52%</td>
+                      <td>254/486</td>
+                    </tr>
+                    <tr>
+                      <td>Tonny Rozzetta</td>
+                      <td>2303-2 Room 2</td>
+                      <td>
+                        <div class="progress-wrapper">
+                          <div class="level"></div>
+                        </div>
+                      </td>
+                      <td>52%</td>
+                      <td>254/486</td>
+                    </tr>
+                    <tr>
+                      <td>Tonny Rozzetta</td>
+                      <td>2303-2 Room 2</td>
+                      <td>
+                        <div class="progress-wrapper">
+                          <div class="level"></div>
+                        </div>
+                      </td>
+                      <td>52%</td>
+                      <td>254/486</td>
+                    </tr>
+                    <tr>
+                      <td>Tonny Rozzetta</td>
+                      <td>2303-2 Room 2</td>
+                      <td>
+                        <div class="progress-wrapper">
+                          <div class="level"></div>
+                        </div>
+                      </td>
+                      <td>52%</td>
+                      <td>254/486</td>
+                    </tr>
+                    <tr>
+                      <td>Tonny Rozzetta</td>
+                      <td>2303-2 Room 2</td>
+                      <td>
+                        <div class="progress-wrapper">
+                          <div class="level" style="width: 20px;"></div>
+                        </div>
+                      </td>
+                      <td>52%</td>
+                      <td>254/486</td>
+                    </tr>
+                    <tr>
+                      <td>Tonny Rozzetta</td>
+                      <td>2303-2 Room 2</td>
+                      <td>
+                        <div class="progress-wrapper">
+                          <div class="level"></div>
+                        </div>
+                      </td>
+                      <td>52%</td>
+                      <td>254/486</td>
+                    </tr>
+                    <tr>
+                      <td>Tonny Rozzetta</td>
+                      <td>2303-2 Room 2</td>
+                      <td>
+                        <div class="progress-wrapper">
+                          <div class="level"></div>
+                        </div>
+                      </td>
+                      <td>52%</td>
+                      <td>254/486</td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+                <div class="pagintaion-container">
+                <div class="pagination">
+                  <a href=""><span class="icon-pagination-left"></span></a>
+                  <a href="" class="page active">1</a>
+                  <a href="" class="page">2</a>
+                  <a href="" class="page">3</a>
+                  <a href=""><span class="icon-pagination-right active"></span></a>
+                </div>
+              </div>
+              </div>
+
+              <div class="custom-panel upcoming">
+                <div class="header">
+                  <h3>Upcoming check-ins</h3>
+                  <div class="right-content"> 
+                    <div class="menu-container">
+                      <nav class="menu">
+                        <a class="">All</a>
+                        <a class="">Today</a>
+                        <a class="">7 days</a>
+                        <a class="active">30 days</a>
+                      </nav>
+                    </div>
+                  </div> 
+                </div>
+                <div class="body">
+                <table>
+                  <col class="column1"/>
+                  <col class="column2"/>
+                  <col class="column3"/>
+                  <col class="column4"/>
+                  <tr>
+                    <td class="revenue"></td>
+                    <td>2021-2 Room 8 (2 guest, 0 children, for 77 nights) <span class="status">— Booked</span></td>
+                    <td class="time-icon"></td>
+                    <td>in 2 days</td>
+                  </tr>
+                  <tr>
+                    <td class="revenue"></td>
+                    <td>2021-2 Room 8 (2 guest, 0 children, for 77 nights) <span class="status">— Booked</span></td>
+                    <td class="time-icon"></td>
+                    <td>in 2 days</td>
+                  </tr>
+                  <tr>
+                    <td class="revenue"></td>
+                    <td>2021-2 Room 8 (2 guest, 0 children, for 77 nights) <span class="status">— Booked</span></td>
+                    <td class="time-icon"></td>
+                    <td>in 2 days</td>
+                  </tr>
+                  <tr>
+                    <td class="question"></td>
+                    <td>2021-2 Room 8 (2 guest, 0 children, for 77 nights)</td>
+                    <td class="time-icon"></td>
+                    <td>in 2 days</td>
+                  </tr>
+                  <tr>
+                    <td class="revenue"></td>
+                    <td>2021-2 Room 8 (2 guest, 0 children, for 77 nights) <span class="status">— Booked</span></td>
+                    <td class="time-icon"></td>
+                    <td>in 2 days</td>
+                  </tr>
+                  <tr>
+                    <td class="question"></td>
+                    <td>2021-2 Room 8 (2 guest, 0 children, for 77 nights)</td>
+                    <td class="time-icon"></td>
+                    <td>in 2 days</td>
+                  </tr>
+                  <tr>
+                    <td class="revenue"></td>
+                    <td>2021-2 Room 8 (2 guest, 0 children, for 77 nights) <span class="status">— Booked</span></td>
+                    <td class="time-icon"></td>
+                    <td>in 2 days</td>
+                  </tr>
+                  <tr>
+                    <td class="question"></td>
+                    <td>2021-2 Room 8 (2 guest, 0 children, for 77 nights)</td>
+                    <td class="time-icon"></td>
+                    <td>in 2 days</td>
+                  </tr>
+                </table>
+                </div>
+
+              </div>   
+            
+          </div>
+          
+        </section>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+    <script src="js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="js/lib/highcharts-custom.js"></script>
+    <script type="text/javascript" src="js/element.js"></script>
+  </body>
+</html>

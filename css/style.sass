@@ -12,42 +12,65 @@
 +font-face("Avenir LT Std", "../font/AvenirLTStd-Book", "AvenirLTStd-Book")
 +font-face("Montserrat Bold", "../font/Montserrat-Bold", "Montserrat-Bold")
 +font-face("Montserrat Regular", "../font/Montserrat-Regular", "Montserrat-Regular")
++font-face("dasboard-icons", "../font/dasboard-icons", "dasboard-icons")
 
 // mixins
 
-@mixin border-radius ($radius)
+=border-radius ($radius)
   -webkit-border-radius: $radius
   -moz-border-radius: $radius
   -ms-border-radius: $radius
   border-radius: $radius
 
-@mixin box-sizing ($type: border-box)
+=box-sizing ($type: border-box)
   -webkit-box-sizing: $type
   -moz-box-sizing: $type
   -o-box-sizing: $type
   -ms-box-sizing: $type
   box-sizing: $type
 
-@mixin transition ($transition-property, $transition-time, $method)
+=transition ($transition-property, $transition-time, $method)
   -webkit-transition: $transition-property $transition-time $method
   -moz-transition: $transition-property $transition-time $method
   -ms-transition: $transition-property $transition-time $method
   -o-transition: $transition-property $transition-time $method
   transition: $transition-property $transition-time $method
 
-@mixin transform ($transforms)
+=transform ($transforms)
   -moz-transform: $transforms
   -o-transform: $transforms
   -ms-transform: $transforms
   -webkit-transform: $transforms
   transform: $transforms
 
-@mixin user-select ($setting: none)
+=user-select ($setting: none)
   -webkit-user-select: $setting
   -moz-user-select: $setting
   -ms-user-select: $setting
   -o-user-select: $setting
   user-select: $setting
+
+=placeholder
+  &::-webkit-input-placeholder
+    @content
+  &:-moz-placeholder
+    @content
+  &::-moz-placeholder
+    @content
+  &:-ms-input-placeholder
+    @content
+
+=transform-style ($style)
+  -webkit-transform-style: $style
+  -moz-transform-style: $style
+  -ms-transform-style: $style
+  transform-style: $style
+
+=perspective ($style)
+  -webkit-perspective: $style 
+  -moz-perspective: $style 
+  -ms-perspective: $style 
+  perspective: $style
 
 // main
 
@@ -56,6 +79,15 @@ body
   height: inherit
   background-color: #f7f7f9
   width: 100%
+  &.hidden
+    overflow: hidden
+
+.body
+  -webkit-filter: blur(0)
+  filter: none
+  &.hidden
+    -webkit-filter: blur(3px)
+    filter: url("data:image/svg+xml;utf8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cfilter%20id%3D%22blur%22%3E%3CfeGaussianBlur%20stdDeviation%3D%223%22%20%2F%3E%3C%2Ffilter%3E%3C%2Fsvg%3E#blur")
 
 // common
 
@@ -66,7 +98,7 @@ ul
   list-style: none
   padding-left: 0
 
-input, select
+input, select, textarea, button
   outline: none
   border: none
 
@@ -109,8 +141,8 @@ label.checkbox
   cursor: pointer
   position: relative
   overflow: hidden
-  @include user-select()
-  @include box-sizing()
+  +user-select()
+  +box-sizing()
   input[type="checkbox"]
     margin: 0
     position: absolute
@@ -140,12 +172,12 @@ label.checkbox
   width: 15px
   margin-left: auto
   margin-right: auto
-  @include user-select()
+  +user-select()
   .icon-property
     font-size: 10px
     color: #bbc3c9
     cursor: pointer
-    @include transition(all, 0.2s, ease-in-out)
+    +transition(all, 0.2s, ease-in-out)
     &:hover
       color: #4a4a4a
   .property-container
@@ -154,14 +186,13 @@ label.checkbox
     position: absolute
     opacity: 0
     width: 188px
-    height: 107px
     top: -6.5px
     left: -11px
     background-color: white
     padding: 6.5px 11px
     box-shadow: 0 5px 14px rgba(0, 0, 0, 0.14)
-    @include box-sizing()
-    @include border-radius(2px)
+    +box-sizing()
+    +border-radius(2px)
     &.active
       display: block
     .icon-property
@@ -173,14 +204,16 @@ label.checkbox
         display: table-row
         height: 31px
         a
-          .icon-edit, .icon-view
+          .icon-edit, .icon-convert, .icon-view
             display: table-cell
             color: #858d9c
             line-height: 30px
             vertical-align: middle
-            @include transition(all, 0.2s, ease-in-out)
+            +transition(all, 0.2s, ease-in-out)
           .icon-edit
             font-size: 17px
+          .icon-convert
+            font-size: 15px
           .icon-view
             font-size: 11px
           .title
@@ -192,7 +225,7 @@ label.checkbox
             font-weight: 300
             padding-left: 6px
           &:hover
-            .icon-view, .icon-edit
+            .icon-view, .icon-convert, .icon-edit
               color: #4a4a4a
             .title
               text-decoration: underline
@@ -206,7 +239,7 @@ label.checkbox
 .error
   color: #f14a4a
 
-.button
+a.button, button.button
   display: table-cell
   vertical-align: middle
   text-align: center
@@ -221,10 +254,20 @@ label.checkbox
   line-height: 16px
   text-transform: uppercase
   white-space: nowrap
-  @include border-radius(3px)
-  @include transition(all, 0.2s, ease-in-out)
+  cursor: pointer
+  +user-select()
+  +border-radius(3px)
+  +transition(all, 0.2s, ease-in-out)
   &:hover
     background-color: #1a98d6
+  &.dark-blue
+    background-color: #657084
+    &:hover
+      background-color: #7182a1
+  &.dark-red
+    background-color: #c86767
+    &:hover
+      background-color: #ff7b7b
 
 .simple-button
   width: 86px
@@ -237,9 +280,9 @@ label.checkbox
   display: table-cell
   vertical-align: middle
   cursor: pointer
-  @include box-sizing()
-  @include border-radius(3px)
-  @include transition(all, 0.2s, ease-in-out)
+  +box-sizing()
+  +border-radius(3px)
+  +transition(all, 0.2s, ease-in-out)
   &.green
     background-color: #44cd7e
     color: white
@@ -252,6 +295,137 @@ label.checkbox
     &:hover
       background-color: #eaeaee
 
+.simple-select
+  position: relative
+  width: 251px
+  height: 35px
+  select
+    cursor: pointer
+    width: 100%
+    height: 35px
+    border: 1px solid #e0e0e0
+    background-color: white
+    color: #878787
+    font-family: "Roboto"
+    font-size: 14px
+    font-weight: 300
+    padding-left: 6px
+    +box-sizing()
+    +border-radius(3px)
+
+.select-container
+  cursor: pointer
+  position: relative
+  display: block
+  +border-radius(3px)
+  select
+    cursor: pointer
+    height: 35px
+    width: 100%
+    padding: 6px
+    color: #878787
+    font-family: "Roboto"
+    font-size: 14px
+    font-weight: 300
+    background-color: white
+    +box-sizing()
+    option:first-child
+      color: #bbc3c9
+  .icon-container
+    position: absolute
+    background-color: white
+    height: 100%
+    display: block
+    top: 0
+    right: 0
+    font-size: 8px
+    color: #8a8a8a
+    padding-right: 15px
+    cursor: pointer
+    +user-select()
+    +box-sizing()
+    .icon-select-arrow
+      display: table-cell
+      height: 35px
+      vertical-align: middle
+      +transition(all, 0.2s, ease-in-out)
+  &:hover
+    .icon-container
+      .icon-select-arrow
+        color: #4a4a4a !important
+
+.input-field
+  cursor: pointer
+  width: 100%
+  display: block
+  .input-container
+    display: block
+    input
+      border: 1px solid #e0e0e0
+      padding: 9px
+      width: 100%
+      color: #878787
+      font-family: "Roboto"
+      font-size: 14px
+      font-weight: 300
+      background-color: white
+      +box-sizing
+      +border-radius(3px)
+      +placeholder
+        color: #bbc3c9
+
+.date-field
+  cursor: pointer
+  border: 1px solid #e0e0e0
+  display: table
+  width: 100%
+  +user-select()
+  +border-radius(3px)
+  label
+    cursor: pointer
+  .field-container
+    display: table-cell
+    input
+      height: 35px                
+      width: 100%
+      padding: 10px
+      color: #878787
+      font-family: "Roboto"
+      font-size: 14px
+      font-weight: 300
+      +box-sizing()
+  .icon-container
+    display: table-cell
+    vertical-align: middle
+    padding-left: 13px
+    padding-right: 13px
+    text-align: center
+    border-left: 1px solid #e0e0e0
+    +box-sizing()
+    .icon-date
+      color: #969696
+      font-size: 18px
+      +transition(all, 0.2s, ease-in-out)
+  &:hover
+    .icon-container
+      .icon-date
+        color: #4a4a4a !important
+
+textarea
+  border: 1px solid #e0e0e0
+  display: block
+  padding: 10px 10px
+  color: #878787
+  font-family: "Roboto"
+  font-size: 14px
+  font-weight: 300
+  line-height: 23px
+  resize: vertical
+  +border-radius(3px)
+  +box-sizing()
+  +placeholder
+    color: #bbc3c9
+
 // carcase
 
 .left-panel-container
@@ -260,7 +434,7 @@ label.checkbox
   overflow: hidden
   width: 227px
   background-color: #4b5260
-  @include transition(all, 0.2s, ease-in-out)
+  +transition(all, 0.2s, ease-in-out)
   &.active
     left: 0px
   .left-panel
@@ -284,7 +458,7 @@ label.checkbox
       padding-right: 16px
       display: table
       padding-bottom: 6px
-      @include box-sizing()
+      +box-sizing()
       .icon-container-wrap
         display: table-cell
         vertical-align: middle
@@ -293,7 +467,7 @@ label.checkbox
           height: 56px
           border: 3px solid #e8f3ff
           position: relative
-          @include border-radius(50%)
+          +border-radius(50%)
           .note
             position: absolute
             width: 15px
@@ -301,7 +475,7 @@ label.checkbox
             background-color: #7ed321
             right: 0px
             bottom: -3px
-            @include border-radius(50%)
+            +border-radius(50%)
       .info-container
         vertical-align: middle
         display: table-cell
@@ -317,7 +491,7 @@ label.checkbox
           margin-bottom: 0
     .main-nav
       border-top: 1px solid #3c4451
-      @include box-sizing()
+      +box-sizing()
       .link
         height: 87px
         a
@@ -329,7 +503,7 @@ label.checkbox
           text-align: center
           cursor: pointer
           text-decoration: none
-          @include transition(all, 0.2s, ease-in-out)
+          +transition(all, 0.2s, ease-in-out)
           .icon
             position: relative
             display: block
@@ -374,8 +548,8 @@ label.checkbox
               font-family: "Avenir LT Std"
               font-size: 12px
               font-weight: 300
-              @include border-radius(50%)
-              @include box-sizing()
+              +border-radius(50%)
+              +box-sizing()
           .title
             display: block
             margin-top: 10px
@@ -407,7 +581,8 @@ label.checkbox
   left: 0
   top: 60px
   display: none
-  @include transition(all, 0.2s, ease-in-out)
+  z-index: 10
+  +transition(all, 0.2s, ease-in-out)
   &.active
     left: 227px
     .left-panel-activator
@@ -427,9 +602,9 @@ label.checkbox
     display: table-cell
     vertical-align: middle
     text-align: center
-    @include user-select()
-    @include border-radius(0 3px 3px 0)
-    @include box-sizing()
+    +user-select()
+    +border-radius(0 3px 3px 0)
+    +box-sizing()
     .icon-delete
       display: none
       font-size: 20px
@@ -445,7 +620,7 @@ label.checkbox
     width: 100%
     padding-left: 18px
     padding-right: 20px
-    @include box-sizing()
+    +box-sizing()
     .search-container
       height: inherit
       display: table-cell
@@ -466,7 +641,7 @@ label.checkbox
           font-size: 14px
           font-weight: 300
           line-height: 20px
-          @include box-sizing()
+          +box-sizing()
         .icon-search
           color: #a2a2a2
           font-size: 18px
@@ -488,10 +663,10 @@ label.checkbox
         cursor: pointer
         border: 1px solid transparent
         position: relative
-        @include box-sizing()
-        @include user-select()
-        @include border-radius(5px)
-        @include transition(all, 0.2s, ease-in-out)
+        +box-sizing()
+        +user-select()
+        +border-radius(5px)
+        +transition(all, 0.2s, ease-in-out)
         .user-info
           height: inherit
           .title
@@ -511,7 +686,7 @@ label.checkbox
             color: #858d9c
             vertical-align: middle
             text-decoration: none
-            @include transition(all, 0.2s, ease-in-out)
+            +transition(all, 0.2s, ease-in-out)
         .user-settings
           display: none
           opacity: 0
@@ -522,8 +697,8 @@ label.checkbox
           top: 100%
           background-color: white
           border: 1px solid #e9e9e9
-          @include box-sizing()
-          @include border-radius(0 0 5px 5px)
+          +box-sizing()
+          +border-radius(0 0 5px 5px)
           ul
             li
               padding-top: 6px
@@ -539,12 +714,12 @@ label.checkbox
           border: 1px solid #e9e9e9
         &.active
           border: 1px solid #e9e9e9
-          @include border-radius(5px 5px 0 0)
+          +border-radius(5px 5px 0 0)
           .icon-setting
             color: #4a4a4a !important
   .main-content
     padding: 17px 18px
-    @include box-sizing()
+    +box-sizing()
     .main-title
       p
         margin-top: 12px
@@ -561,8 +736,9 @@ label.checkbox
         height: 32px
         display: table
         border: 1px solid #e0e0e0
-        @include border-radius(3px)
-        @include box-sizing()
+        +user-select()
+        +border-radius(3px)
+        +box-sizing()
         a
           display: table-cell
           vertical-align: middle
@@ -577,8 +753,8 @@ label.checkbox
           font-weight: 300
           font-size: 14px
           text-decoration: none
-          @include box-sizing()
-          @include transition(all, 0.2s, ease-in-out)
+          +box-sizing()
+          +transition(all, 0.2s, ease-in-out)
           &:first-child
             border-left: none
           &.active
@@ -586,18 +762,21 @@ label.checkbox
             color: #515151
           &:hover
             background-color: #ededf1
+    .wrapper
+      padding: 10px 0
+      box-sizing: border-box
 
 article
   padding-bottom: 30px
   background-color: white
   border: 1px solid #d3d7df
-  @include box-sizing()
-  @include border-radius(3px)
+  +box-sizing()
+  +border-radius(3px)
   header
     width: 100%
     padding-left: 20px
     border-top: 1px solid #ddd
-    @include box-sizing()
+    +box-sizing()
     &:first-child
       border-top: none
     h4
@@ -617,13 +796,13 @@ article
       padding-bottom: 30px
       background-color: white
       border: 1px solid #d3d7df
-      @include box-sizing()
-      @include border-radius(3px)
+      +box-sizing()
+      +border-radius(3px)
       .information
         width: 100%
         padding: 10px
         border-top: 1px solid #ddd
-        @include box-sizing()
+        +box-sizing()
         tr
           height: 31px
           td
@@ -652,8 +831,8 @@ article
       padding-bottom: 30px
       background-color: white
       border: 1px solid #d3d7df
-      @include box-sizing()
-      @include border-radius(3px)
+      +box-sizing()
+      +border-radius(3px)
       .contact-reservation
         border-collapse: collapse
         width: 100%
@@ -674,7 +853,7 @@ article
               text-align: left
               padding-left: 18px
               padding-top: 8px
-              @include box-sizing()
+              +box-sizing()
         tbody
           tr
             height: 44px
@@ -689,20 +868,22 @@ article
               font-size: 14px
               font-weight: 300
               line-height: 16px
-              @include box-sizing()
+              +box-sizing()
               &:nth-child(2)
                 padding-left: 0
+
+// Pagination styles
 
 .pagintaion-container
   padding-top: 23px
   padding-left: 15px
-  @include box-sizing()
+  +box-sizing()
   .pagination
     width: 255px
     height: 39px
     border: 1px solid #e0e0e0
     display: table
-    @include border-radius(3px)
+    +border-radius(3px)
     a
       width: 51px
       display: table-cell
@@ -714,8 +895,8 @@ article
       font-weight: 300
       border-left: 1px solid #e0e0e0
       text-decoration: none
-      @include box-sizing()
-      @include transition(all, 0.2s, ease-in-out)
+      +box-sizing()
+      +transition(all, 0.2s, ease-in-out)
       &:first-child
         border-left: none
       .icon-pagination-left
@@ -723,8 +904,7 @@ article
         font-size: 10px
         display: block
         padding-top: 1px
-        @include transform(rotateY(180deg))
-        @include transition(all, 0.2s, ease-in-out)
+        +transition(all, 0.2s, ease-in-out)
         &.active
           color: #5b5b5b
       .icon-pagination-right
@@ -744,6 +924,55 @@ article
         .icon-pagination-left
           color: #5b5b5b
 
+
+// On list styles
+
+.on-list-container
+  padding-top: 23px
+  padding-left: 15px
+  +box-sizing()
+  .on-list
+    width: 204px
+    height: 39px
+    border: 1px solid #e0e0e0
+    display: table
+    +border-radius(3px)
+    a
+      width: 51px
+      display: table-cell
+      vertical-align: middle
+      text-align: center
+      color: gainsboro
+      font-family: "Avenir LT Std"
+      font-size: 16px
+      font-weight: 300
+      border-left: 1px solid #e0e0e0
+      text-decoration: none
+      padding-top: 2px
+      color: #838383
+      +box-sizing()
+      +transition(all, 0.2s, ease-in-out)
+      &:first-child
+        border-left: none
+      &.active
+        color: #575757
+        background-color: #f0f0f6
+      &:hover
+        color: #575757
+        background-color: #f0f0f6
+
+.pagination-list-container
+  padding-left: 15px
+  padding-right: 15px
+  .pagintaion-container
+    float: left
+    padding-top: 23px
+    padding-left: 0
+  .on-list-container
+    float: right
+    padding-top: 23px
+    padding-left: 0
+
 // emails
 
 .table-container
@@ -757,12 +986,13 @@ article
       padding-left: 26px
       padding-top: 5px
       vertical-align: middle
+    header + table
+      border-top: 1px solid #ddd
     table
       border-collapse: collapse
       width: 100%
       max-width: 100%
       table-layout: fixed
-      border-top: 1px solid #ddd
       border-bottom: 1px solid #ddd
       th, td
         border-left: 1px solid rgba(221, 221, 221, 0.47)
@@ -778,16 +1008,21 @@ article
             font-weight: 400
             text-align: left
             padding-left: 18px
+            padding-right: 18px
             padding-top: 8px
             overflow: hidden
             white-space: nowrap
-            text-overflow: ellipsis
-            @include box-sizing()
+            // text-overflow: ellipsis
+            +box-sizing()
             &.cell-50
               width: 50px
             &.cell-30
               width: 30px
               padding-left: 0
+            &.cell-125
+              width: 125px
+            &.cell-100
+              width: 100px
             &.cell-150
               width: 150px
             &.cell-200
@@ -820,7 +1055,7 @@ article
             overflow: hidden
             white-space: nowrap
             text-overflow: ellipsis
-            @include box-sizing()
+            +box-sizing()
             &:nth-child(2)
               padding-left: 0
               overflow: visible
@@ -831,7 +1066,7 @@ article
 .table-operation-container
   padding-top: 25px
   padding-left: 15px
-  @include box-sizing()
+  +box-sizing()
   .count-to-delete
     font-family: "Roboto"
     font-size: 14px
@@ -843,11 +1078,11 @@ article
     .title
       color: #979797
       padding-left: 5px
-      @include transition(all, 0.2s, ease-in-out)
+      +transition(all, 0.2s, ease-in-out)
     .icon-delete
       color: #9e9e9e
       padding-left: 10px
-      @include transition(all, 0.2s, ease-in-out)
+      +transition(all, 0.2s, ease-in-out)
     &.active
       .title
         color: #5c5c5c
@@ -963,16 +1198,16 @@ article
     padding-bottom: 30px
     background-color: white
     border: 1px solid #d3d7df
-    @include box-sizing()
-    @include border-radius(3px)
+    +box-sizing()
+    +border-radius(3px)
     padding-bottom: 0
     header
       width: 100%
       padding-left: 20px
       border-top: 1px solid #ddd
       cursor: pointer
-      @include box-sizing()
-      @include user-select()
+      +box-sizing()
+      +user-select()
       &:first-child
         border-top: none
       h4
@@ -988,21 +1223,20 @@ article
         position: absolute
         margin-top: 4px
         display: inline-block
-        @include transition(all, 0.2s, ease-in-out)
+        +transition(all, 0.2s, ease-in-out)
     &.active
       .filter-list-wrap
         display: block
       .icon-opener
-        @include transform(rotateZ(90deg))
+        +transform(rotateZ(90deg))
     .filter-list-wrap
       height: 0
-      // display: none
       width: 100%
       overflow: hidden
-      @include box-sizing()
+      +box-sizing()
       .filter-list
         border-top: 1px solid #ddd
-        @include box-sizing()
+        +box-sizing()
         label
           display: block
           padding-left: 20px
@@ -1011,20 +1245,20 @@ article
           float: left
           cursor: pointer
           padding-top: 15px
-          @include box-sizing()
+          +box-sizing()
           .label
             color: #515151
             font-family: "Montserrat Regular"
             font-size: 14px
             white-space: nowrap
-            @include user-select()
+            +user-select()
           .date-field
             border: 1px solid #e0e0e0
             margin-top: 6px
             display: table
             width: 100%
-            @include user-select()
-            @include border-radius(3px)
+            +user-select()
+            +border-radius(3px)
             .field-container
               display: table-cell
               input
@@ -1035,7 +1269,7 @@ article
                 font-family: "Roboto"
                 font-size: 14px
                 font-weight: 300
-                @include box-sizing()
+                +box-sizing()
             .icon-container
               display: table-cell
               vertical-align: middle
@@ -1043,34 +1277,19 @@ article
               padding-right: 13px
               text-align: center
               border-left: 1px solid #e0e0e0
-              @include box-sizing()
+              +box-sizing()
               .icon-date
                 color: #969696
                 font-size: 18px
-                @include transition(all, 0.2s, ease-in-out)
+                +transition(all, 0.2s, ease-in-out)
           .select-field
             cursor: pointer
-            border: 1px solid #e0e0e0
             margin-top: 6px
             display: table
             width: 100%
-            position: relative
-            @include user-select()
-            @include border-radius(3px)
             .field-container
               display: table-cell
               width: 100%
-              select
-                cursor: pointer
-                height: 35px
-                width: 100%
-                padding: 8px 10px
-                color: #878787
-                font-family: "Roboto"
-                font-size: 14px
-                padding-top: 8px
-                font-weight: 300
-                @include box-sizing()
             .icon-container
               position: absolute
               background-color: white
@@ -1080,12 +1299,12 @@ article
               font-size: 8px
               color: #8a8a8a
               padding-right: 15px
-              @include box-sizing()
+              +box-sizing()
               .icon-select-arrow
                 display: table-cell
                 height: 35px
                 vertical-align: middle
-                @include transition(all, 0.2s, ease-in-out)
+                +transition(all, 0.2s, ease-in-out)
           &:hover
             .date-field
               .icon-container
@@ -1129,14 +1348,14 @@ article
   margin-top: 30px
   padding-left: 20px
   padding-right: 20px
-  @include border-radius(3px)
+  +border-radius(3px)
   header
     height: 72px
     display: table
     width: 100%
     position: relative
     padding-left: 122px
-    @include box-sizing()
+    +box-sizing()
     h3
       display: table-cell
       vertical-align: middle
@@ -1149,7 +1368,7 @@ article
         font-size: 15px
         color: #858d9c
         cursor: pointer
-        @include user-select()
+        +user-select()
       .icon-arrow-left
         margin-right: 15px
       .icon-arrow-right
@@ -1161,8 +1380,8 @@ article
       position: absolute
       top: 15px
       left: 0
-      @include box-sizing()
-      @include border-radius(3px)
+      +box-sizing()
+      +border-radius(3px)
       a
         display: table-cell
         text-decoration: none
@@ -1172,7 +1391,7 @@ article
         padding-left: 10px
         padding-right: 10px
         border-left: 1px solid #e0e0e0
-        @include transition(all, 0.2s, ease-in-out)
+        +transition(all, 0.2s, ease-in-out)
         &:first-child
           border-left: none
         &.active, &:hover
@@ -1181,13 +1400,13 @@ article
     border: 1px solid #ddd
     width: 100%
     overflow-y: hidden
-    @include border-radius(3px)
+    +border-radius(3px)
     .date-table
       width: 100%
       max-width: 100%
       background-color: white
       border-collapse: collapse
-      @include box-sizing()
+      +box-sizing()
       .month
         color: #ef4a4a
         font-family: "Montserrat Bold"
@@ -1226,7 +1445,7 @@ article
           font-weight: 300
           font-size: 10px
           text-align: center
-          @include box-sizing()
+          +box-sizing()
           &:first-child
             width: 100px
             border-left: none
@@ -1263,7 +1482,7 @@ article
           font-size: 14px
           text-align: center
           padding: 12px
-          @include box-sizing()
+          +box-sizing()
           &:first-child
             width: 100px
             border-left: none
@@ -1284,7 +1503,7 @@ article
             width: auto
             border-left: 1px solid #ddd
             padding: 0
-            @include box-sizing()
+            +box-sizing()
             &:first-child
               width: 100px
               padding: 10px 30px 10px 10px
@@ -1303,7 +1522,7 @@ article
                 display: block
                 width: 100%
                 height: 30px
-                @include border-radius(4px 0 0 4px)
+                +border-radius(4px 0 0 4px)
               .title
                 z-index: 3
                 position: absolute
@@ -1315,8 +1534,8 @@ article
                 top: 50%
                 left: 10px
                 background-color: #515151
-                @include border-radius(3px)
-                @include transform(translateY(-50%))
+                +border-radius(3px)
+                +transform(translateY(-50%))
               &.blue
                 &:before
                   background-color: #8295aa
@@ -1344,13 +1563,38 @@ article
                 display: block
                 width: 100%
                 height: 30px
-                @include border-radius(0 4px 4px 0)
+                +border-radius(0 4px 4px 0)
               &.blue
                 &:before
                   background-color: #8295aa
               &.orange
                 &:before
                   background-color: #f5a623
+            &.mark-single
+              position: relative
+              padding: 4px
+              &:before
+                content: ""
+                display: block
+                width: 100%
+                height: 30px
+                +border-radius(4px)
+              .title
+                z-index: 3
+                position: absolute
+                font-family: "Avenir LT Std"
+                color: white
+                font-weight: 300
+                padding: 3px 8px
+                font-size: 13px 
+                top: 50%
+                left: 10px
+                background-color: #515151
+                +border-radius(3px)
+                +transform(translateY(-50%))
+              &.blue
+                &:before
+                  background-color: #8295aa
             .count
               position: absolute
               height: 19px
@@ -1366,9 +1610,9 @@ article
               font-weight: 700
               text-align: center
               padding-left: 1px
-              @include box-sizing()
-              @include border-radius(50%)
-              @include transform(translateX(-50%) translateY(-50%))
+              +box-sizing()
+              +border-radius(50%)
+              +transform(translateX(-50%) translateY(-50%))
 
 @media screen and (max-width: 520px)
   .room-table-container
@@ -1376,3 +1620,1054 @@ article
       h3
         padding-top: 60px
         padding-bottom: 15px
+
+
+// Email popup
+
+.popup-filter
+  background-color: rgba(74, 73, 74, 0.71)
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 999
+  opacity: 0
+  display: none
+  +transition(all, 0.6s, ease-in-out)
+  &.active
+    opacity: 1
+
+.popup-container
+  position: fixed
+  overflow-x: hidden
+  overflow-y: auto
+  width: 100%
+  height: 100%
+  z-index: 1000
+  top: 0
+  left: 0
+  display: none
+  opacity: 0
+  +transition(all, 0.6s, ease-in-out)
+  &.active
+    opacity: 1
+    .popup-wrap
+      .popup
+        +transform(translateY(0) translateZ(0) rotateX(0))
+  .popup-wrap
+    height: 100%
+    width: 100%
+    display: table
+    padding-top: 30px
+    padding-bottom: 30px
+    +perspective(600px)
+    +transform-style(preserve-3d)
+    .popup
+      z-index: 1000
+      position: relative
+      padding-left: 20%
+      padding-right: 20%
+      height: 100%
+      display: table-cell
+      vertical-align: middle
+      +transform(translateY(-50%) translateZ(-300px) rotateX(30deg))
+      +transition(all, 0.6s, ease-in-out)
+      header
+        h4
+          text-align: left
+        .popup-close-activator
+          cursor: pointer
+          &:hover
+            .icon-delete
+              color: #4a4a4a
+        .button-wrap
+          display: table-cell
+          padding-right: 26px
+          padding-left: 26px
+          padding-top: 5px
+          vertical-align: middle
+          +user-select()
+          .icon-delete
+            font-size: 16px
+            cursor: pointer
+            color: #bbc3c9
+            +transition(all, 0.2s, ease-in-out)
+      .params-panel
+        border-top: 1px solid #ddd
+        padding: 12px 96px 10px 60px
+        display: table
+        width: 100%
+        +box-sizing()
+        .panel-row
+          display: table-row
+          .title
+            display: table-cell
+            text-align: right
+            vertical-align: middle
+            padding-top: 10px
+            padding-bottom: 10px
+            color: #515151
+            font-family: "Montserrat Regular"
+            font-size: 14px
+            font-weight: 400
+            line-height: 18px
+            +user-select()
+          .content
+            padding-top: 10px
+            padding-bottom: 10px
+            text-align: left
+            padding-left: 48px
+            display: table-cell
+            color: #878787
+            font-family: "Roboto"
+            font-size: 14px
+            font-weight: 300
+            .select-container, .input-container
+              max-width: 251px
+              height: 35px
+            textarea
+              border: 1px solid #e0e0e0
+              display: block
+              width: 100%
+              max-width: 1200px
+              min-height: 250px
+              padding: 10px 10px
+              color: #878787
+              font-family: "Roboto"
+              font-size: 14px
+              font-weight: 300
+              line-height: 23px
+              resize: vertical
+              +border-radius(3px)
+              +box-sizing()
+              +placeholder
+                color: #bbc3c9
+            .edit-container
+              float: left
+              border: 1px solid #e0e0e0
+              border-radius: 3px
+              display: table
+              margin-right: 10px
+              +user-select()
+              +box-sizing()
+              +border-radius(3px)
+              &:first-child
+                margin-left: 0
+              .edit
+                cursor: pointer
+                color: #858d9c
+                display: table-cell
+                width: 35px
+                height: 30px
+                border-left: 1px solid #e0e0e0
+                vertical-align: middle
+                text-align: center
+                font-size: 12px
+                +transition(all, 0.2s, ease-in-out)
+                +box-sizing()
+                &:first-child
+                  border-left: none
+                &:hover
+                  background-color: #f0f0f6
+                  color: #5b5b5b
+            .attach-container
+              color: #219d82
+              display: table
+              cursor: pointer
+              .icon-attach
+                display: table-cell
+                vertical-align: middle
+                font-size: 22px
+              .description
+                padding-top: 3px
+                padding-left: 10px
+                display: table-cell
+                vertical-align: middle
+                font-family: "Avenir LT Std"
+                font-size: 14px
+            .button-container
+              margin-top: 5px
+
+@media screen and (min-width: 1200px) and (max-width: 1600px)
+  .popup-container
+    .popup-wrap
+      .popup
+        padding-left: 15%
+        padding-right: 15%
+
+@media screen and (min-width: 992px) and (max-width: 1200px)
+  .popup-container
+    .popup-wrap
+      .popup
+        padding-left: 10%
+        padding-right: 10%
+
+@media screen and (min-width: 768px) and (max-width: 992px)
+  .popup-container
+    .popup-wrap
+      .popup
+        padding-left: 5%
+        padding-right: 5%
+        .params-panel
+          padding: 12px 50px 10px 30px
+          .panel-row
+            .content
+              padding-left: 30px
+
+@media screen and (min-width: 480px) and (max-width: 768px)
+  .popup-container
+    .popup-wrap
+      .popup
+        padding-left: 30px
+        padding-right: 30px
+        .params-panel
+          padding: 12px 35px 10px 20px
+          .panel-row
+            .content
+              padding-left: 20px
+              .edit-container
+                margin-top: 10px
+
+@media screen and (min-width: 320px) and (max-width: 480px)
+  .popup-container
+    .popup-wrap
+      .popup
+        padding-left: 15px
+        padding-right: 15px
+        .params-panel
+          padding: 12px 30px 10px 20px
+          .panel-row
+            .title
+              display: block
+              text-align: left
+            .content
+              padding-left: 0
+              clear: both
+              display: block
+              .edit-container
+                margin-top: 10px
+            &:nth-child(3), &:nth-child(4), &:nth-child(5), &:nth-child(6)
+              .content
+                padding-top: 0
+                padding-bottom: 0
+
+@media screen and (min-width: 0) and (max-width: 320px)
+  .popup-container
+    .popup-wrap
+      .popup
+        padding-left: 10px
+        padding-right: 10px
+        .params-panel
+          padding: 12px 20px 10px 20px
+          .panel-row
+            .title
+              display: block
+              text-align: left
+            .content
+              padding-left: 0
+              clear: both
+              display: block
+              .edit-container
+                margin-top: 10px
+            &:nth-child(3), &:nth-child(4), &:nth-child(5), &:nth-child(6)
+              .content
+                padding-top: 0
+                padding-bottom: 0
+
+
+// Add reservation page
+
+.add-reservation
+  margin-top: 20px
+  padding-top: 45px
+  padding-bottom: 130px
+  form
+    display: table
+    padding-left: 15px
+    padding-right: 15px
+    width: 100%
+    +box-sizing()
+    label, .form-row
+      display: table-row
+      .title
+        display: table-cell
+        padding-top: 10px
+        padding-bottom: 10px
+        width: 40%
+        text-align: right
+        color: #515151
+        font-family: "Montserrat Regular"
+        font-size: 14px
+        font-weight: 400
+      .content
+        padding-top: 10px
+        padding-bottom: 10px
+        display: table-cell
+        padding-left: 30px
+        text-align: left
+        padding-right: 50px
+        .date-field, .select-container
+          width: 251px
+        .area-container
+          textarea
+            width: 100%
+            max-width: 413px
+            height: 80px
+
+@media screen and (min-width: 0) and (max-width: 480px)
+  .add-reservation
+    padding-bottom: 45px
+    form
+      label, .form-row
+        display: block
+        .title
+          text-align: left
+          display: block
+        .content
+          display: block
+          padding-left: 0
+          padding-right: 5px
+
+// Add lead page
+
+.tab-box
+  margin-top: 20px
+  padding-bottom: 130px
+  .menu-container-wrap
+    height: 75px
+    display: table
+    width: 100%
+    border-bottom: 1px solid #ddd
+    .menu-container
+      padding: 10px
+      margin-top: 0 !important
+      display: table-cell
+      vertical-align: middle
+      text-align: center
+  .tab
+    display: none
+    opacity: 0
+    +transition(all, 0.2s, ease-in-out)
+    &.active
+      display: block
+      &.show
+        opacity: 1
+    form
+      display: table
+      padding-top: 30px
+      padding-left: 15px
+      padding-right: 15px
+      width: 100%
+      +box-sizing()
+      .form-row
+        display: table-row
+        .title
+          display: table-cell
+          padding-top: 10px
+          padding-bottom: 10px
+          width: 40%
+          text-align: right
+          color: #515151
+          font-family: "Montserrat Regular"
+          font-size: 14px
+          font-weight: 400
+        .content
+          padding-top: 10px
+          padding-bottom: 10px
+          display: table-cell
+          padding-left: 30px
+          text-align: left
+          padding-right: 50px
+          .date-field, .select-container, .input-field
+            width: 251px
+          .area-container
+            textarea
+              width: 100%
+              max-width: 413px
+              height: 80px
+
+@media screen and (min-width: 0) and (max-width: 480px)
+  .tab-box
+    padding-bottom: 45px
+    .menu-container-wrap
+      .menu-container
+        .menu
+          margin-top: 15px
+          margin-bottom: 15px
+          a
+            display: block
+            padding-top: 15px
+            padding-bottom: 15px
+    .tab
+      form
+        padding-top: 0
+        padding-bottom: 0
+        padding-left: 20px
+        label, .form-row
+          display: block
+          .title
+            text-align: left
+            display: block
+          .content
+            padding-top: 0
+            display: block
+            padding-left: 0
+            padding-right: 5px
+
+
+// cont page
+
+.panel-one-wrap
+  margin-top: 30px
+  width: 100%
+  .panel-one-container
+    padding-right: 11.5px
+    .panel-one
+      padding-bottom: 30px
+      background-color: white
+      border: 1px solid #d3d7df
+      overflow-x: auto
+      +box-sizing()
+      +border-radius(3px)
+      header
+        overflow-x: auto
+        .button-wrap
+          display: table-cell
+          padding-right: 12px
+          padding-top: 5px
+          vertical-align: middle
+      .first-column
+        width: 100%
+        max-width: 100%
+        padding: 16px
+        border-top: 1px solid #ddd
+        border-spacing: 0
+        +box-sizing()
+        tr
+          height: 33px
+          td
+            font-size: 14px
+            &:first-child
+              width: 170px
+              white-space: nowrap
+              text-align: right
+              color: #515151
+              font-family: "Montserrat Bold"
+              vertical-align: middle
+            &:last-child
+              text-align: left
+              color: #878787
+              font-family: "Roboto"
+              font-weight: 300
+              padding-left: 33px
+              vertical-align: middle
+          &.total-container
+            td
+              color: #515151
+              font-family: "Montserrat Bold"
+              vertical-align: bottom
+              &:first-child
+                padding-top: 36px
+      .input-field
+        width: 251px
+      .button-wrap
+        margin-top: 18px
+
+@media screen and (min-width: 480px) and (max-width: 768px)
+  .panel-one-wrap
+    .panel-one-container
+      .panel-one
+        header
+          .button-wrap
+            margin-top: 0
+            margin-bottom: 15px
+            float: left
+            display: block
+        .first-column
+          tr
+            td
+              display: block
+              padding-bottom: 10px
+              &:first-child
+                padding-top: 10px
+                padding-left: 33px
+                text-align: left
+
+@media screen and (min-width: 0) and (max-width: 480px)
+  .panel-one-wrap
+    .panel-one-container
+      .panel-one
+        header
+          .button-wrap
+            margin-top: 0
+            margin-bottom: 15px
+            float: left
+            display: block
+        .first-column
+          tr
+            td
+              display: block
+              padding-bottom: 3px
+              &:first-child
+                padding-top: 10px
+                padding-left: 15px
+                text-align: left
+              &:last-child
+                padding-left: 15px
+            &.total-container
+              td
+                &:first-child
+                  padding-top: 16px
+          .button-wrap
+            margin-top: 5px
+
+
+// Table filter box
+
+.table-filter-container
+  margin-top: 25px
+  display: table
+  width: 100%
+  .table-filter
+    height: 103px
+    background-color: white
+    border: 1px solid #d3d7df
+    border-radius: 3px
+    display: table-cell
+    vertical-align: middle
+    padding: 20px
+    width: 100%
+    +box-sizing()
+    .button-wrap
+      float: left
+      margin-top: 10px
+      margin-bottom: 10px
+      margin-right: 20px
+      .button
+        display: table
+        padding-left: 0
+        padding-right: 0
+        height: 35px
+        .icon-add-new
+          display: table-cell
+          vertical-align: middle
+          font-size: 21px
+          padding-left: 10px
+          padding-right: 10px
+        .title
+          display: table-cell
+          vertical-align: middle
+          text-transform: none
+          padding-right: 15px
+          padding-top: 3px
+    .right-container-wrap
+      .right-container
+        float: right
+        .filter
+          margin-top: 10px
+          margin-bottom: 10px
+          float: left
+          display: table
+          padding-right: 26px
+          .title
+            display: table-cell
+            width: 1px
+            color: #515151
+            font-family: "Montserrat Bold"
+            font-size: 14px
+            font-weight: 400
+            white-space: nowrap
+            vertical-align: middle
+          .simple-select
+            padding-left: 15px
+            display: table-cell
+        .search-container
+          float: left
+          width: 400px
+          height: 35px
+          margin-right: 15px
+          position: relative
+          margin-top: 10px
+          margin-bottom: 10px
+          input
+            width: 100%
+            height: 100%
+            border: 1px solid #e0e0e0
+            padding: 12px 12px
+            color: #878787
+            font-family: "Roboto"
+            font-size: 14px
+            +box-sizing()
+            +border-radius(3px)
+          .icon-search
+            cursor: pointer
+            position: absolute
+            right: 12px
+            top: 50%
+            margin-top: -9px
+            font-size: 18px
+            color: #a2a2a2
+        .button-container
+          float: left
+          margin-top: 10px
+          margin-bottom: 10px
+          height: 35px
+          .button-wrap
+            margin-top: 0
+            margin-bottom: 0
+            margin-right: 10px
+            height: 35px
+            &:last-child
+              margin-right: 0
+            .simple-button
+              height: 35px
+
+@media screen and (min-width: 0) and (max-width: 480px)
+  .table-filter-container
+    .table-filter
+      .right-container-wrap
+        .right-container
+          .filter
+            width: 100%
+          .search-container
+            width: 100%
+          .button-container
+
+
+// Reservations center, contacts, inquiries pages
+
+.reservation-center
+  .table
+    header + table
+      border-top: 1px solid #ddd
+    table
+      // th:nth-child(7), td:nth-child(7), th:nth-child(8), td:nth-child(8)
+      //   padding-left: 30px
+      th:nth-child(7), td:nth-child(7)
+        border-left: 1px solid rgba(221, 221, 221, 0.47) !important
+      td:nth-child(7)
+        padding-left: 35px
+
+.inquiries-table
+  .table
+    header + table
+      border-top: 1px solid #ddd
+    table
+      // th:nth-child(7), td:nth-child(7), th:nth-child(8), td:nth-child(8)
+      //   padding-left: 30px
+      th:nth-child(7), td:nth-child(7)
+        border-left: 1px solid rgba(221, 221, 221, 0.47) !important
+.wrapper-label
+  display:inline-block
+  position: relative
+  top: 0
+  left: 0 
+  margin: 14px 11px 19px 0
+  border: 1px solid #d3d7df
+  border-radius: 3px
+  box-sizing: border-box
+  &.lg
+    max-width: 373px
+    width: 100%
+    height: 146px
+    padding: 41px 10px 41px 92px
+    &.revenue:before
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      content:''
+      width: 5px
+      height: 144px
+      border-radius: 3px 0px 0 3px
+      background-color: #50e3c2
+    &.revenue:after
+      display: block
+      position: absolute
+      top: 54px
+      left: 35px
+      font-family: "dasboard-icons"
+      font-size: 32px
+      content: "\e600"
+      color: #4b5260  
+    &.reservations:before
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      content:''
+      width: 5px
+      height: 144px
+      border-radius: 3px 0px 0 3px
+      background-color: #ffc76b
+    &.reservations:after
+      display: block
+      position: absolute
+      top: 54px
+      left: 35px
+      font-family: "dasboard-icons"
+      font-size: 32px
+      content: "\e601"
+      color: #4b5260
+    &.inquiries:before
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      content:''
+      width: 5px
+      height: 144px
+      border-radius: 3px 0px 0 3px
+      background-color: #82b0e6
+    &.inquiries:after
+      display: block
+      position: absolute
+      top: 54px
+      left: 35px
+      font-family: "dasboard-icons"
+      font-size: 32px
+      content: "\e602"
+      color: #4b5260
+    .description
+      position: absolute
+      bottom: 18px
+      left: 94px
+      font: 14px "Roboto"
+      font-weight: 300
+      line-height: 16px
+      color: #575757
+    p 
+      padding: 0
+      margin: 0
+      font-family: "Roboto"
+      font-size: 48px
+      font-weight: 300
+      line-height: 57px
+      color: #575757
+  &.sm 
+    max-width: 273px
+    width: 100%
+    height: 94px
+    padding: 13px 31px
+    margin:  0 0px 22px 29px
+    .description
+      position: absolute
+      bottom: 14px
+      left: 35px
+      font: 14px "Roboto"
+      font-weight: 300
+      line-height: 16px
+      color: #575757
+    p 
+      padding: 0
+      margin: 0
+      font-family: "Roboto"
+      font-size: 38px
+      font-weight: 300
+      line-height: 44px
+      color: #575757  
+  &.sm:before
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    content:''
+    width: 3px
+    height: 92px
+    border-radius: 3px 0px 0 3px
+    background-color: #8591a7
+
+.ocupancy-report
+  display: inline-block
+  max-width: 841px
+  width: 100%
+  height: 442px
+  float: left
+  background-color: white
+  border: 1px solid #d3d7df
+  border-radius: 3px
+  .menu-icon
+    position:relative
+    top: 0
+    left: 0
+  .menu-icon:after
+    display: block
+    position: absolute
+    top: 6px;
+    left: -15px;
+    font-family: "dasboard-icons"
+    font-size: 10px
+    content: "\e605"
+    color: #4b5260
+    cursor: pointer
+  #diagram
+    width: 824px;
+    height: 285px
+    margin: 36px 10px 
+    .wrapper-left-bar
+      display: inline-block 
+      vertical-align: top;
+      width: 24px
+      height: 260px
+      span
+        position: relative
+        top: 0
+        left: 0
+        width: 24px
+        height: 16px
+        color: #575757
+        font-family: "Roboto"
+        font-size: 14px
+        font-weight: 300
+        line-height: 16px
+        text-align: right
+        display: inline-block
+        padding-bottom: 42px
+      span:after
+        position: absolute
+        top: 7px
+        left: 28px
+        display: block
+        content: ''
+        width: 787px
+        height: 1px
+        background-color: #f4f4f4
+        z-index: 0
+    .wrapper-months
+      display: inline-block
+      vertical-align: top
+      width: 796px;
+      height: 100%
+      padding-top: 21px;
+      .month
+        display: inline-block
+        position: relative
+        top: 0
+        left: 0
+        margin: 0 7px
+        width: 48px
+        span
+          display: block;
+          padding-top: 16px 
+          font-family: "Roboto"
+          font-size: 14px
+          font-weight: 300
+          line-height: 16px
+          color: #575757
+          text-align: center 
+        .title
+          content: attr(data-title)
+          position: absolute
+          left: 20%; top: 30%
+          z-index: 1
+          width: 48px
+          height: 24px
+          background-color: rgba(45, 52, 65, 0.81)
+          border-radius: 2px
+          color: white
+          font-family: "Roboto"
+          font-size: 14px
+          font-weight: 300
+          line-height: 16px
+          text-align: center
+          padding: 3px 0
+          box-sizing: border-box  
+        .diagram
+          width: 100%
+          height: 230px
+          background-color: #90d39c
+          cursor: pointer
+          &.sm
+            height: 225px
+            margin-top: 5px 
+          .level
+            width: 100%
+            max-height: 230px
+            height: 100px
+            background-color: #ff5d5d
+            border-bottom: 4px solid white        
+
+.custom-panel
+  position: relative
+  top: 0
+  left: 0
+  display: inline-block
+  background-color: white
+  border: 1px solid #d3d7df
+  border-radius: 3px
+  margin-bottom: 15px
+  .body
+    width: 100%
+    overflow: auto
+  .header
+      width:100%
+      min-height: 70px
+      padding: 23px 17px  
+      border-bottom: 1px solid #ddd;
+      box-sizing: border-box
+      h3
+        float: left 
+        padding: 0
+        margin: 0
+        font-family: "Montserrat Regular"
+        font-size: 20px
+        font-weight: 400
+        line-height: 24px
+        color: #515151
+      .right-content
+        display: inline-block
+        .counter
+          display: inline-block
+          padding: 5px 10px
+          background-color: #858d9c
+          border-radius: 101px
+          color: white
+          font-family: "Roboto"
+          font-size: 14px
+          font-weight: 300
+          line-height: 16px
+@media screen and (min-width: 480px)
+  .custom-panel
+    .header
+      .right-content 
+        display: inline-block
+        float: right
+        .menu-container
+          margin-top: -3px
+
+.reservation
+  max-width: 1134px
+  width: 100%
+  .body
+    height: 100%
+  .pagintaion-container
+    padding: 16px 16px 36px 16px
+  table
+    width: 100%
+    border-collapse:collapse
+  table col
+    &.column1
+      width: 150px
+    &.column2
+      width: 150px
+    &.column3
+      width: auto
+    &.column4
+      width: 100px
+    &.column5
+      width: 100px
+  table th
+    padding: 25px 20px 19px 20px  
+    font-family: "Montserrat Regular"
+    font-size: 14px
+    font-weight: 400
+    line-height: 18px
+    text-align: left
+    color: #515151
+  table th:nth-child(-n+3)
+    border-left: 1px solid #ddd
+  table th:first-child
+    border: none
+  table td:first-child
+    border: none
+  tbody tr:nth-child(odd)
+    background-color: #f7f7f9
+  tbody tr:hover
+    cursor:pointer
+    background-color: #eaeaee
+  table td:nth-child(-n+3)
+    border-left: 1px solid #ddd
+  table td
+    padding: 12px 20px 16px 20px 
+    font-family: "Roboto"
+    font-size: 14px
+    font-weight: 300
+    line-height: 16px
+    color: #575757
+    .progress-wrapper
+      width: 335px
+      height: 9px
+      background-color: #d8d8d8
+      border-radius: 25px
+      .level
+        width: 141px
+        height: 9px
+        background-color: #44c7ff
+        border-radius: 25px
+
+.upcoming
+  max-width: 1134px;
+  width: 100%
+  .right-content
+    .menu-container
+      margin-top: 10px
+  .body
+    height: 100%
+    overflow-x: auto
+  table
+    width: 100%
+    min-width: 400px  
+    border-collapse:collapse
+  table th
+    min-width: 24px 
+    font-family: "Montserrat Regular"
+    font-size: 14px
+    font-weight: 400
+    line-height: 18px
+    color: #515151
+  table col
+    &.column1
+      width: 55px
+    &.column2
+      width: 380px
+    &.column3
+      width: 55px
+    &.column4
+      width: auto 
+  tbody tr:nth-child(even)
+    background-color: #f7f7f9
+  tbody tr:hover
+    cursor:pointer
+    background-color: #eaeaee    
+  table td
+    position: relative
+    top: 0
+    left: 0
+    max-width: 350px
+    min-width: 24px 
+    font-family: "Roboto"
+    font-size: 14px
+    font-weight: 300
+    line-height: 16px
+    color: #575757
+    padding: 13px 0
+    &.revenue:before
+      display: block
+      position: absolute
+      top: 16px
+      left: 16px
+      font-family: "dasboard-icons"
+      font-size: 24px
+      content: "\e600"
+      color: #a5d8af
+    &.question:before
+      display: block
+      position: absolute
+      top: 16px
+      left: 16px
+      font-family: "dasboard-icons"
+      font-size: 24px
+      content: "\e603"
+      color: #d5ce73
+    &.time-icon:before
+      display: block
+      position: absolute
+      top: 16px
+      left: 16px
+      font-family: "dasboard-icons"
+      font-size: 24px
+      content: "\e604"
+      color: #4b5260
+    .status
+      font-weight: 400    
