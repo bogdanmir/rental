@@ -4,6 +4,26 @@ $(document).ready(function() {
 
   var userContainer = $(".user-info");
 
+  $('.property-top-bar').on('click', 'button', function(){
+    if($(this).hasClass('active')){
+      $(this).removeClass('active');
+    } else {
+      $(this).closest('.property-top-bar').find('button').removeClass('active');
+      $(this).addClass('active');
+    }
+      
+  });
+
+  $('.checkbox-list .cbAll').on('click', function(){
+
+    console.log($(this).find('input'), $(this).find('input').attr('checked'))
+    if($(this).find('input').prop("checked")){
+      $(this).closest('ul').find('input:checkbox').prop("checked", true);
+    } else {
+      $(this).closest('ul').find('input:checkbox').prop("checked", false);
+    }
+  });
+
   userContainer.on("click", function() {
     $element = $(this).closest(".user");
     $userSettings = $element.find(".user-settings");

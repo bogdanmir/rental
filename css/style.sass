@@ -243,8 +243,8 @@ a.button, button.button
   display: table-cell
   vertical-align: middle
   text-align: center
-  padding-left: 25px
-  padding-right: 25px
+  padding-left: 15px
+  padding-right: 15px
   height: 38px
   background-color: #52b7f6
   color: white
@@ -268,6 +268,12 @@ a.button, button.button
     background-color: #c86767
     &:hover
       background-color: #ff7b7b
+  &.white
+    color: #bebebe
+    background-color: #ffffff
+    border: 1px solid #d9d9d9
+    &:hover
+      background-color: #eaeaee    
 
 .simple-button
   width: 86px
@@ -360,6 +366,30 @@ a.button, button.button
   display: block
   .input-container
     display: block
+    position: relative
+    top: 0
+    left: 0
+    &.US-currency:after
+      display: block
+      position: absolute
+      top: 0px
+      left: 0px
+      content: ''
+      width: 31px
+      height: 35px
+      border-right: 1px solid #e0e0e0
+    &.US-currency:before
+      position: absolute
+      top: 10px
+      left: 12px
+      content: '$'
+      color: #878787
+      font-family: 'Roboto'
+      font-size: 14px
+      font-weight: 700
+      line-height: 16px
+    &.US-currency input
+      padding-left: 40px 
     input
       border: 1px solid #e0e0e0
       padding: 9px
@@ -372,7 +402,7 @@ a.button, button.button
       +box-sizing
       +border-radius(3px)
       +placeholder
-        color: #bbc3c9
+        color: #bbc3c9       
 
 .date-field
   cursor: pointer
@@ -655,6 +685,7 @@ textarea
       display: table-cell
       vertical-align: middle
       text-align: right
+      z-index: 999
       .user
         width: 204px
         float: right
@@ -691,25 +722,111 @@ textarea
           display: none
           opacity: 0
           width: 204px
-          padding: 9px 18px
           position: absolute
           left: -1px
           top: 100%
           background-color: white
           border: 1px solid #e9e9e9
+          text-align: left
+          z-index: 9999
           +box-sizing()
           +border-radius(0 0 5px 5px)
+          .user-avtar
+            display: block
+            width: 54px
+            height: 54px
+            border-radius: 100%
+            margin-left: 22px
+            margin-top: 13px 
+            overflow: hidden
+            box-shadow: 0 0 10px rgba(232, 243, 255, 1)
+            img
+              width: 100%
+              height: 100%
+          p.mail
+            padding-left: 22px
+            padding-top: 10px
+            color: #656565
+            font-family: "Avenir LT Std"
+            font-size: 14px
+            font-weight: 300
+            line-height: 17px
           ul
+            padding: 9px 0; 
+            li.line
+              width: 100%
+              height: 1px
+              padding:0
+              margin: 0
+              background-color: #d9d9d9
             li
-              padding-top: 6px
-              padding-bottom: 6px
+              padding: 6px
               text-align: left
               a
+                position: relative
+                top:0
+                left: 0
                 text-decoration: none
                 font-family: "Avenir LT Std"
                 font-size: 14px
+                margin-left:35px 
                 &:hover
                   text-decoration: underline
+                &.change-password:after
+                  display: block
+                  position: absolute
+                  top: 5px
+                  left: -25px
+                  font-family: "dasboard-icons"
+                  font-size: 24px
+                  content: "\e60e"
+                  color: #858d9c
+                &.edit-Profile:after
+                  display: block
+                  position: absolute
+                  top:0
+                  left: -21px;
+                  font-family: "dasboard-icons";
+                  font-size: 14px;
+                  content: "\e60f"
+                  color: #858d9c
+                &.photo-gallery:after
+                  display: block
+                  position: absolute
+                  top: 5px
+                  left: -25px
+                  font-family: "dasboard-icons"
+                  font-size: 24px
+                  content: "\e610"
+                  color: #858d9c
+                &.setting:after
+                  display: block
+                  position: absolute
+                  top: 5px
+                  left: -25px
+                  font-family: "dasboard-icons"
+                  font-size: 24px
+                  content: "\e611"
+                  color: #858d9c
+                &.add-new-user:after
+                  display: block
+                  position: absolute
+                  top: 5px
+                  left: -25px
+                  font-family: "dasboard-icons"
+                  font-size: 24px
+                  content: "\e60d"
+                  color: #858d9c
+                &.log-out:after
+                  display: block
+                  position: absolute
+                  top: 5px
+                  left: -25px
+                  font-family: "dasboard-icons"
+                  font-size: 24px
+                  content: "\e612"
+                  color: #858d9c         
+
         &:hover
           border: 1px solid #e9e9e9
         &.active
@@ -1945,6 +2062,21 @@ article
       display: table-cell
       vertical-align: middle
       text-align: center
+  header
+    padding: 27px 21px
+    color: #656565
+    font-family: "Avenir LT Std"
+    font-size: 16px
+    font-weight: 300
+    line-height: 19px
+    border-bottom: 1px solid #ddd
+    & h3
+      color: #515151
+      font-family: "Montserrat Bold"
+      font-size: 20px
+      font-weight: 400
+      line-height: 24px
+      margin-bottom: 18px 
   .tab
     display: none
     opacity: 0
@@ -1969,7 +2101,7 @@ article
           width: 40%
           text-align: right
           color: #515151
-          font-family: "Montserrat Regular"
+          font-family: "Montserrat Bold"
           font-size: 14px
           font-weight: 400
         .content
@@ -2669,4 +2801,373 @@ article
       content: "\e604"
       color: #4b5260
     .status
-      font-weight: 400    
+      font-weight: 400
+
+.property-top-bar
+  display: block
+  width: 100%
+  margin-bottom: 110px 
+  button
+    display: inline-block
+    width: 15.7%
+    position: relative
+    top: 0
+    left: 0
+    padding: 12px 0
+    margin-right: -4px;
+    text-align: center
+    color: #858d9a
+    font-family: 'Montserrat Bold'
+    font-size: 12px
+    font-weight: 400
+    line-height: 15px
+    background: none
+    border-left: 1px solid #858d9c
+    border-top: 1px solid #858d9c
+    border-bottom: 1px solid #858d9c
+  button:first-child
+    border-radius: 3px 0px 0px 3px
+  button:last-child
+    border-radius: 0px 3px 3px 0px
+    border-right: 1px solid #858d9c 
+  button:hover, button.active
+    color:white
+    background-color: #858d9a
+    cursor: pointer
+  button.dropdown.active:before
+    display: block
+    position: absolute
+    top: 40px
+    left: 50%
+    margin-left: -5px 
+    content: ''
+    border: 5px solid transparent
+    border-top: 5px solid #858d9a
+  button.dropdown.active  
+    span.general:after
+      -moz-transform: rotate(90deg)
+      -ms-transform: rotate(90deg)
+      -webkit-transform: rotate(90deg)
+      -o-transform: rotate(90deg)
+      transform: rotate(90deg) 
+  button.dark-red
+    width: 20%
+    color: #ff4646
+    border: 1px solid #ff4646
+  button.dark-red:hover,
+  button.dark-red.active
+    color: #ffffff
+    background-color: #ff4646   
+  button span
+    display: inline-block
+    position: relative
+    top: 0
+    left: 0 
+    &.general:before
+      display: block
+      position: absolute
+      top: 0
+      left: -25px
+      font-family: "dasboard-icons"
+      font-size: 17px
+      content: "\e606"
+    &.general:after
+      display: block
+      position: absolute
+      top: 0
+      left: 70px
+      font-family: "icomoon"
+      font-size: 13px
+      -moz-transform: rotate(270deg)
+      -ms-transform: rotate(270deg)
+      -webkit-transform: rotate(270deg)
+      -o-transform: rotate(270deg)
+      transform: rotate(270deg)
+      content: "\e616" 
+    &.pricing:before  
+      display: block
+      position: absolute
+      top: 0
+      left: -25px
+      font-family: "dasboard-icons"
+      font-size: 17px
+      content: "\e607"
+    &.photos:before
+      display: block
+      position: absolute
+      top: 0
+      left: -25px
+      font-family: "dasboard-icons"
+      font-size: 17px
+      content: "\e608"
+    &.calendar:before
+      display: block
+      position: absolute
+      top: 0
+      left: -25px
+      font-family: "dasboard-icons"
+      font-size: 17px
+      content: "\e609"
+    &.marketing:before
+      display: block
+      position: absolute
+      top: 0
+      left: -25px
+      font-family: "dasboard-icons"
+      font-size: 17px
+      content: "\e60b"
+    &.delete-product:before
+      display: block
+      position: absolute
+      top: 0
+      left: -25px
+      font-family: "dasboard-icons"
+      font-size: 17px
+      content: "\e60a"
+.property-top-bar                
+  .dropdown
+    .dropdown-menu
+      display: none
+      width: 910px
+  .dropdown.active,
+    .dropdown-menu
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      padding-top: 65px         
+      li:first-child
+        padding-left: 0 
+      li
+        display: inline-block
+        padding: 8px 26px
+        text-align: left
+        color: #858d9a
+        font-family: 'Montserrat Bold'
+        font-size: 14px
+        font-weight: 400
+        line-height: 18px
+        border: none
+        &.active
+          font-weight: 700
+          background: none
+          border-bottom: 2px solid #858d9a
+      li:hover
+        background: none
+
+@media screen and (max-width: 980px)
+  .property-top-bar
+    button,
+    button.dark-red
+      border-radius: 0px 0px 0px 0px
+      width: 100%
+    button  
+      border-left: 1px solid #858d9c
+      border-right: 1px solid #858d9c
+      border-bottom: none
+      &.dropdown.active,
+      &.dropdown:hover   
+        .dropdown-menu
+          position: relative;
+          top: 12px;
+          left: 0;
+          width: 100%
+          padding-top: 0px
+          border-right: 1px solid #858d9c
+          background-color: #f7f7f9
+          li,
+          li:first-child
+            width: 95%
+            padding: 8px 26px
+            box-sizing: border-box 
+
+.first-column
+  display: inline-block
+  vertical-align: top
+  width: 49.5%
+  padding: 25px 12px 25px 0
+  box-sizing: border-box 
+
+.second-column
+  display: inline-block
+  vertical-align: top
+  width: 49.5%
+  padding: 25px 0 25px 12px
+  box-sizing: border-box 
+
+@media screen and (max-width: 620px)
+  .first-column,
+  .second-column
+    width: 100%
+    padding: 25px 0 0 0
+  .second-column
+    margin-top: -25px   
+
+label
+  color: #575757
+  font-family: 'Roboto'
+  font-size: 14px
+  font-weight: 300
+  line-height: 16px
+  input[type="checkbox"]
+    display: none
+  span 
+    position:relative
+    padding-left: 39px
+    margin-left: 18px 
+  input[type="checkbox"] + span:before
+    position:absolute
+    top: 0
+    left: 0
+    display: block
+    width: 16px
+    height: 16px
+    content:''
+    background-color: whitesmoke
+    border: 1px solid lightgrey
+    border-radius: 2px
+    cursor: pointer
+  input[type="checkbox"]:checked + span:after
+    position:absolute
+    top: 1px
+    left: 1px
+    text-align: center
+    color: grey
+    font-family: "icomoon"
+    content: "\e611"
+    font-size: 15px
+    z-index: 10
+    width: 15px
+    height: 15px
+    background-color: whitesmoke
+
+.amenities
+  vertical-align: top
+  width: 100%
+  margin-bottom: 25px 
+  .checkbox-list
+    li
+      height: 44px
+      padding-top: 12px;
+      box-sizing: border-box;
+    li:nth-child(even)
+      background-color: #f7f7f9
+    li:nth-child(odd)
+      background-color: #ffffff
+
+.calendar
+  .room-table-container
+   padding: 0
+   header
+    padding-left: 0
+  .body
+    overflow-x: auto   
+  .date-switcher
+    &.left
+      top: 19px
+      left: 25px
+    &.right
+      top: 19px
+      right:25px
+      left: auto
+
+
+
+.table-calendar
+  width: 100%
+  min-width: 800px
+  outline: none
+  border-collapse:collapse
+  thead
+    th
+      width: 14.2% 
+      color: #515151
+      font-family: 'Montserrat Bold'
+      font-size: 14px
+      font-weight: 400
+      line-height: 18px
+      text-align: center
+      padding: 22px 0
+      border-right: 1px solid #ddd
+      border-bottom: 1px solid #ddd
+      border-top: 1px solid #ddd
+    th:last-child
+      border-right: none  
+  tbody
+    td
+      position: relative
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      height: 110px
+      padding: 0
+      border-right: 1px solid #ddd
+      border-bottom: 1px solid #ddd
+      .day
+        position: absolute
+        top: 13px
+        right: 13px
+        color: #575757
+        font-family: 'Roboto'
+        font-size: 14px
+        font-weight: 400
+        line-height: 16px
+      &.disabled 
+        .day
+          color: #878787
+      .marker
+        position: absolute
+        left: -1px
+        right: -1px
+        bottom: 0
+        height: 23px
+        text-align: left
+        padding: 3px 9px
+        box-sizing: border-box
+        &.start
+          border-radius: 3px 0px 0px 3px
+          left: 1px
+        &.end
+          border-radius: 0px 3px 3px 0px
+          right: 1px 
+        &.title
+          color: white
+          font-family: 'Roboto'
+          font-size: 14px
+          font-weight: 300
+          line-height: 16px
+        &.line1
+          bottom: 2px
+        &.line2
+          bottom: 27px  
+        &.orange
+          background-color: #f5a623
+        &.grey
+          background-color: #858d9c
+        &.light-grey
+          background-color: #8295aa    
+    td:last-child
+      border-right: none
+    td:hover,  
+    td.active
+      background-color: #fcfcfc
+      cursor: pointer
+    td:hover:after,  
+    td.active:after
+      display: block
+      position: absolute
+      top: -1px
+      left: -1px
+      right: -1px
+      bottom: -1px
+      content: ''
+      background: none
+      border: 1px solid #44cd7e
+      z-index: 999
+    td:last-child:hover:after,
+    td.active:last-child:after
+      right: 0
+    td:first-child:hover:after, 
+    td.active:first-child:after
+      left: 0
