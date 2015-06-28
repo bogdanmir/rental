@@ -28,7 +28,6 @@
   font-style: normal; }
 
 body {
-  min-width: 300px;
   margin: 0;
   height: inherit;
   background-color: #f7f7f9;
@@ -75,9 +74,6 @@ h4 {
   font-size: 20px;
   font-weight: 400;
   line-height: 24px; }
-
-* {
-  box-sizing: border-box; }
 
 .clear:after {
   content: "";
@@ -180,38 +176,34 @@ label.checkbox {
       .property-box .property-container ul li {
         display: table-row;
         height: 31px; }
-        .property-box .property-container ul li a {
-          text-decoration: none; }
-          .property-box .property-container ul li a .icon-edit, .property-box .property-container ul li a .icon-convert, .property-box .property-container ul li a .icon-view, .property-box .property-container ul li a .delete-icon {
-            display: table-cell;
-            color: #858d9c;
-            line-height: 30px;
-            vertical-align: middle;
-            -webkit-transition: all 0.2s ease-in-out;
-            -moz-transition: all 0.2s ease-in-out;
-            -ms-transition: all 0.2s ease-in-out;
-            -o-transition: all 0.2s ease-in-out;
-            transition: all 0.2s ease-in-out; }
-          .property-box .property-container ul li a .icon-edit {
-            font-size: 17px; }
-          .property-box .property-container ul li a .icon-convert {
-            font-size: 15px; }
-          .property-box .property-container ul li a .icon-view {
-            font-size: 11px; }
-          .property-box .property-container ul li a .delete-icon {
-            font-size: 17px; }
-          .property-box .property-container ul li a .title {
-            display: table-cell;
-            vertical-align: middle;
-            color: #3498db;
-            font-family: "Avenir LT Std";
-            font-size: 14px;
-            font-weight: 300;
-            padding-left: 6px; }
-          .property-box .property-container ul li a:hover .icon-view, .property-box .property-container ul li a:hover .icon-convert, .property-box .property-container ul li a:hover .icon-edit, .property-box .property-container ul li a:hover .delete-icon {
-            color: #4a4a4a; }
-          .property-box .property-container ul li a:hover .title {
-            text-decoration: underline; }
+        .property-box .property-container ul li a .icon-edit, .property-box .property-container ul li a .icon-convert, .property-box .property-container ul li a .icon-view {
+          display: table-cell;
+          color: #858d9c;
+          line-height: 30px;
+          vertical-align: middle;
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -ms-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out; }
+        .property-box .property-container ul li a .icon-edit {
+          font-size: 17px; }
+        .property-box .property-container ul li a .icon-convert {
+          font-size: 15px; }
+        .property-box .property-container ul li a .icon-view {
+          font-size: 11px; }
+        .property-box .property-container ul li a .title {
+          display: table-cell;
+          vertical-align: middle;
+          color: #3498db;
+          font-family: "Avenir LT Std";
+          font-size: 14px;
+          font-weight: 300;
+          padding-left: 6px; }
+        .property-box .property-container ul li a:hover .icon-view, .property-box .property-container ul li a:hover .icon-convert, .property-box .property-container ul li a:hover .icon-edit {
+          color: #4a4a4a; }
+        .property-box .property-container ul li a:hover .title {
+          text-decoration: underline; }
 
 .ok {
   color: #44cd7e; }
@@ -272,39 +264,6 @@ a.button, button.button {
     border: 1px solid #d9d9d9; }
     a.button.white:hover, button.button.white:hover {
       background-color: #eaeaee; }
-
-.button-green {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  padding-left: 15px;
-  padding-right: 15px;
-  height: 38px;
-  background-color: #44cd7e;
-  color: white;
-  font-family: "Roboto";
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
-  text-transform: uppercase;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
-  .button-green:hover {
-    background-color: #1b894a; }
 
 .simple-button {
   width: 86px;
@@ -1088,7 +1047,8 @@ textarea {
           .main-container .main-content .menu-container .menu a:hover {
             background-color: #ededf1; }
     .main-container .main-content .wrapper {
-      padding: 10px 0; }
+      padding: 10px 0;
+      box-sizing: border-box; }
 
 article {
   padding-bottom: 30px;
@@ -2527,8 +2487,7 @@ article {
           color: #515151;
           font-family: "Montserrat Bold";
           font-size: 14px;
-          font-weight: 400;
-          vertical-align: top; }
+          font-weight: 400; }
         .tab-box .tab form .form-row .content {
           padding-top: 10px;
           padding-bottom: 10px;
@@ -2668,9 +2627,6 @@ article {
   .panel-one-wrap .panel-one-container .panel-one .first-column .button-wrap {
     margin-top: 5px; } }
 
-.button-container button.button {
-  display: inline-block; }
-
 .table-filter-container {
   margin-top: 25px;
   display: table;
@@ -2743,7 +2699,7 @@ article {
           width: 100%;
           height: 100%;
           border: 1px solid #e0e0e0;
-          padding: 10px 12px;
+          padding: 12px 12px;
           color: #878787;
           font-family: "Roboto";
           font-size: 14px;
@@ -2780,12 +2736,10 @@ article {
             height: 35px; }
 
 @media screen and (min-width: 0) and (max-width: 480px) {
-  .table-filter-container .table-filter {
-    padding: 20px 10px; }
-    .table-filter-container .table-filter .right-container-wrap .right-container .filter {
-      width: 100%; }
-    .table-filter-container .table-filter .right-container-wrap .right-container .search-container {
-      width: 100%; } }
+  .table-filter-container .table-filter .right-container-wrap .right-container .filter {
+    width: 100%; }
+  .table-filter-container .table-filter .right-container-wrap .right-container .search-container {
+    width: 100%; } }
 
 .reservation-center .table header + table {
   border-top: 1px solid #ddd; }
@@ -2809,7 +2763,8 @@ article {
   left: 0;
   margin: 14px 11px 19px 0;
   border: 1px solid #d3d7df;
-  border-radius: 3px; }
+  border-radius: 3px;
+  box-sizing: border-box; }
   .wrapper-label.lg {
     max-width: 373px;
     width: 100%;
@@ -3011,7 +2966,8 @@ article {
           font-weight: 300;
           line-height: 16px;
           text-align: center;
-          padding: 3px 0; }
+          padding: 3px 0;
+          box-sizing: border-box; }
         .ocupancy-report #diagram .wrapper-months .month .diagram {
           width: 100%;
           height: 230px;
@@ -3341,7 +3297,7 @@ article {
   top: 0;
   left: 0;
   padding-top: 65px; }
-  .property-top-bar .dropdown.active + .dropdown-menu li {
+  .property-top-bar .dropdown.active + .dropdown-menu li:first-child {
     padding-left: 0; }
   .property-top-bar .dropdown.active + .dropdown-menu li {
     display: inline-block;
@@ -3406,19 +3362,19 @@ article {
   .second-column {
     margin-top: -25px; } }
 
-.amen-check {
+label {
   color: #575757;
   font-family: 'Roboto';
   font-size: 14px;
   font-weight: 300;
   line-height: 16px; }
-  .amen-check input[type="checkbox"] {
+  label input[type="checkbox"] {
     display: none; }
-  .amen-check span {
+  label span {
     position: relative;
     padding-left: 39px;
     margin-left: 18px; }
-  .amen-check input[type="checkbox"] + span:before {
+  label input[type="checkbox"] + span:before {
     position: absolute;
     top: 0;
     left: 0;
@@ -3430,7 +3386,7 @@ article {
     border: 1px solid lightgrey;
     border-radius: 2px;
     cursor: pointer; }
-  .amen-check input[type="checkbox"]:checked + span:after {
+  label input[type="checkbox"]:checked + span:after {
     position: absolute;
     top: 1px;
     left: 1px;
@@ -3747,177 +3703,3 @@ article {
 .password {
   font-weight: bold;
   font-size: 2em; }
-
-.ff-montserrat {
-  font-family: "Montserrat Regular"; }
-
-.dp-none {
-  display: none; }
-
-.form-chs-file {
-  font-family: Roboto; }
-
-.form-chs-file {
-  width: 630px;
-  height: 35px;
-  border: 1px solid #e0e0e0;
-  border-radius: 3px;
-  float: left;
-  margin-right: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px; }
-
-.choose-file {
-  color: #878787;
-  font-size: 14px;
-  font-weight: 300;
-  padding: 10px 20px 7px;
-  line-height: 16px;
-  display: inline-block;
-  max-width: 500px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  -o-box-sizing: border-box;
-  -ms-box-sizing: border-box; }
-
-.span-chs-file {
-  float: right;
-  background-color: white;
-  border-left: 1px solid #e0e0e0;
-  color: #878787;
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 16px;
-  padding: 10px 20px 7px; }
-
-.button.btn-chs-file {
-  height: 35px; }
-
-@media screen and (max-width: 1300px) {
-  .form-chs-file {
-    width: 400px; }
-  .choose-file {
-    max-width: 280px; } }
-
-@media screen and (max-width: 760px) {
-  .form-chs-file {
-    width: auto; } }
-
-@media screen and (max-width: 480px) {
-  .choose-file {
-    max-width: 135px; }
-  .form-chs-file {
-    margin-right: 5px; } }
-
-#photos {
-  /* Prevent vertical gaps */
-  line-height: 0;
-  -webkit-column-count: 5;
-  -webkit-column-gap: 0px;
-  -moz-column-count: 5;
-  -moz-column-gap: 0px;
-  column-count: 5;
-  column-gap: 0px;
-  padding: 15px; }
-  #photos img {
-    width: 100% !important;
-    height: auto !important;
-    padding: 15px; }
-
-@media (max-width: 992px) {
-  #photos {
-    -moz-column-count: 4;
-    -webkit-column-count: 4;
-    column-count: 4; } }
-
-@media (max-width: 792px) {
-  #photos {
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3; } }
-
-@media (max-width: 600px) {
-  #photos {
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
-    column-count: 2;
-    padding: 5px; }
-    #photos img {
-      padding: 5px; } }
-
-@media (max-width: 400px) {
-  #photos {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-    column-count: 1; } }
-
-table.price-table {
-  border-top: 1px solid #ddd;
-  border-bottom: none !important;
-  width: 100%; }
-  table.price-table th:first-child {
-    width: 4%; }
-  table.price-table th:nth-child(2) {
-    width: 4%; }
-  table.price-table th:nth-child(3), table.price-table th:nth-child(4), table.price-table th:nth-child(5) {
-    width: 31%; }
-
-table.rules-table {
-  border-bottom: none !important;
-  width: 100%; }
-  table.rules-table th:first-child {
-    width: 5%; }
-  table.rules-table th:nth-child(2) {
-    width: 15%; }
-  table.rules-table th:nth-child(3), table.rules-table th:nth-child(4) {
-    width: 50%; }
-
-.price-table-btns {
-  display: inline-block; }
-
-.border-btm {
-  border-bottom: 1px solid #ddd; }
-
-.price-table-description {
-  padding: 20px; }
-  .price-table-description .margin-btm {
-    margin-bottom: 15px; }
-  .price-table-description p {
-    color: #515151;
-    font-family: "Montserrat Regular";
-    font-size: 14px;
-    font-weight: bold;
-    text-align: left;
-    margin-top: 0;
-    margin-bottom: 25px; }
-    .price-table-description p span {
-      font-weight: 100 !important;
-      color: #999;
-      margin-left: 25px; }
-
-.column-padding {
-  padding-top: 0 !important; }
-
-table.rules-manager-tables {
-  border-bottom: none !important;
-  width: 100%; }
-  table.rules-manager-tables td:first-child {
-    width: 5%; }
-  table.rules-manager-tables td:nth-child(2) {
-    width: 5%; }
-  table.rules-manager-tables td:last-child {
-    width: 90%; }
-
-.rules-manager-tables_header {
-  font-size: 14px !important;
-  font-weight: 400; }
-
-.delete-icon:before {
-  font-family: "dasboard-icons";
-  content: "\e60a"; }
-
-.price-container {
-  border-left: none !important;
-  border-right: 1px solid #ddd; }

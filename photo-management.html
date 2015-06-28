@@ -116,92 +116,77 @@
     <section class="main-content">
 
         <nav class="location-top-bar property-top-bar">
-            <button class="dropdown active"><span class="general">GENERAL</span></button>
-            <ul class="dropdown-menu xs">
-                <li>Location</li>
-                <li class="active">Property information</li>
-                <li>Amenities</li>
-                <li>Policies</li>
-                <li>Check-Ins/Outs</li>
-                <li>Feed</li>
-                <li>Services</li>
-            </ul>
-            <button><span class="pricing">PRICING</span></button>
-            <button><span class="photos">PHOTOS</span></button>
-            <button><span class="calendar">CALENDAR</span></button>
-            <button><span class="marketing">MARKETING</span></button>
-            <button class="dark-red"><span class="delete-product">DELETE PRODUCT</span></button>
-            <ul class="dropdown-menu-bottom md">
-                <li>Location</li>
-                <li class="active">Property information</li>
-                <li>Amenities</li>
-                <li>Policies</li>
-                <li>Check-Ins/Outs</li>
-                <li>Feed</li>
-                <li>Services</li>
-            </ul>
+          <button class="dropdown"><span class="general">GENERAL</span></button>
+          <ul class="dropdown-menu xs">
+              <li  class="active">Location</li>
+              <li>Property information</li>
+              <li>Amenities</li>
+              <li>Policies</li>
+              <li>Check-Ins/Outs</li>
+              <li>Feed</li>
+              <li>Services</li>
+          </ul>
+          <button><span class="pricing">PRICING</span></button>
+          <button class="active"><span class="photos">PHOTOS</span></button>
+          <button><span class="calendar">CALENDAR</span></button>
+          <button><span class="marketing">MARKETING</span></button>
+          <button class="dark-red"><span class="delete-product">DELETE PRODUCT</span></button>
+          <ul class="dropdown-menu-bottom md">
+              <li>Location</li>
+              <li>Property information</li>
+              <li>Amenities</li>
+              <li>Policies</li>
+              <li>Check-Ins/Outs</li>
+              <li>Feed</li>
+              <li>Services</li>
+          </ul>
         </nav>
 
         <header class="main-title">
-            <h1>Edit property information</h1>
-            <p>RentalsForce user dashboard</p>
+          <h1>Photo Management</h1>
+          <p>RentalsForce user dashboard</p>
         </header>
+        <div class="table-filter-container">
+          <section class="table-filter">
+            <div class="left-container">
+              <div class="button-wrap">
+                <h4 class="ff-montserrat">Add new photo</h4>
+              </div>
+            </div>
+            <div class="right-container-wrap">
+              <form class="right-container">
+                <input class="dp-none" type="file" id="choose-file"  accept="image/*" >
+                <label class="form-chs-file" for="choose-file">
+                  <span class="choose-file">No file selected</span><span class="span-chs-file">Choose File</span>
+                </label>
+                <div class="button-container">
+                  <button class="button btn-chs-file">UPLOAD</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
         <article class="tab-box add-lead">
             <header>
-                <h3>Property information</h3>
+                <h3>Polices</h3>
             </header>
-            <div class="tab active show">
-                <form>
-                    <div class="form-row">
-                        <span class="title">Title:</span>
-                        <span class="content">
-                            <span class="input-field">
-                                <span class="input-container">
-                                    <input type="text" value="2120-2 Room 2"/>
-                                </span>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="form-row">
-                        <span class="title">Description:</span>
-                        <span class="content">
-                            <span class="input-field">
-                                <span class="area-container">
-                                    <textarea placeholder="Comfort apartments for you"></textarea>
-                                </span>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="form-row">
-                        <span class="title"></span>
-                        <span class="content">
-                            <span class="button-container">
-                                <button class="button location-content-button">EDIT</button>
-                            </span>
-                        </span>
-                    </div>
-                </form>
-            </div>
-            <div class="tab">
-                <header>
-                    <h4>Tab 2</h4>
-                </header>
-            </div>
-            <div class="tab">
-                <header>
-                    <h4>Tab 3</h4>
-                </header>
-            </div>
-            <div class="tab">
-                <header>
-                    <h4>Tab 4</h4>
-                </header>
-            </div>
-            <div class="tab">
-                <header>
-                    <h4>Tab 5</h4>
-                </header>
-            </div>
+            <section id="photos">
+                <img class="content-img" src="img/add-img-1.png" alt="Alt Image Text" />
+                <img class="content-img" src="img/add-img-4.png" alt="Alt Image Text" />
+                <img class="content-img" src="img/add-img-8.png" alt="Alt Image Text" />
+                <img class="content-img" src="img/add-img-2.png" alt="Alt Image Text" />
+                <img class="content-img" src="img/add-img-5.png" alt="Alt Image Text" />
+                <img class="content-img" src="img/add-img-2.png" alt="Alt Image Text" />
+                <img class="content-img" src="img/add-img-9.png" alt="Alt Image Text" />
+                <img class="content-img" src="img/add-img-1.png" alt="Alt Image Text" />
+                <img class="content-img" src="img/add-img-10.png" alt="Alt Image Text" />
+                <img class="content-img" src="img/add-img-6.png" alt="Alt Image Text" />
+                <img class="content-img" src="img/add-img-12.png" alt="Alt Image Text" />
+                <img class="content-img" src="img/add-img-3.png" alt="Alt Image Text" />
+                <img class="content-img" src="img/add-img-7.png" alt="Alt Image Text" />
+                <img class="content-img" src="img/add-img-11.png" alt="Alt Image Text" />
+                <img class="content-img" src="img/add-img-13.png" alt="Alt Image Text" />
+            </section>
         </article>
     </section>
 </div>
@@ -210,6 +195,5 @@
 <script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
 <script src="js/lib/jquery.selectric.min.js"></script>
 <script type="text/javascript" src="js/element.js"></script>
-
 </body>
 </html>

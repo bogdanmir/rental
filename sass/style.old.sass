@@ -75,7 +75,6 @@
 // main
 
 body
-  min-width: 300px
   margin: 0
   height: inherit
   background-color: #f7f7f9
@@ -124,8 +123,7 @@ h4
   font-size: 20px
   font-weight: 400
   line-height: 24px
-*
-  box-sizing: border-box
+
 .clear
   &:after
     content: ""
@@ -206,8 +204,7 @@ label.checkbox
         display: table-row
         height: 31px
         a
-          text-decoration: none
-          .icon-edit, .icon-convert, .icon-view, .delete-icon
+          .icon-edit, .icon-convert, .icon-view
             display: table-cell
             color: #858d9c
             line-height: 30px
@@ -219,8 +216,6 @@ label.checkbox
             font-size: 15px
           .icon-view
             font-size: 11px
-          .delete-icon
-            font-size: 17px
           .title
             display: table-cell
             vertical-align: middle
@@ -230,7 +225,7 @@ label.checkbox
             font-weight: 300
             padding-left: 6px
           &:hover
-            .icon-view, .icon-convert, .icon-edit, .delete-icon
+            .icon-view, .icon-convert, .icon-edit
               color: #4a4a4a
             .title
               text-decoration: underline
@@ -282,29 +277,7 @@ a.button, button.button
     background-color: #ffffff
     border: 1px solid #d9d9d9
     &:hover
-      background-color: #eaeaee
-
-.button-green
-  display: table-cell
-  vertical-align: middle
-  text-align: center
-  padding-left: 15px
-  padding-right: 15px
-  height: 38px
-  background-color: #44cd7e
-  color: white
-  font-family: "Roboto"
-  font-size: 14px
-  font-weight: 400
-  line-height: 16px
-  text-transform: uppercase
-  white-space: nowrap
-  cursor: pointer
-  +user-select()
-  +border-radius(3px)
-  +transition(all, 0.2s, ease-in-out)
-  &:hover
-    background-color: #1b894a
+      background-color: #eaeaee    
 
 .simple-button
   width: 86px
@@ -783,11 +756,11 @@ textarea
             font-weight: 300
             line-height: 17px
           ul
-            padding: 9px 0 
+            padding: 9px 0; 
             li.line
               width: 100%
               height: 1px
-              padding: 0
+              padding:0
               margin: 0
               background-color: #d9d9d9
             li
@@ -795,12 +768,12 @@ textarea
               text-align: left
               a
                 position: relative
-                top: 0
+                top:0
                 left: 0
                 text-decoration: none
                 font-family: "Avenir LT Std"
                 font-size: 14px
-                margin-left: 35px 
+                margin-left:35px 
                 &:hover
                   text-decoration: underline
                 &.change-password:after
@@ -815,10 +788,10 @@ textarea
                 &.edit-Profile:after
                   display: block
                   position: absolute
-                  top: 0
-                  left: -21px
-                  font-family: "dasboard-icons"
-                  font-size: 14px
+                  top:0
+                  left: -21px;
+                  font-family: "dasboard-icons";
+                  font-size: 14px;
                   content: "\e60f"
                   color: #858d9c
                 &.photo-gallery:after
@@ -912,6 +885,7 @@ textarea
             background-color: #ededf1
     .wrapper
       padding: 10px 0
+      box-sizing: border-box
 
 article
   padding-bottom: 30px
@@ -2134,7 +2108,6 @@ article
           font-family: "Montserrat Bold"
           font-size: 14px
           font-weight: 400
-          vertical-align: top
         .content
           padding-top: 10px
           padding-bottom: 10px
@@ -2287,9 +2260,7 @@ article
 
 
 // Table filter box
-.button-container
-  button.button
-    display: inline-block
+
 .table-filter-container
   margin-top: 25px
   display: table
@@ -2359,7 +2330,7 @@ article
             width: 100%
             height: 100%
             border: 1px solid #e0e0e0
-            padding: 10px 12px
+            padding: 12px 12px
             color: #878787
             font-family: "Roboto"
             font-size: 14px
@@ -2391,13 +2362,13 @@ article
 @media screen and (min-width: 0) and (max-width: 480px)
   .table-filter-container
     .table-filter
-      padding: 20px 10px
       .right-container-wrap
         .right-container
           .filter
             width: 100%
           .search-container
             width: 100%
+          .button-container
 
 
 // Reservations center, contacts, inquiries pages
@@ -2424,13 +2395,14 @@ article
       th:nth-child(7), td:nth-child(7)
         border-left: 1px solid rgba(221, 221, 221, 0.47) !important
 .wrapper-label
-  display: inline-block
+  display:inline-block
   position: relative
   top: 0
   left: 0 
   margin: 14px 11px 19px 0
   border: 1px solid #d3d7df
   border-radius: 3px
+  box-sizing: border-box
   &.lg
     max-width: 373px
     width: 100%
@@ -2441,7 +2413,7 @@ article
       position: absolute
       top: 0
       left: 0
-      content: ''
+      content:''
       width: 5px
       height: 144px
       border-radius: 3px 0px 0 3px
@@ -2460,7 +2432,7 @@ article
       position: absolute
       top: 0
       left: 0
-      content: ''
+      content:''
       width: 5px
       height: 144px
       border-radius: 3px 0px 0 3px
@@ -2479,7 +2451,7 @@ article
       position: absolute
       top: 0
       left: 0
-      content: ''
+      content:''
       width: 5px
       height: 144px
       border-radius: 3px 0px 0 3px
@@ -2536,7 +2508,7 @@ article
     position: absolute
     top: 0
     left: 0
-    content: ''
+    content:''
     width: 3px
     height: 92px
     border-radius: 3px 0px 0 3px
@@ -2562,7 +2534,7 @@ article
     color: #4b5260
     cursor: pointer
   #diagram
-    width: 824px
+    width: 824px;
     height: 285px
     margin: 36px 10px 
     .wrapper-left-bar
@@ -2597,9 +2569,9 @@ article
     .wrapper-months
       display: inline-block
       vertical-align: top
-      width: 796px
+      width: 796px;
       height: 100%
-      padding-top: 21px
+      padding-top: 21px;
       .month
         display: inline-block
         position: relative
@@ -2608,7 +2580,7 @@ article
         margin: 0 7px
         width: 48px
         span
-          display: block
+          display: block;
           padding-top: 16px 
           font-family: "Roboto"
           font-size: 14px
@@ -2619,8 +2591,7 @@ article
         .title
           content: attr(data-title)
           position: absolute
-          left: 20%
-          top: 30%
+          left: 20%; top: 30%
           z-index: 1
           width: 48px
           height: 24px
@@ -2633,6 +2604,7 @@ article
           line-height: 16px
           text-align: center
           padding: 3px 0
+          box-sizing: border-box  
         .diagram
           width: 100%
           height: 230px
@@ -2667,7 +2639,7 @@ article
     width: 100%
     min-height: 70px
     padding: 23px 17px  
-    border-bottom: 1px solid #ddd
+    border-bottom: 1px solid #ddd;
     box-sizing: border-box
     h3
       float: left 
@@ -2737,7 +2709,7 @@ article
   tbody tr:nth-child(odd)
     background-color: #f7f7f9
   tbody tr:hover
-    cursor: pointer
+    cursor:pointer
     background-color: #eaeaee
   table td:nth-child(-n+3)
     border-left: 1px solid #ddd
@@ -2760,7 +2732,7 @@ article
         border-radius: 25px
 
 .upcoming
-  max-width: 1134px
+  max-width: 1134px;
   width: 100%
   .right-content
     .menu-container
@@ -2771,7 +2743,7 @@ article
   table
     width: 100%
     min-width: 400px  
-    border-collapse: collapse
+    border-collapse:collapse
   table th
     min-width: 24px 
     font-family: "Montserrat Regular"
@@ -2791,7 +2763,7 @@ article
   tbody tr:nth-child(even)
     background-color: #f7f7f9
   tbody tr:hover
-    cursor: pointer
+    cursor:pointer
     background-color: #eaeaee    
   table td
     position: relative
@@ -2846,7 +2818,7 @@ article
     top: 0
     left: 0
     padding: 12px 0
-    margin-right: -4px
+    margin-right: -4px;
     text-align: center
     color: #858d9a
     font-family: 'Montserrat Bold'
@@ -2863,7 +2835,7 @@ article
     border-radius: 0px 3px 3px 0px
     border-right: 1px solid #858d9c 
   button:hover, button.active
-    color: white
+    color:white
     background-color: #858d9a
     cursor: pointer
   button.dropdown.active:before
@@ -2958,32 +2930,32 @@ article
       content: "\e60a"
 .property-top-bar
   .dropdown + .dropdown-menu
-    display: none
-    width: 910px
+      display: none
+      width: 910px
   .dropdown.active + .dropdown-menu
-    display: block
-    position: absolute
-    top: 0
-    left: 0
-    padding-top: 65px
-    li
-      padding-left: 0
-    li
-      display: inline-block
-      padding: 8px 26px
-      text-align: left
-      color: #858d9a
-      font-family: 'Montserrat Bold'
-      font-size: 14px
-      font-weight: 400
-      line-height: 18px
-      border: none
-      &.active
-        font-weight: 700
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      padding-top: 65px
+      li:first-child
+        padding-left: 0
+      li
+        display: inline-block
+        padding: 8px 26px
+        text-align: left
+        color: #858d9a
+        font-family: 'Montserrat Bold'
+        font-size: 14px
+        font-weight: 400
+        line-height: 18px
+        border: none
+        &.active
+          font-weight: 700
+          background: none
+          border-bottom: 2px solid #858d9a
+      li:hover
         background: none
-        border-bottom: 2px solid #858d9a
-    li:hover
-      background: none
 
 @media screen and (max-width: 980px)
   .property-top-bar
@@ -2997,16 +2969,16 @@ article
       border-bottom: none
       &.dropdown.active + .dropdown-menu,
       &.dropdown:hover + .dropdown-menu
-        position: relative
-        width: 100%
-        padding-top: 0
-        border-right: none
-        background-color: #f7f7f9
-        li,
-        li:first-child
-          width: 95%
-          padding: 8px 26px
-          box-sizing: border-box 
+          position: relative
+          width: 100%
+          padding-top: 0
+          border-right: none
+          background-color: #f7f7f9
+          li,
+          li:first-child
+            width: 95%
+            padding: 8px 26px
+            box-sizing: border-box 
 
 .first-column
   display: inline-block
@@ -3030,7 +3002,7 @@ article
   .second-column
     margin-top: -25px   
 
-.amen-check
+label
   color: #575757
   font-family: 'Roboto'
   font-size: 14px
@@ -3039,23 +3011,23 @@ article
   input[type="checkbox"]
     display: none
   span 
-    position: relative
+    position:relative
     padding-left: 39px
     margin-left: 18px 
   input[type="checkbox"] + span:before
-    position: absolute
+    position:absolute
     top: 0
     left: 0
     display: block
     width: 16px
     height: 16px
-    content: ''
+    content:''
     background-color: whitesmoke
     border: 1px solid lightgrey
     border-radius: 2px
     cursor: pointer
   input[type="checkbox"]:checked + span:after
-    position: absolute
+    position:absolute
     top: 1px
     left: 1px
     text-align: center
@@ -3084,9 +3056,9 @@ article
 
 .calendar
   .room-table-container
-    padding: 0
-    header
-      padding-left: 0
+   padding: 0
+   header
+    padding-left: 0
   .body
     overflow-x: auto   
   .date-switcher
@@ -3095,14 +3067,16 @@ article
       left: 25px
     &.right
       top: 19px
-      right: 25px
+      right:25px
       left: auto
+
+
 
 .table-calendar
   width: 100%
   min-width: 800px
   outline: none
-  border-collapse: collapse
+  border-collapse:collapse
   thead
     th
       width: 14.2% 
@@ -3319,28 +3293,28 @@ article
     display: none
     position: relative
   .dropdown.active ~ .dropdown-menu-bottom
-    padding-top: 30px
-    display: block
-    li:first-child
-      padding-left: 0
-    li
-      cursor: pointer
-      display: inline-block
-      padding: 8px 0
-      margin-right: 36px
-      text-align: left
-      color: #858d9a
-      font-family: 'Montserrat Bold'
-      font-size: 14px
-      font-weight: 400
-      line-height: 18px
-      border: none
-      &.active
-        font-weight: 700
+      padding-top: 30px
+      display: block
+      li:first-child
+        padding-left: 0
+      li
+        cursor: pointer
+        display: inline-block
+        padding: 8px 0
+        margin-right: 36px
+        text-align: left
+        color: #858d9a
+        font-family: 'Montserrat Bold'
+        font-size: 14px
+        font-weight: 400
+        line-height: 18px
+        border: none
+        &.active
+          font-weight: 700
+          background: none
+          border-bottom: 2px solid #858d9a
+      li:hover
         background: none
-        border-bottom: 2px solid #858d9a
-    li:hover
-      background: none
 
 .pull-right
   float: right
@@ -3387,171 +3361,3 @@ article
 .password
   font-weight: bold
   font-size: 2em
-.ff-montserrat
-  font-family: "Montserrat Regular"
-.dp-none
-  display: none
-.form-chs-file
-  font-family: Roboto
-.form-chs-file
-  width: 630px
-  height: 35px
-  border: 1px solid #e0e0e0
-  border-radius: 3px
-  float: left
-  margin-right: 15px
-  margin-top: 10px
-  margin-bottom: 10px
-.choose-file
-  color: #878787
-  font-size: 14px
-  font-weight: 300
-  padding: 10px 20px 7px
-  line-height: 16px
-  display: inline-block
-  max-width: 500px
-  overflow: hidden
-  white-space: nowrap
-  text-overflow: ellipsis
-  -o-box-sizing: border-box
-  -ms-box-sizing: border-box
-.span-chs-file
-  float: right
-  background-color: white
-  border-left: 1px solid #e0e0e0
-  color: #878787
-  font-family: Roboto
-  font-size: 14px
-  font-weight: 700
-  line-height: 16px
-  padding: 10px 20px 7px
-.button.btn-chs-file
-  height: 35px
-@media screen and (max-width: 1300px)
-  .form-chs-file
-    width: 400px
-  .choose-file
-    max-width: 280px
-@media screen and (max-width: 760px)
-  .form-chs-file
-    width: auto
-@media screen and (max-width: 480px)
-  .choose-file
-    max-width: 135px
-  .form-chs-file
-    margin-right: 5px
-
-
-#photos
-  /* Prevent vertical gaps */
-  line-height: 0
-  -webkit-column-count: 5
-  -webkit-column-gap:   0px
-  -moz-column-count:    5
-  -moz-column-gap:      0px
-  column-count:         5
-  column-gap:           0px
-  padding: 15px
-  img
-    width: 100% !important
-    height: auto !important
-    padding: 15px
-
-@media (max-width: 992px)
-  #photos
-    -moz-column-count:    4
-    -webkit-column-count: 4
-    column-count:         4
-
-@media (max-width: 792px)
-  #photos
-    -moz-column-count:    3
-    -webkit-column-count: 3
-    column-count:         3
-
-@media (max-width: 600px)
-  #photos
-    -moz-column-count:    2
-    -webkit-column-count: 2
-    column-count:         2
-    padding: 5px
-    img
-      padding: 5px
-
-
-@media (max-width: 400px)
-  #photos
-    -moz-column-count:    1
-    -webkit-column-count: 1
-    column-count:         1
-
-
-table.price-table
-  border-top: 1px solid #ddd
-  border-bottom: none !important
-  width: 100%
-  th:first-child
-    width: 4%
-  th:nth-child(2)
-    width: 4%
-  th:nth-child(3), th:nth-child(4), th:nth-child(5)
-    width: 31%
-
-
-table.rules-table
-  border-bottom: none !important
-  width: 100%
-  th:first-child
-    width: 5%
-  th:nth-child(2)
-    width: 15%
-  th:nth-child(3), th:nth-child(4)
-    width: 50%
-
-.price-table-btns
-  display: inline-block
-
-.border-btm
-  border-bottom: 1px solid #ddd
-
-.price-table-description
-  padding: 20px
-  .margin-btm
-    margin-bottom: 15px
-  p
-    color: #515151
-    font-family: "Montserrat Regular"
-    font-size: 14px
-    font-weight: bold
-    text-align: left
-    margin-top: 0
-    margin-bottom: 25px
-    span
-      font-weight: 100 !important
-      color: #999
-      margin-left: 25px
-
-.column-padding
-  padding-top: 0 !important
-
-table.rules-manager-tables
-  border-bottom: none !important
-  width: 100%
-  td:first-child
-    width: 5%
-  td:nth-child(2)
-    width: 5%
-  td:last-child
-    width: 90%
-
-.rules-manager-tables_header
-  font-size: 14px !important
-  font-weight: 400
-
-.delete-icon:before
-  font-family: "dasboard-icons"
-  content: "\e60a"
-
-.price-container
-  border-left: none !important
-  border-right: 1px solid #ddd
