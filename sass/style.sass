@@ -3555,3 +3555,247 @@ table.rules-manager-tables
 .price-container
   border-left: none !important
   border-right: 1px solid #ddd
+
+h1.search-result-page__header
+  font-weight: 400 !important
+  //font-family: "Avenir LT Std"
+  font-family: "Montserrat Regular"
+  .search-result
+    font-weight: 700 !important
+
+.search-result-content
+  article
+    padding-bottom: 0
+    header
+      h3
+        margin-bottom: 0 !important
+    .search-result-text
+      padding: 20px
+      p
+        margin: 0
+        font-family: "Roboto"
+        font-size: 14px
+        line-height: 16px
+        color: #515151
+        font-weight: 300
+        span
+          color: #4a90e2
+
+.logo_demo
+  float: left
+
+.edit-settings-filter
+  display: table !important
+  width: 100%
+  .left-container
+    display: table-cell
+    vertical-align: middle
+  .right-container-wrap
+    text-align: right
+    display: table-cell
+    vertical-align: middle
+    width: 100%
+    a
+      text-transform: none !important
+      font-weight: bold
+
+.edit-settings-table-wrap
+  overflow-x: visible !important
+  table.edit-settings-table
+    border-bottom: none !important
+    width: 100%
+    th:first-child
+      width: 1%
+    th:nth-child(2)
+      width: 2%
+    th:nth-child(3)
+      width: 37%
+    th:last-child
+      width: 60%
+
+.admin-panel-table-container
+  article
+    padding-bottom: 25px !important
+    .admin-panel-table-wrap
+      overflow-x: auto
+      width: 100%
+      table.admin-panel-table
+        border-bottom: none !important
+        width: 100%
+        min-width: 100%
+        table-layout: fixed
+        thead
+          tr
+            th
+              padding: 5px !important
+            th:nth-child(1)
+              //width: 1%
+              width: 10px
+            th:nth-child(2)
+              //width: 1%
+              width: 20px
+            th:nth-child(3)
+              //width: 15%
+              width: 150px
+            th:nth-child(4)
+              //width: 9%
+              width: 90px
+            th:nth-child(5)
+              //width: 24%
+              width: 240px
+            th:nth-child(6)
+              //width: 6%
+              width: 60px
+            th:nth-child(7)
+              //width: 11%
+              width: 100px
+              border-left: 1px solid rgba(221, 221, 221, 0.47) !important
+            th:nth-child(8)
+              //width: 10%
+              width: 100px
+            th:nth-child(9)
+              //width: 9%
+              width: 90px
+            th:nth-child(10)
+              //width: 8%
+              width: 80px
+            th:nth-child(11)
+              //width: 11%
+              width: 110px
+        tbody
+          tr
+            td
+              white-space: normal !important
+            td:nth-child(7)
+              border-left: 1px solid rgba(221, 221, 221, 0.47) !important
+              padding: 10px !important
+
+.email-template-table-wrap
+  overflow-x: visible !important
+  table.email-template-table
+    border-bottom: none !important
+    width: 100%
+    overflow: visible
+    th:first-child
+      width: 1%
+    th:nth-child(2)
+      width: 2%
+    th:nth-child(3)
+      width: 37%
+    th:last-child
+      width: 60%
+
+.content-column
+  width: 73% !important
+.aside-column
+  width: 26% !important
+  .aside-container
+    padding: 15px
+    p
+      color: #515151
+      font-family: "Roboto"
+      font-size: 14px
+      font-weight: 300
+      line-height: 20px
+      margin-bottom: 15px
+      span
+        display: block
+
+@media (max-width: 620px)
+  .content-column
+    width: 100% !important
+  .aside-column
+    width: 100% !important
+
+#text-area
+  min-width: 100%
+
+.content-column
+  .tab
+    padding: 0 !important
+
+#new-email-template
+  padding: 10px !important
+  .form-row
+    display: table-row
+    .title
+      display: table-cell
+      padding-top: 10px
+      padding-bottom: 10px
+      width: 15%
+      text-align: right
+      color: #515151
+      font-family: "Montserrat Regular"
+      font-size: 14px
+      font-weight: 400
+    .content
+      padding: 10px 0 10px 40px
+      display: table-cell
+      text-align: left
+      .input-field
+        max-width: 300px
+        width: 100%
+      .area-container
+        min-width: 100% !important
+        textarea
+          width: 100%
+          min-height: 255px
+      .edit-container
+        float: left
+        border: 1px solid #e0e0e0
+        border-radius: 3px
+        display: inline-block
+        margin-right: 6px
+        margin-bottom: 6px
+        +user-select()
+        +box-sizing()
+        +border-radius(3px)
+        &:first-child
+          margin-left: 0
+        .edit
+          cursor: pointer
+          color: #858d9c
+          display: table-cell
+          width: 35px
+          height: 30px
+          border-left: 1px solid #e0e0e0
+          vertical-align: middle
+          text-align: center
+          font-size: 16px
+          font-family: 'icons-for-redactor'
+          +transition(all, 0.2s, ease-in-out)
+          +box-sizing()
+          &:first-child
+            border-left: none
+          &:hover
+            background-color: #f0f0f6
+            color: #5b5b5b
+          .img-icons
+            vertical-align: middle
+            text-align: center
+            font-size: 18px
+            padding: 2px
+      .button-container
+        .new-email-btn
+          padding: 10px 25px
+        .white
+          text-transform: none
+
+@media (max-width: 620px)
+  #new-email-template
+    .form-row
+      display: block
+      .title
+        display: block
+        padding-top: 10px
+        padding-bottom: 10px
+        min-width: 100%
+        text-align: left
+      .content
+        padding: 10px 0
+        min-width: 100%
+        display: block
+        text-align: left
+        .area-container
+          textarea
+            min-height: 140px

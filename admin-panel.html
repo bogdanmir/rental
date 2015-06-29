@@ -1,0 +1,324 @@
+<!doctype html>
+<html>
+<head>
+    <title>Rental</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/custom_jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/icon.css">
+    <link rel="stylesheet" type="text/css" href="css/selectric.css">
+</head>
+<body>
+
+<div class="left-panel-activator-container"><div class="left-panel-activator"><span class="icon-property"></span><span class="icon-delete"></span></div></div>
+<div class="left-panel-container">
+    <div class="left-panel">
+        <a href="#" class="logo-container">
+            <img src="img/rentalsforce-logo-bold-inverse-print.png" alt="Rental force" />
+        </a>
+        <div class="user-container">
+            <div class="icon-container-wrap">
+                <div class="icon-container">
+                    <img src="img/bitmap.png" alt="User">
+                    <div class="note"></div>
+                </div>
+            </div>
+            <div class="info-container">
+                <header>Welcome</header>
+                <p>Konstantin Western</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="link">
+                <a href="">
+                    <span class="icon icon-dashboard"></span>
+                    <span class="title">dashboard</span>
+                </a>
+            </div>
+            <div class="link">
+                <a href="">
+                    <span class="icon icon-inquiries"><span class="tasks">21</span></span>
+                    <span class="title">inquiries</span>
+                </a>
+            </div>
+            <div class="link">
+                <a href="">
+                    <span class="icon icon-contacts"></span>
+                    <span class="title">contacts</span>
+                </a>
+            </div>
+            <div class="link">
+                <a href="">
+                    <span class="icon icon-reservation-center"><span class="tasks">21</span></span>
+                    <span class="title">reservation center</span>
+                </a>
+            </div>
+            <div class="link">
+                <a href="">
+                    <span class="icon icon-availability"></span>
+                    <span class="title">availability</span>
+                </a>
+            </div>
+            <div class="link">
+                <a href="">
+                    <span class="icon icon-properties"></span>
+                    <span class="title">properties</span>
+                </a>
+            </div>
+            <div class="link">
+                <a href="">
+                    <span class="icon icon-import"></span>
+                    <span class="title">import</span>
+                </a>
+            </div>
+            <div class="link">
+                <a href="">
+                    <span class="icon icon-templates"></span>
+                    <span class="title">templates</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="main-container">
+    <aside class="main-header">
+        <div class="search-container">
+            <div class="search">
+                <input type="text" placeholder="Type to search ..." />
+                <span class="icon-search"></span>
+            </div>
+        </div>
+        <div class="user-container">
+            <div class="user">
+                <div class="user-info">
+                    <span class="title">Konstantin Western</span>
+                    <span class="icon-setting"></span>
+                </div>
+                <div class="user-settings">
+                    <div class="user-avtar">
+                        <img src="img/bitmap.png" alt="avatar">
+                    </div>
+                    <p class="mail">housing@literalltic.com</p>
+                    <ul class="setup">
+                        <li><a class="change-password" href="">Change password</a></li>
+                        <li><a class="edit-Profile" href="">Edit Profile</a></li>
+                        <li><a class="photo-gallery" href="">Photo Gallery</a></li>
+                        <li><a class="setting" href="">Setting</a></li>
+                        <li><a class="add-new-user" href="">Add new user</a></li>
+                        <li class="line"></li>
+                        <li><a class="log-out" href="">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <section class="main-content search-result-content">
+        <header class="main-title">
+            <h1>Users admin panel</h1>
+            <p>Admin panel for monitoring user</p>
+        </header>
+        <div class="table-filter-container admin-panel-filter">
+            <aside class="table-filter">
+                <div class="left-container">
+                    <div class="button-wrap">
+                        <a class="button property-button">
+                            <span class="title">Create New</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="right-container-wrap">
+                    <div class="right-container">
+                        <label class="search-container">
+                            <input type="text" placeholder="Search">
+                            <span class="icon-search"></span>
+                        </label>
+                        <div class="button-container">
+                            <div class="button-wrap">
+                                <div class="simple-button green">search</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <div class="table-container admin-panel-table-container">
+            <article>
+                <div class="table admin-panel-table-wrap">
+                    <table class="admin-panel-table">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>Name</th>
+                            <th>User Name</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Last Login</th>
+                            <th>#Properties</th>
+                            <th>#Enquires</th>
+                            <th>#Contact</th>
+                            <th>#Reservation</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="property-box"><span class="icon-property"></span>
+                                    <div class="property-container"><span class="icon-property"></span>
+                                        <ul>
+                                            <li><a href=""><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                                            <li><a href=""><span class="delete-icon"></span><span class="title">Delete</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Antony Jons</td>
+                            <td>Jo</td>
+                            <td>omrihalav@hotmail.com</td>
+                            <td><span class="icon-status ok"></span></td>
+                            <td>
+                                4/12/2014
+                                9:35:16 AM
+                            </td>
+                            <td>21</td>
+                            <td>2</td>
+                            <td>24</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="property-box"><span class="icon-property"></span>
+                                    <div class="property-container"><span class="icon-property"></span>
+                                        <ul>
+                                            <li><a href=""><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                                            <li><a href=""><span class="delete-icon"></span><span class="title">Delete</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Antony Jons</td>
+                            <td>Jo</td>
+                            <td>heike@barcelonacityagenda.com</td>
+                            <td><span class="icon-status warning"></span></td>
+                            <td>
+                                5/11/2015
+                                10:30:10 AM
+                            </td>
+                            <td>5</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="property-box"><span class="icon-property"></span>
+                                    <div class="property-container"><span class="icon-property"></span>
+                                        <ul>
+                                            <li><a href=""><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                                            <li><a href=""><span class="delete-icon"></span><span class="title">Delete</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>David Grohl</td>
+                            <td>Dave</td>
+                            <td>dave@corporaterentalsynk.com</td>
+                            <td><span class="icon-status ok"></span></td>
+                            <td>
+                                4/12/2014
+                                9:35:16 AM
+                            </td>
+                            <td>21</td>
+                            <td>2</td>
+                            <td>24</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="property-box"><span class="icon-property"></span>
+                                    <div class="property-container"><span class="icon-property"></span>
+                                        <ul>
+                                            <li><a href=""><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                                            <li><a href=""><span class="delete-icon"></span><span class="title">Delete</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Josef Rambalone</td>
+                            <td>Joe</td>
+                            <td>rambalone@gmail.com</td>
+                            <td><span class="icon-status error"></span></td>
+                            <td>
+                                4/12/2014
+                                9:35:16 AM
+                            </td>
+                            <td>21</td>
+                            <td>2</td>
+                            <td>24</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="property-box"><span class="icon-property"></span>
+                                    <div class="property-container"><span class="icon-property"></span>
+                                        <ul>
+                                            <li><a href=""><span class="icon-edit"></span><span class="title">Edit</span></a></li>
+                                            <li><a href=""><span class="delete-icon"></span><span class="title">Delete</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Deena Penthhouse</td>
+                            <td>Deena</td>
+                            <td>penthhouse@netvision.co.il</td>
+                            <td><span class="icon-status ok"></span></td>
+                            <td>
+                                4/12/2014
+                                9:35:16 AM
+                            </td>
+                            <td>21</td>
+                            <td>2</td>
+                            <td>24</td>
+                            <td>21</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination-list-container clear">
+                    <div class="pagintaion-container">
+                        <div class="pagination">
+                            <a href=""><span class="icon-pagination-left"></span></a>
+                            <a href="" class="page active">1</a>
+                            <a href="" class="page">2</a>
+                            <a href="" class="page">3</a>
+                            <a href=""><span class="icon-pagination-right active"></span></a>
+                        </div>
+                    </div>
+                    <div class="on-list-container">
+                        <div class="on-list">
+                            <a href="">10</a>
+                            <a href="" class="active">25</a>
+                            <a href="">50</a>
+                            <a href="">All</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+<script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+<script src="js/lib/jquery.selectric.min.js"></script>
+<script type="text/javascript" src="js/element.js"></script>
+
+</body>
+</html>

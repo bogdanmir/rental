@@ -1,0 +1,393 @@
+<!doctype html>
+<html>
+<head>
+    <title>Rental</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/custom_jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/icon.css">
+    <link rel="stylesheet" type="text/css" href="css/selectric.css">
+    <link rel="stylesheet" type="text/css" href="icons-for-redactor/screen.css">
+</head>
+<body>
+
+<div class="left-panel-activator-container"><div class="left-panel-activator"><span class="icon-property"></span><span class="icon-delete"></span></div></div>
+<div class="left-panel-container">
+    <div class="left-panel">
+        <a href="#" class="logo-container">
+            <img src="img/rentalsforce-logo-bold-inverse-print.png" alt="Rental force" />
+        </a>
+        <div class="user-container">
+            <div class="icon-container-wrap">
+                <div class="icon-container">
+                    <img src="img/bitmap.png" alt="User">
+                    <div class="note"></div>
+                </div>
+            </div>
+            <div class="info-container">
+                <header>Welcome</header>
+                <p>Konstantin Western</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="link">
+                <a href="">
+                    <span class="icon icon-dashboard"></span>
+                    <span class="title">dashboard</span>
+                </a>
+            </div>
+            <div class="link">
+                <a href="">
+                    <span class="icon icon-inquiries"><span class="tasks">21</span></span>
+                    <span class="title">inquiries</span>
+                </a>
+            </div>
+            <div class="link">
+                <a href="">
+                    <span class="icon icon-contacts"></span>
+                    <span class="title">contacts</span>
+                </a>
+            </div>
+            <div class="link">
+                <a href="">
+                    <span class="icon icon-reservation-center"><span class="tasks">21</span></span>
+                    <span class="title">reservation center</span>
+                </a>
+            </div>
+            <div class="link">
+                <a href="">
+                    <span class="icon icon-availability"></span>
+                    <span class="title">availability</span>
+                </a>
+            </div>
+            <div class="link">
+                <a href="">
+                    <span class="icon icon-properties"></span>
+                    <span class="title">properties</span>
+                </a>
+            </div>
+            <div class="link">
+                <a href="">
+                    <span class="icon icon-import"></span>
+                    <span class="title">import</span>
+                </a>
+            </div>
+            <div class="link active">
+                <a href="">
+                    <span class="icon icon-templates"></span>
+                    <span class="title">templates</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="main-container">
+    <aside class="main-header">
+        <div class="search-container">
+            <div class="search">
+                <input type="text" placeholder="Type to search ..." />
+                <span class="icon-search"></span>
+            </div>
+        </div>
+        <div class="user-container">
+            <div class="user">
+                <div class="user-info">
+                    <span class="title">Konstantin Western</span>
+                    <span class="icon-setting"></span>
+                </div>
+                <div class="user-settings">
+                    <div class="user-avtar">
+                        <img src="img/bitmap.png" alt="avatar">
+                    </div>
+                    <p class="mail">housing@literalltic.com</p>
+                    <ul class="setup">
+                        <li><a class="change-password" href="">Change password</a></li>
+                        <li><a class="edit-Profile" href="">Edit Profile</a></li>
+                        <li><a class="photo-gallery" href="">Photo Gallery</a></li>
+                        <li><a class="setting" href="">Setting</a></li>
+                        <li><a class="add-new-user" href="">Add new user</a></li>
+                        <li class="line"></li>
+                        <li><a class="log-out" href="">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <section class="main-content search-result-content">
+        <header class="main-title">
+            <h1>New templates</h1>
+            <p>Create new templates here</p>
+        </header>
+        <div class="first-column content-column">
+            <article class="tab-box add-lead">
+                <header>
+                    <h3>Send mail</h3>
+                </header>
+                <div class="tab active show">
+                    <form id="new-email-template">
+                        <div class="form-row">
+                          <span class="title pswd-title">Name:</span>
+                          <span class="content">
+                            <span class="input-field">
+                              <span class="input-container">
+                                <input type="password" value=""/>
+                              </span>
+                            </span>
+                          </span>
+                        </div>
+                        <div class="form-row">
+                          <span class="title pswd-title">Subject:</span>
+                          <span class="content">
+                            <span class="input-field">
+                              <span class="input-container">
+                                <input type="password" value=""/>
+                              </span>
+                            </span>
+                          </span>
+                        </div>
+                        <div class="form-row">
+                          <span class="title pswd-title">Content:</span>
+                          <div class="content">
+                            <div class="area-container">
+                                <div class="edit-container">
+                                    <span class="edit ico-icon1"></span>
+                                    <span class="edit ico-icon2"></span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit ico-icon3"></span>
+                                    <span class="edit ico-icon4"></span>
+                                    <span class="edit ico-icon5"></span>
+                                    <span class="edit ico-icon6"></span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit ico-icon7"></span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon8.svg" alt="" class="img-icons">
+                                    </span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon9.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon10.svg" alt="" class="img-icons">
+                                    </span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit ico-icon11"></span>
+                                    <span class="edit ico-icon12"></span>
+                                    <span class="edit ico-icon13"></span>
+                                    <span class="edit ico-icon14"></span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit ico-icon15"></span>
+                                    <span class="edit ico-icon16"></span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon17.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon18.svg" alt="" class="img-icons">
+                                    </span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit ico-icon19"></span>
+                                    <span class="edit ico-icon20"></span>
+                                    <span class="edit ico-icon21"></span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon22.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon23.svg" alt="" class="img-icons">
+                                    </span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit ico-icon24"></span>
+                                    <span class="edit ico-icon25"></span>
+                                    <span class="edit ico-icon26"></span>
+                                    <span class="edit ico-icon27"></span>
+                                    <span class="edit ico-icon28"></span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit ico-icon29"></span>
+                                    <span class="edit ico-icon30"></span>
+                                    <span class="edit ico-icon31"></span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon32.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit ico-icon33"></span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon34.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit ico-icon35"></span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit ico-icon36"></span>
+                                    <span class="edit ico-icon37"></span>
+                                    <span class="edit ico-icon38"></span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit ico-icon39"></span>
+                                    <span class="edit ico-icon40"></span>
+                                    <span class="edit ico-icon41"></span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit ico-icon42"></span>
+                                    <span class="edit ico-icon43"></span>
+                                    <span class="edit ico-icon44"></span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit ico-icon45"></span>
+                                    <span class="edit ico-icon46"></span>
+                                    <span class="edit ico-icon47"></span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit ico-icon48"></span>
+                                    <span class="edit ico-icon49"></span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon50.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit ico-icon51"></span>
+                                    <span class="edit ico-icon52"></span>
+                                    <span class="edit ico-icon53">
+                                        <img src="icons-for-redactor/svg/icon53.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon54.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon55.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit ico-icon56"></span>
+                                    <span class="edit ico-icon57"></span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit ico-icon58"></span>
+                                    <span class="edit ico-icon59"></span>
+                                    <span class="edit ico-icon60"></span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit ico-icon61"></span>
+                                    <span class="edit ico-icon62"></span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon63.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon64.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon65.svg" alt="" class="img-icons">
+                                    </span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon66.svg" alt="" class="img-icons">
+                                    </span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit">
+                                        <span class="ico-icon28 double"></span>
+                                        <span class="ico-icon28 double2"></span>
+                                    </span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon68.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon69.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon70.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon71.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit ico-icon72"></span>
+                                </div>
+                                <div class="edit-container">
+                                    <span class="edit ico-icon73"></span>
+                                    <span class="edit ico-icon73"></span>
+                                    <span class="edit ico-icon73"></span>
+                                    <span class="edit">
+                                        <img src="icons-for-redactor/svg/icon76.svg" alt="" class="img-icons">
+                                    </span>
+                                    <span class="edit ico-icon77"></span>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                            <span></span>
+                          <span class="content">
+                              <span class="area-container">
+                                <textarea id="text-area" placeholder=""></textarea>
+                              </span>
+                          </span>
+                        </div>
+                        <div class="form-row">
+                          <span class="title"></span>
+                          <span class="content">
+                            <span class="button-container">
+                              <button class="button new-email-btn">SAVE</button>
+                              <button class="button white new-email-btn">Clear</button>
+                            </span>
+                          </span>
+                        </div>
+                    </form>
+                </div>
+            </article>
+        </div>
+        <div class="second-column aside-column">
+            <article class="tab-box add-lead">
+                <header>
+                    <h3>Place Holders</h3>
+                </header>
+                <div class="tab active show aside-container">
+                    <p>Place holders in an email template which are enclosed with double curly braces {{ }} will be
+                        replaced by actual data when sending emails.</p>
+                    <p>
+                        <span><b>Sample:</b></span>
+                        A {{Customer name}} placeholder will be replaced by John Smith
+                    </p>
+                    <p>
+                        <span><b>Available placeholders:</b></span>
+
+                        <span>My name</span>
+                        <span>My address</span>
+                        <span>My email</span>
+                        <span>Customer name</span>
+                        <span>Customer address</span>
+                        <span>Customer home address</span>
+                        <span>Customer phone</span>
+                        <span>Customer home phone</span>
+                        <span>Customer email</span>
+                        <span>Property name</span>
+                        <span>Number of bedrooms</span>
+                        <span>Number of bathrooms</span>
+                        <span>Status</span>
+                        <span>Start date</span>
+                        <span>End date</span>
+                        <span>Length of stay</span>
+                        <span>Number of guests</span>
+                        <span>Number of children</span>
+                        <span>Price</span>
+                        <span>Pricing type</span>
+                        <span>Discount</span>
+                        <span>Total</span>
+                        <span>Paid amount</span>
+                        <span>Due amount</span>
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+<script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+<script src="js/lib/jquery.selectric.min.js"></script>
+<script type="text/javascript" src="js/element.js"></script>
+
+</body>
+</html>
