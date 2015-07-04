@@ -60,7 +60,8 @@ a {
   font-family: Roboto;
   font-size: 14px;
   font-weight: 300;
-  line-height: 16px; }
+  line-height: 16px;
+  text-decoration: none; }
 
 h1 {
   color: #515151;
@@ -83,7 +84,6 @@ h4 {
   content: "";
   display: block;
   clear: both; }
-
 label.checkbox {
   display: block;
   width: 16px;
@@ -526,7 +526,8 @@ a.button, button.button {
     -o-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box; }
-    .date-field .icon-container .icon-date {
+    .date-field .icon-container .icon-date,
+    .date-field .icon-container span.time-icon{
       color: #969696;
       font-size: 18px;
       -webkit-transition: all 0.2s ease-in-out;
@@ -534,7 +535,8 @@ a.button, button.button {
       -ms-transition: all 0.2s ease-in-out;
       -o-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out; }
-  .date-field:hover .icon-container .icon-date {
+  .date-field:hover .icon-container .icon-date,
+    .date-field:hover .icon-container span.time-icon {
     color: #4a4a4a !important; }
 
 textarea {
@@ -1124,6 +1126,29 @@ article {
   padding-right: 11.5px;
   float: left;
   width: 460px; }
+  .table-container.reserv-info .table table tbody tr:nth-child(1),
+  .table-container.reserv-info .table table tbody tr:nth-child(2n+1){
+    background-color: white;    
+  }
+  .table-container.reserv-info .table .button-wrap{
+    padding-left: 0;
+  }
+  .table-container.reserv-info .table table tbody tr{
+    height: 31px;
+  }
+  .reserv-info article header{
+    border: none;
+  }
+  .reserv-info article{
+    padding-bottom: 0;
+  }
+  .table-container.reserv-info .first-column tr td:first-child{
+    white-space: nowrap;
+    text-align: right;
+    color: #515151;
+    font-family: "Montserrat Bold";
+    vertical-align: middle;
+  }
   .personal-information-wrap .personal-information-container .personal-information {
     padding-bottom: 30px;
     background-color: white;
@@ -2207,6 +2232,9 @@ article {
         -ms-user-select: none;
         -o-user-select: none;
         user-select: none; }
+        .popup-inp.date-field{
+            width: 250px;
+        }
         .popup-container .popup-wrap .popup header .button-wrap .icon-delete {
           font-size: 16px;
           cursor: pointer;
@@ -2244,6 +2272,9 @@ article {
             -ms-user-select: none;
             -o-user-select: none;
             user-select: none; }
+            .popup-container .popup-wrap .popup .params-panel .panel-row .title.content-note{
+              vertical-align: top;
+            }
           .popup-container .popup-wrap .popup .params-panel .panel-row .content {
             padding-top: 10px;
             padding-bottom: 10px;
@@ -2342,6 +2373,7 @@ article {
                 display: table-cell;
                 vertical-align: middle;
                 font-size: 22px; }
+
               .popup-container .popup-wrap .popup .params-panel .panel-row .content .attach-container .description {
                 padding-top: 3px;
                 padding-left: 10px;
@@ -2349,6 +2381,9 @@ article {
                 vertical-align: middle;
                 font-family: "Avenir LT Std";
                 font-size: 14px; }
+                input.upload_file{
+                  display: none;
+                }
             .popup-container .popup-wrap .popup .params-panel .panel-row .content .button-container {
               margin-top: 5px; }
 
@@ -2752,7 +2787,7 @@ article {
           width: 100%;
           height: 100%;
           border: 1px solid #e0e0e0;
-          padding: 10px 12px;
+          padding: 10px 40px 10px 12px;
           color: #878787;
           font-family: "Roboto";
           font-size: 14px;
@@ -3216,6 +3251,13 @@ article {
       font-size: 24px;
       content: "\e604";
       color: #4b5260; }
+      span.time-icon:before{
+        font-family: "dasboard-icons";
+        content: "\e604";
+      }
+      span.time-icon:before:hover{
+
+      }
     .upcoming table td .status {
       font-weight: 400; }
 

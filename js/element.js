@@ -129,6 +129,11 @@ $(document).ready(function() {
 
 $(function() {
   try {
+    $( "#reminderDate" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 1,
+    });
     $( "#from" ).datepicker({
       defaultDate: "+1w",
       changeMonth: true,
@@ -150,7 +155,16 @@ $(function() {
     // console.error(error);
   }
 });
-
+$('#datetimepickerTime').datetimepicker({
+  datepicker:false,
+  format:'H:i',
+  step:5
+});
+$('#datetimepickerReminderTime').datetimepicker({
+  datepicker:false,
+  format:'H:i',
+  step:5
+});
   // Filter activator
 
   var $filterActivator = $(".filter-activator");
@@ -176,6 +190,9 @@ $(function() {
   var $bodyContainer = $body.find(".body");
   var $popupFilter = $body.find(".popup-filter");
   var $popupActivator = $(".popup-open-activator");
+  var $popupActivatorTask = $(".popup-open-activator-task");
+  var $popupActivatorNote = $(".popup-open-add-new-note");
+  var $popupActivatorUpload = $(".popup-open-upload-new-file");
 
   $popupActivator.on("click", function() {
     var $popupContainer = $body.find(".email-popup");
@@ -202,6 +219,89 @@ $(function() {
     $bodyContainer.addClass("hidden");
     $iconDelete.on("click", closeHandler);
   });
+
+
+  $popupActivatorTask.on("click", function() {
+    var $popupContainer = $body.find(".add-new-task");
+    var $popup = $popupContainer.find(".popup");
+    var $iconDelete = $popupContainer.find(".popup-close-activator");
+    var closeHandler = function() {
+      $popupContainer.removeClass("active");
+      $popupFilter.removeClass("active");
+      $bodyContainer.removeClass("hidden");
+      setTimeout(function() {
+        $body.removeClass("hidden");
+        $popupContainer.css({ display: "none" });
+        $popupFilter.css({ display: "none" });
+        $iconDelete.off("click", closeHandler);
+      }, 600);
+    };
+    $popupContainer.css({ display: "block" });
+    $popupFilter.css({ display: "block" });
+    setTimeout(function() {
+      $popupContainer.addClass("active");
+      $popupFilter.addClass("active");
+    }, 60);
+    $body.addClass("hidden");
+    $bodyContainer.addClass("hidden");
+    $iconDelete.on("click", closeHandler);
+  });
+
+$popupActivatorNote.on("click", function() {
+    var $popupContainer = $body.find(".add-new-note");
+    var $popup = $popupContainer.find(".popup");
+    var $iconDelete = $popupContainer.find(".popup-close-activator");
+    var closeHandler = function() {
+      $popupContainer.removeClass("active");
+      $popupFilter.removeClass("active");
+      $bodyContainer.removeClass("hidden");
+      setTimeout(function() {
+        $body.removeClass("hidden");
+        $popupContainer.css({ display: "none" });
+        $popupFilter.css({ display: "none" });
+        $iconDelete.off("click", closeHandler);
+      }, 600);
+    };
+    $popupContainer.css({ display: "block" });
+    $popupFilter.css({ display: "block" });
+    setTimeout(function() {
+      $popupContainer.addClass("active");
+      $popupFilter.addClass("active");
+    }, 60);
+    $body.addClass("hidden");
+    $bodyContainer.addClass("hidden");
+    $iconDelete.on("click", closeHandler);
+  });
+
+
+
+$popupActivatorUpload.on("click", function() {
+    var $popupContainer = $body.find(".upload-new-file");
+    var $popup = $popupContainer.find(".popup");
+    var $iconDelete = $popupContainer.find(".popup-close-activator");
+    var closeHandler = function() {
+      $popupContainer.removeClass("active");
+      $popupFilter.removeClass("active");
+      $bodyContainer.removeClass("hidden");
+      setTimeout(function() {
+        $body.removeClass("hidden");
+        $popupContainer.css({ display: "none" });
+        $popupFilter.css({ display: "none" });
+        $iconDelete.off("click", closeHandler);
+      }, 600);
+    };
+    $popupContainer.css({ display: "block" });
+    $popupFilter.css({ display: "block" });
+    setTimeout(function() {
+      $popupContainer.addClass("active");
+      $popupFilter.addClass("active");
+    }, 60);
+    $body.addClass("hidden");
+    $bodyContainer.addClass("hidden");
+    $iconDelete.on("click", closeHandler);
+  });
+
+
 
   var $tabBox = $(".tab-box");
   var $leadMenu = $tabBox.find(".menu");
