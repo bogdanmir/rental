@@ -12,8 +12,9 @@
 </head>
 <body>
 
-  <!-- Email popup -->
   <div class="popup-filter"></div>
+  <!-- Email popup -->
+
   <div class="popup-container email-popup">
     <div class="popup-wrap">
       <div class="popup">
@@ -105,7 +106,6 @@
     </div>
   </div><!-- Email popup end -->
   <!-- Popup add task -->
-  <div class="popup-filter"></div>
   <div class="popup-container add-new-task">
     <div class="popup-wrap">
       <div class="popup">
@@ -118,17 +118,6 @@
               </div>
             </header>
             <div class="params-panel">
-              <label class="panel-row">
-                <span class="title">Template:</span>
-                <span class="content">
-                  <span class="select-container">
-                    <select>
-                      <option value="">Mail to</option>
-                      <option>to</option>
-                    </select>
-                  </span>
-                </span>
-              </label>
               <label class="panel-row">
                 <span class="title">Subject:</span>
                 <span class="content">
@@ -240,7 +229,6 @@
     </div>
   </div><!-- End popup add task -->
   <!-- Popup add note -->
-  <div class="popup-filter"></div>
   <div class="popup-container add-new-note">
     <div class="popup-wrap">
       <div class="popup">
@@ -287,7 +275,6 @@
   </div><!-- End add note popup -->
 
   <!-- Popup upload new file -->
-  <div class="popup-filter"></div>
   <div class="popup-container upload-new-file">
     <div class="popup-wrap">
       <div class="popup">
@@ -300,6 +287,14 @@
               </div>
             </header>
             <div class="params-panel">
+              <div class="panel-row">
+                <span class="title content-note">Description</span>
+                <span class="content">
+                  <span class="area-container">
+                    <textarea placeholder="Description" placeholder="Description"></textarea>
+                  </span>
+                </span>
+              </div>
              <div class="panel-row">
                 <span class="title"></span>
                 <span class="content">
@@ -307,14 +302,6 @@
                     <span class="icon-attach"></span><span class="description">Upload files</span>
                   </label>
                   <input class="upload_file" type="file" id="upload_new_file">
-                </span>
-              </div>
-              <div class="panel-row">
-                <span class="title content-note">Description</span>
-                <span class="content">
-                  <span class="area-container">
-                    <textarea placeholder="Description" placeholder="Description"></textarea>
-                  </span>
                 </span>
               </div>
               <div class="panel-row">
@@ -479,87 +466,6 @@
                 <a class="button">
                   edit personal information
                 </a>
-              </div>
-            </article>
-          </div>
-          <div class="table-container contact-reservations-container reserv-info">
-            <article class="table">
-                <div class="panel-one-container">
-                    <header>
-                      <h4>Reservation information</h4>
-                      <div class="button-wrap">
-                        <a class="button dark-blue">Print quote</a>
-                      </div>
-                      <div class="button-wrap">
-                        <a class="button dark-blue">Print invoice</a>
-                      </div>
-                      <div class="button-wrap">
-                        <a class="button dark-red">Delete</a>
-                      </div>
-                    </header>
-                    <table class="first-column">
-                      <tbody>
-                        <tr>
-                          <td>Property name:</td><td>2120-2 Room 2</td>
-                        </tr>
-                        <tr>
-                          <td>Badrooms No:</td><td>1</td>
-                        </tr>
-                        <tr>
-                          <td>Bathrooms No:</td><td>1</td>
-                        </tr>
-                        <tr>
-                          <td>Dates:</td><td>05/01/2015 — 08/12/2016, for 12 month</td>
-                        </tr>
-                        <tr>
-                          <td>Status:</td><td>Booked</td>
-                        </tr>
-                        <tr>
-                          <td>Comments:</td><td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <header>
-                      <h4>Detailed info</h4>
-                    </header>
-                    <table class="first-column">
-                      <tbody>
-                        <tr>
-                          <td>Pricing Type:</td><td>Mounthly</td>
-                        </tr>
-                        <tr>
-                          <td>Price:</td><td>$ 950</td>
-                        </tr>
-                        <tr>
-                          <td>Nomber of Month:</td><td>12</td>
-                        </tr>
-                        <tr>
-                          <td>Total:</td><td>$ 11400</td>
-                        </tr>
-                        <tr>
-                          <td>Paid:</td>
-                          <td>
-                            <span class="input-field">
-                              <span class="input-container">
-                                <input type="text" />
-                              </span>
-                            </span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td></td><td>
-                            <div class="button-wrap">
-                              <a class="button">
-                                Update paid
-                              </a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="total-container">
-                          <td>Due Amount:</td><td class="total">$ 11 400</td>
-                        </tr>
-                      </tbody>
-                    </table>
               </div>
             </article>
           </div>
@@ -1015,6 +921,87 @@
             </div>
           </article>
         </div>
+                <div class="panel-one-wrap">
+          <div class="panel-one-container">
+            <article class="panel-one">
+              <header>
+                <h4>Reservation information</h4>
+                <div class="button-wrap">
+                  <a class="button dark-blue">Print quote</a>
+                </div>
+                <div class="button-wrap">
+                  <a class="button dark-blue">Print invoice</a>
+                </div>
+                <div class="button-wrap">
+                  <a class="button dark-red">Delete</a>
+                </div>
+              </header>
+              <table class="first-column">
+                <tbody>
+                  <tr>
+                    <td>Property name:</td><td>2120-2 Room 2</td>
+                  </tr>
+                  <tr>
+                    <td>Badrooms:</td><td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Bathrooms:</td><td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Dates:</td><td>05/01/2015 — 08/12/2016, for 12 month</td>
+                  </tr>
+                  <tr>
+                    <td>Status:</td><td>Booked</td>
+                  </tr>
+                  <tr>
+                    <td>Comments:</td><td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <header>
+                <h4>Detailed info</h4>
+              </header>
+              <table class="first-column">
+                <tbody>
+                  <tr>
+                    <td>Pricing type:</td><td>1/15/2015 11:56:04 PM</td>
+                  </tr>
+                  <tr>
+                    <td>Price:</td><td>$ 11 400</td>
+                  </tr>
+                  <tr>
+                    <td>Nomber of month:</td><td>3</td>
+                  </tr>
+                  <tr>
+                    <td>Total:</td><td>336</td>
+                  </tr>
+                  <tr>
+                    <td>Paid:</td>
+                    <td>
+                      <span class="input-field">
+                        <span class="input-container">
+                          <input type="text" />
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td><td>
+                      <div class="button-wrap">
+                        <a class="button">
+                          Update paid
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="total-container">
+                    <td>Due amount:</td><td class="total">$ 11 400</td>
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+          </div>
+        </div>
       </section>
     </div>
   </div>
@@ -1024,6 +1011,17 @@
   <script src="js/lib/jquery.datetimepicker.js"></script>
   <script src="js/lib/jquery.selectric.min.js"></script>
   <script type="text/javascript" src="js/element.js"></script>
-
+  <script>
+    $('#datetimepickerTime').datetimepicker({
+      datepicker:false,
+      format:'H:i a',
+      step:7
+    });
+    $('#datetimepickerReminderTime').datetimepicker({
+      datepicker:false,
+      format:'H:i a',
+      step:5
+    });
+  </script>
 </body>
 </html>

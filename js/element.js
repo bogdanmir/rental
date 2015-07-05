@@ -155,16 +155,7 @@ $(function() {
     // console.error(error);
   }
 });
-$('#datetimepickerTime').datetimepicker({
-  datepicker:false,
-  format:'H:i',
-  step:5
-});
-$('#datetimepickerReminderTime').datetimepicker({
-  datepicker:false,
-  format:'H:i',
-  step:5
-});
+
   // Filter activator
 
   var $filterActivator = $(".filter-activator");
@@ -189,6 +180,9 @@ $('#datetimepickerReminderTime').datetimepicker({
   var $body = $("body");
   var $bodyContainer = $body.find(".body");
   var $popupFilter = $body.find(".popup-filter");
+  var $popupFilterTask = $body.find(".popup-filter-task");
+  var $popupFilterNote = $body.find(".popup-filter-note");
+  var $popupFilterUpload = $body.find(".popup-filter-upload");
   var $popupActivator = $(".popup-open-activator");
   var $popupActivatorTask = $(".popup-open-activator-task");
   var $popupActivatorNote = $(".popup-open-add-new-note");

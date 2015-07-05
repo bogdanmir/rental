@@ -1125,7 +1125,9 @@ article {
 .personal-information-wrap .personal-information-container {
   padding-right: 11.5px;
   float: left;
-  width: 460px; }
+  width: 460px;}
+.personal-information-wrap .reservation-center-details {
+  margin-top: 30px; }
   .table-container.reserv-info .table table tbody tr:nth-child(1),
   .table-container.reserv-info .table table tbody tr:nth-child(2n+1){
     background-color: white;    
