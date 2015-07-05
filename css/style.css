@@ -2217,6 +2217,10 @@ article {
       -ms-transition: all 0.6s ease-in-out;
       -o-transition: all 0.6s ease-in-out;
       transition: all 0.6s ease-in-out; }
+      .popup-container .popup-wrap .popup.popup_load_logo{
+        padding-left: 30%;
+        padding-right: 30%;
+      }
       .popup-container .popup-wrap .popup header h4 {
         text-align: left; }
       .popup-container .popup-wrap .popup header .popup-close-activator {
@@ -2397,12 +2401,18 @@ article {
 @media screen and (min-width: 992px) and (max-width: 1200px) {
   .popup-container .popup-wrap .popup {
     padding-left: 10%;
-    padding-right: 10%; } }
+    padding-right: 10%; }
+  .popup-container .popup-wrap .popup.popup_load_logo{
+    padding-left: 25%;
+    padding-right: 25%; } }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .popup-container .popup-wrap .popup {
     padding-left: 5%;
     padding-right: 5%; }
+  .popup-container .popup-wrap .popup.popup_load_logo{
+    padding-left: 25%;
+    padding-right: 25%; }
     .popup-container .popup-wrap .popup .params-panel {
       padding: 12px 50px 10px 30px; }
       .popup-container .popup-wrap .popup .params-panel .panel-row .content {
@@ -2410,6 +2420,9 @@ article {
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .popup-container .popup-wrap .popup {
+    padding-left: 30px;
+    padding-right: 30px; }
+  .popup-container .popup-wrap .popup.popup_load_logo{
     padding-left: 30px;
     padding-right: 30px; }
     .popup-container .popup-wrap .popup .params-panel {
@@ -2421,6 +2434,9 @@ article {
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .popup-container .popup-wrap .popup {
+    padding-left: 15px;
+    padding-right: 15px; }
+  .popup-container .popup-wrap .popup.popup_load_logo{
     padding-left: 15px;
     padding-right: 15px; }
     .popup-container .popup-wrap .popup .params-panel {
@@ -2440,6 +2456,9 @@ article {
 
 @media screen and (min-width: 0) and (max-width: 320px) {
   .popup-container .popup-wrap .popup {
+    padding-left: 10px;
+    padding-right: 10px; }
+  .popup-container .popup-wrap .popup.popup_load_logo{
     padding-left: 10px;
     padding-right: 10px; }
     .popup-container .popup-wrap .popup .params-panel {
